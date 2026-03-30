@@ -1,0 +1,2 @@
+csv: outputs/log_analysis/log_analysis.csv
+scores: outputs/dev_official_scores.csv

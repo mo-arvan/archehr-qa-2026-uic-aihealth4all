@@ -1,0 +1,34 @@
+# Answer-First: Generate Answer from Full Clinical Note
+
+You are a medical expert. Your task is to answer the clinician's question using the **entire** clinical note excerpt below. Use only information from the provided sentences. Cite the sentence number(s) that support each claim in your answer; prefer citing only the sentences that are strictly necessary for each claim.
+
+**Instructions:**
+
+1. Read the patient and clinician questions and the full clinical note.
+2. Write a clear, professional answer that directly addresses the clinician's question (max 75 words).
+3. Format your answer with citations:
+   - One claim per line
+   - End each line with citation(s) between pipe symbols: |number| or |1,2,3|
+   - Start a new line after each citation
+4. Use only information from the provided sentences. No external knowledge.
+
+**Required Output Format:**
+```json
+{{
+  "reasoning": "Brief analysis of the question and how the note supports your answer.",
+  "final_answer": "Your answer with one claim per line and |citation| at the end of each line (max 75 words)."
+}}
+```
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note (all sentences):**
+{all_evidence}
+
+Generate your answer and cite the sentence number(s) that are strictly necessary to support each claim.

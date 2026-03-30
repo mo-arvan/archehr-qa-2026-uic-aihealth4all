@@ -1,0 +1,240 @@
+# Minimal Sufficiency Evidence Selection
+
+You are a medical expert tasked with identifying the MINIMUM set of sentences needed to answer a patient's question completely and correctly. Your goal is a set that is both **sufficient** (nothing essential missing) and **minimal** (no redundant or purely contextual sentences).
+
+## Core Principle: Minimal AND Sufficient
+- **Sufficient**: Every sentence that is necessary for a complete, correct answer must be included. Missing such a sentence hurts the answer.
+- **Minimal**: Do not include sentences that only add context or that repeat information already covered by other selected sentences.
+
+## Decision Framework
+
+### Ask Yourself (in order):
+1. **Would the answer be incomplete or incorrect without this sentence?**
+   - If YES: Include it
+   - If NO: Continue to step 2
+
+2. **Does another selected sentence already provide this same information?**
+   - If YES: Exclude it (redundant)
+   - If NO: Continue to step 3
+
+3. **Does this sentence directly support the answer, or only provide background/context?**
+   - If DIRECT SUPPORT: Include it
+   - If ONLY CONTEXT: Exclude it
+
+### Tie-Breaking Rule
+When you're uncertain whether a sentence is necessary for a complete answer:
+- **Default to INCLUSION** for that sentence
+- Missing essential evidence is worse than including one extra sentence. Only exclude when you are confident the sentence is redundant or purely contextual.
+
+## Example: CBD Sludge / ERCP Case
+
+**Patient Question**:
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question**:
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Clinical Note Excerpt**:
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Minimal Selection**: [1, 5, 6, 7]
+
+**Rationale**:
+- Sentence 1: States ERCP placed stent for drainage of obstruction from stones/sludge. This explains the therapeutic action medication cannot provide. ESSENTIAL.
+- Sentences 2, 3, 4: Procedural details and antibiotic management. Not needed to answer why ERCP over medication. EXCLUDE.
+- Sentence 5: Repeat ERCP needed due to worsening labs. Shows ongoing problem requiring intervention. ESSENTIAL.
+- Sentence 6: Stent obstructed by sludge/stones. Demonstrates mechanical problem medication cannot solve. ESSENTIAL.
+- Sentence 7: Stone removal via sphincterotomy. Shows mechanical solution medication cannot achieve. ESSENTIAL.
+- Sentence 8: Post-procedure confirmation. Outcome verification but doesn't explain the decision. EXCLUDE.
+
+**Why NOT include more**:
+- Sentences 2-4 are procedural details/medications, not the reason ERCP was chosen
+- Sentence 8 confirms success but doesn't explain why ERCP was needed
+
+**Common error – Under-Selection**: Including only [5, 6] would miss sentence 1 (initial ERCP purpose: drainage via stent) and sentence 7 (mechanical solution: stone removal). The answer would be incomplete. Always include every sentence that is needed for a complete explanation.
+
+---
+
+## Example 2: Head Injury Recovery (Neurology / Trauma)
+
+**Patient Question**:
+my son fell and lost conciousness for a couple mins. we rushed him to hospital took a CT scan there was bleeding in the brain we got him admitted in icu and he was under observ.. they were givin him pain killers and injected to prevent him from vomitting yesterday i got him back home but he is continously irritated and has headache when awake what do ido
+
+**Clinician Question**:
+What is the expected course of recovery for him?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions: You were admitted to the hospital after sustaining a trauamtic brain injury due to a fall.
+2: This injury did not require any operations.
+3: It was also noted on chest xray that there is an area of consolidation in your lung.
+4: The infectious Disease doctors consulted for recommendations on antibiotic treatment.
+5: Because of your head injury you may experience some of the following symptoms: drowsiness, headaches, dizziness, irritability, short term memory loss - these are all normal and should decrease over the next several weeks.
+6: It is being strongly recommended that you follow up with Dr. who is a doctor specializing in trauamtic brain injuries.
+7: His contact information has been provided to you.
+8: Please report any:
+9: *fever *new onset sweats *chills *headaches *cough *difficulty breathing *yellow/green sputum *shortness of breath
+10: Please report any: *visual changes *weakness on one side of your body *speech difficulty
+
+**Minimal Selection**: [5, 6, 10]
+
+**Rationale**:
+- Sentence 5: Lists expected symptoms and recovery timeframe. Directly answers "what to expect." ESSENTIAL.
+- Sentence 6: Follow-up with TBI specialist is a key part of recovery plan. ESSENTIAL.
+- Sentence 10: Neurological warning signs specific to brain injury. ESSENTIAL for knowing when to seek help.
+- Sentences 1-4, 7: Admission context, lung finding, logistics — none address recovery expectations. EXCLUDE.
+- Sentences 8-9: Generic warning sign preamble and non-neurological symptoms. Only context. EXCLUDE.
+
+**Key Lesson**: Discharge boilerplate (headers, admission summaries, unrelated findings) is rarely needed. Only include sentences that directly inform the recovery question.
+
+---
+
+## Example 3: Stomach Cancer Concern (Gastroenterology)
+
+**Patient Question**:
+I have had for almost one month extreme pain in my lower left side directly after eating. I've had, recently, a urinalysis, bloodwork, and been to ER for a ultrasonic scan of stomach, and a barium CT yesterday. They can't seem to find out what's wrong, I am under lots of stress at work and thought it might be diverticulitis but hospital drs. yesterday said that is out and also any urinary tract infection is out. What would you say about cancer in the stomach?
+
+**Clinician Question**:
+Was there any evidence for stomach cancer?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions: You were admitted to the hospital with a partial small bowel obstruction.
+2: With time, your obstruction dramatically improved and you were able to eat regular food.
+3: Constipation will worsen your symptoms.
+4: Unfortunately, you have trouble tolerating stool softeners and you get diarrhea very easily.
+5: Fiber is the most gentle treatment for constipation.
+6: Please take fiber supplements (Metamucil) twice daily.
+7: Consider also taking each day if you can tolerate it, but start with a small dose (half a scoop).
+8: You will follow up with your oncologist (Dr.) for consideration of further treatment of your bladder cancer.
+9: You will also follow up with your gastroenterologist (Dr.).
+
+**Minimal Selection**: [1, 2, 3, 6, 8]
+
+**Rationale**:
+- Sentence 1: Identifies actual diagnosis (bowel obstruction, not cancer). Directly answers the cancer concern. ESSENTIAL.
+- Sentence 2: Obstruction resolved — further evidence it's not cancer. ESSENTIAL.
+- Sentence 3: Links ongoing symptoms to constipation/obstruction, not cancer. ESSENTIAL.
+- Sentence 6: Treatment recommendation for the actual condition. ESSENTIAL.
+- Sentence 8: Mentions oncology follow-up for bladder cancer — directly relevant to cancer concern. ESSENTIAL.
+- Sentences 4, 5, 7: Tolerance details and dosing instructions. Background, not needed to answer the cancer question. EXCLUDE.
+- Sentence 9: Generic GI follow-up logistics. EXCLUDE.
+
+**Key Lesson**: When the patient asks about a specific concern (cancer), sentences that establish the actual diagnosis are essential because they answer the question by ruling it out. 5 of 9 sentences are needed here — don't under-select just to minimize.
+
+---
+
+## Example 4: Infection and Infertility Concern (Infectious Disease / Urology)
+
+**Patient Question**:
+Hi. I came to the hospital with testicle pain and swelling and got antibiotics for a penis skin infection. My pain went away but now my testicles have become very weird hanging and it seems like they shrunk in size. I went to the ER and they told me it was all normal. I tried masturbating and when I ejaculated the sperm was very watery and there is no white just clear like water. Very little sticky. What's really going on here? I'm afraid it might have spread to my prostate and seminal vesicles too... Does this mean I'm infertile?
+
+**Clinician Question**:
+Did his infection spread to other anatomies causing infertility?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions:
+2: It was a pleasure to take care of you at the hospital.
+3: You came for further evaluation of penis and scrotum swelling.
+4: Further evaluation revealed that you likely have a skin infection on the surface of the penis.
+5: Antibiotics are being prescribed to help take care of this infection.
+6: You will require close follow-up to confirm eradication of your infection.
+7: It is important that you continue to take your medications as indicated.
+8: The following changes have been made to your medications:
+9: We ADDED Bactrim and Levofloxacin for treatment of your skin infection, which you should take until finished with the prescription.
+10: We ADDED emtricitabine-tenofovir and lopinavir-ritonavir for prophylaxis for possible HIV infection.
+11: You will take this for a total 2-week course.
+12: Your new provider will direct you further concerning this treatment.
+
+**Minimal Selection**: [9, 10]
+
+**Rationale**:
+- Sentence 9: Names specific antibiotics for skin infection — directly relevant to what was treated and the scope of infection. ESSENTIAL.
+- Sentence 10: HIV prophylaxis — indicates additional clinical concern beyond skin infection. ESSENTIAL.
+- Sentences 1-8, 11-12: Headers, pleasantries, generic instructions, logistics. None address infection spread or infertility. EXCLUDE.
+
+**Key Lesson**: Only 2 of 12 sentences are essential. Most discharge notes are boilerplate. Be aggressive in excluding headers, pleasantries, and generic medication compliance reminders.
+
+---
+
+## Example 5: Migraine Diagnosis with Dizziness (Neurology)
+
+**Patient Question**:
+Last week my 61 yr old sister woke up with a terrible headache and was not able to walk because she felt the room was spinning. She went to Intermountain Medical Center in Salt lake City, Utah and was admitted. After many tests, she was told she was having a migraine headache and was sent home with a prescription for sumatriptan. The headache has gotten better, but she is still very dizzy. So what is the dizziness from I never heard of a migraine that can cause your head to spin like that.
+
+**Clinician Question**:
+How did they diagnose her with migraine for spinning sensation?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions: You were evaluated in the Neurology Wards for headaches that were of an unusual quality.
+2: We conducted a series of tests to investigate the cause of your headaches, including a CT scan and an MRI, a series of laboratory tests as well as a lumbar puncture.
+3: Through these tests, we were able to rule out serious intracranial causes that can cause a headache, including pseudotumor cerebri, which is a condition where elevated intracranial pressure can cause headaches and subsequent visual damage.
+4: We also checked an MRV (MR venogram) which ruled out cerebral venous thrombosis (a blood clot in the veins of your brain).
+5: - We started you on a new medication called verapamil.
+6: Take this once daily even if you do not have headaches (everyday, by mouth).
+7: - Inform your PCP of this change, and please follow up with your primary care appointment and neurology appointment.
+8: - You can request your PCP to set up a referral to see a neurologist in the community if you would prefer to do so.
+9: - To achieve optimal control of your migraines, avoid caffeinated products and keep a relatively regular sleep wake cycle (go to bed early, wake up early).
+
+**Minimal Selection**: [2, 3, 4, 5, 6, 9]
+
+**Rationale**:
+- Sentence 2: Lists diagnostic tests performed — directly answers "how did they diagnose." ESSENTIAL.
+- Sentence 3: Explains what was ruled out (pseudotumor cerebri) — part of diagnostic reasoning. ESSENTIAL.
+- Sentence 4: Another condition ruled out (venous thrombosis) — completes the differential. ESSENTIAL.
+- Sentence 5: Treatment started confirms migraine diagnosis. ESSENTIAL.
+- Sentence 6: Medication instructions are part of the treatment following diagnosis. ESSENTIAL.
+- Sentence 9: Migraine-specific lifestyle advice confirms diagnosis and relates to symptoms. ESSENTIAL.
+- Sentences 1, 7, 8: Admission context and referral logistics. Don't explain the diagnostic process. EXCLUDE.
+
+**Key Lesson**: 6 of 9 sentences are essential here. When the question asks "how was this diagnosed," the entire diagnostic chain (tests → rule-outs → treatment → management) is needed. Don't under-select just to keep the set small — minimal means no redundancy, not the smallest possible number.
+
+---
+
+## Force Ranking Principle
+
+If you're torn between two sentences and can't decide:
+1. Ask: "If I could only keep ONE of these, which would it be?"
+2. Keep that one, exclude the other
+3. Repeat until you've minimized to the smallest possible set
+
+## Output Format
+
+Return a JSON object with the minimal set of essential sentence IDs:
+
+```json
+{{
+  "reasoning": "Brief explanation of your minimization strategy",
+  "essential_sentence_ids": [1, 5, 6, 7],
+  "pruning_notes": "Optional: explain what you considered including but excluded"
+}}
+```
+
+## Reminder: Minimal but Complete
+- **Goal**: Smallest set that still gives a complete, correct answer
+- **Default**: When uncertain if a sentence is needed, INCLUDE it
+- **Check for sufficiency**: Before finalizing, ask for each excluded sentence: "Could the answer be incomplete or wrong without this?" If yes, add it.
+- **Check for minimality**: After selecting, try removing each sentence one at a time – if the answer is still complete, that sentence can be dropped.
+
+Think like a clinician who needs a complete picture in minimal form: nothing essential missing, nothing redundant included.
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Sentences:**
+{evidence_count}
+
+Select the minimal set of essential sentence IDs. Ensure the set is sufficient: do not omit any sentence that is needed for a complete, correct answer.

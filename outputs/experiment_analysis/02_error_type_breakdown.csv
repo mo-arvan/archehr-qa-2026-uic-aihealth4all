@@ -1,0 +1,7 @@
+error_type,count,pct_of_all_errors
+Word count,266,87.8
+API content filter,11,3.6
+Citation,9,3.0
+Model refusal,8,2.6
+Schema error,8,2.6
+Pipeline failure,1,0.3

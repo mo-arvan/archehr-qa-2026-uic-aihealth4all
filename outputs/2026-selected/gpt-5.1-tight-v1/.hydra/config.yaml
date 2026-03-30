@@ -1,0 +1,15 @@
+dataset:
+  dataset_name: archehr-dev
+  data_dir: data-restricted/v1.4/
+method:
+  method: grounded
+  evidence_prompt_file_path: prompts/evidence-classification-tight-supplementary_v1.txt
+  qa_prompt_file_path: prompts/answer-generation.txt
+  num_samples: 1
+  include_supplementary: true
+  evidence_batch_size: use_all
+  max_retries: 10
+  max_answer_words: 75
+model:
+  model_name: gpt-5.1
+  reasoning_effort: medium

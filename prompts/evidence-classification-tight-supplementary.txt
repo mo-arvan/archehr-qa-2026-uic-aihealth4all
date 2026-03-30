@@ -1,0 +1,117 @@
+# Evidence Classification Task
+
+You are a medical expert tasked with identifying the minimal set of clinically relevant sentences from a clinical note that are essential to answer a patient's question.
+
+## Input
+- **Patient Question**: The patient's original question or concern (narrative form)
+- **Clinician Question**: Concise clinical interpretation of the question
+- **Clinical Note**: Numbered sentences from the patient's electronic health record
+
+## Task
+Classify each sentence into one of three categories:
+1. **Essential**: Sentence is necessary to answer the question. Without this sentence, the answer would be incomplete or incorrect.
+2. **Supplementary**: Sentence provides a specific fact you might cite to clarify an Essential point (e.g., a key lab value or measurement that explains a conclusion). Use sparingly.
+3. **Not Relevant**: Sentence does not contribute to answering the question, or is merely related/background information.
+
+## Key Principles
+
+### 1. Minimal Sufficiency
+Include only what is strictly necessary. If the question can be answered without a sentence, do not mark it as Essential.
+
+### 2. Redundancy Rule
+**If multiple sentences convey the same key fact, mark Essential only for the single sentence that most directly and completely states it** (often the conclusion/assessment or the sentence that includes both diagnosis and action). Mark the rest **Not Relevant** (not Supplementary), unless they add a distinct new fact needed for the answer.
+
+*Example*: If sentence 5 says "patient has pneumonia" and sentence 12 says "chest X-ray shows infiltrate consistent with pneumonia," choose the one that best serves the answer. The other is redundant → Not Relevant.
+
+### 3. Supplementary is Citation-Only
+Use **Supplementary** only if you would realistically cite this sentence in your answer to clarify an Essential point (e.g., "the WBC was 15,000" to support "patient had infection"). If it's merely "related," "background," or "supporting but not directly cited," mark **Not Relevant**.
+
+### 4. Direct Relevance
+Essential sentences must directly address the question. Background information, procedural details, or general context are typically Not Relevant.
+
+### 5. Decision Tie-Breakers
+- **When uncertain between Essential and Supplementary**: Choose Supplementary (it's better to under-include than over-include in Essential)
+- **When uncertain between Supplementary and Not Relevant**: Choose Not Relevant (Supplementary should be rare)
+
+## Example: CBD Sludge / ERCP Case
+
+**Patient Question**:
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question**:
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Clinical Note Excerpt** (with sentences numbered):
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Correct Classification**:
+- Sentence 1: Essential (explains ERCP was done to place stent for drainage of obstruction from stones/sludge - directly addresses why ERCP over medication)
+- Sentence 2: Not Relevant (elevated INR and procedure limitations don't explain why ERCP over medication)
+- Sentence 3: Not Relevant (post-procedure antibiotics don't explain the ERCP decision; pus drainage is context but not essential to the "why ERCP" question)
+- Sentence 4: Not Relevant (discontinuing Vancomycin unrelated to ERCP rationale)
+- Sentence 5: Essential (need for repeat ERCP shows ongoing problem despite initial intervention)
+- Sentence 6: Essential (stent obstruction by sludge/stones shows why procedural intervention needed, not just medication)
+- Sentence 7: Essential (successful stone removal via sphincterotomy shows ERCP provided mechanical solution that medication cannot)
+- Sentence 8: Not Relevant (successful outcome confirmation but doesn't explain why ERCP chosen; merely verifies result)
+
+**Gold Standard Evidence**: [1, 5, 6, 7]
+
+**Common Error - Over-Selection of Supplementary** (Precision 0.50, Recall 1.00, F1 0.67):
+Marking sentences 2, 3, 8 as Supplementary because they seem "related" to ERCP. But ask: would you cite these in your answer? Sentence 2 (INR limitation) doesn't explain why ERCP was chosen. Sentence 3 (antibiotics) is post-procedure care. Sentence 8 (negative cholangiogram) confirms success but doesn't explain the decision. All should be Not Relevant.
+
+**Common Error - Marking Redundant Sentences as Essential**:
+If sentence 1 explains "stent placed for drainage" and sentence 7 explains "sphincterotomy performed for stone removal," both are needed because they describe different ERCP interventions. But if two sentences both say "patient had obstruction," only mark the more complete/direct one as Essential.
+
+## Output Format
+
+Return a JSON object with your reasoning and classification for each sentence:
+
+```json
+{{
+  "reasoning": "Brief explanation of your overall approach to this case",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "justification": "Why this classification was chosen"
+    }},
+    {{
+      "sentence_id": 2,
+      "relevance": "Not Relevant",
+      "justification": "Why this classification was chosen"
+    }}
+  ]
+}}
+```
+
+## Remember
+- **Essential** = Cannot answer the question correctly without this sentence
+- **Supplementary** = A specific fact you would cite to clarify an Essential point (use rarely)
+- **Not Relevant** = Does not contribute to answering the question, or is redundant/background
+- **Redundancy**: If multiple sentences say the same thing, pick the best one. The rest are Not Relevant.
+- **Supplementary vs Not Relevant**: When in doubt, choose Not Relevant
+- **Essential vs Supplementary**: When in doubt, choose Supplementary
+- Focus on the minimal set needed to answer the specific question asked
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Sentences:**
+{evidence_count}
+
+Classify each sentence as Essential, Supplementary, or Not Relevant.

@@ -1,0 +1,142 @@
+# Evidence Classification with Confidence Scoring
+
+You are a medical expert tasked with identifying the minimal set of clinically relevant sentences from a clinical note that are essential to answer a patient's question. Additionally, you must rate your confidence in each classification.
+
+## Task
+Classify each sentence into one of three categories AND provide a confidence score:
+
+### Classification Categories
+1. **Essential**: Sentence is necessary and sufficient to answer the question
+2. **Supplementary**: Sentence provides helpful context but is not strictly necessary
+3. **Not Relevant**: Sentence does not contribute to answering the question
+
+### Confidence Scale
+Rate your confidence in the classification on a 5-point Likert scale:
+- **5 (Very High)**: Completely certain about this classification. The sentence clearly belongs in this category with no ambiguity.
+- **4 (High)**: Very confident about this classification. Minor edge cases might argue otherwise, but this is clearly the right choice.
+- **3 (Medium)**: Moderately confident. There's a reasonable argument for this classification, but alternative classifications are plausible.
+- **2 (Low)**: Uncertain. The sentence could reasonably fit into multiple categories.
+- **1 (Very Low)**: Highly uncertain. The classification is essentially a guess.
+
+## Key Principles
+- **Be honest about uncertainty**: It's better to report low confidence than to force a high-confidence classification
+- **Confidence should match specificity**: Very High (5) should be reserved for unambiguous cases
+- **Use full range**: Don't cluster all ratings at 3-4; use 1-2 and 5 when appropriate
+- **Independence**: Confidence rating should reflect YOUR certainty, not the importance of the sentence
+
+## Example: CBD Sludge / ERCP Case
+
+**Patient Question**:
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question**:
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Clinical Note Excerpt**:
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Classification with Confidence**:
+
+```json
+{{
+  "reasoning": "Question asks why ERCP was chosen over medications. Need to show: (1) what ERCP accomplished, (2) why medication wasn't sufficient. Confidence varies based on how directly each sentence answers these points.",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "confidence": 5,
+      "justification": "Directly states ERCP placed stent for drainage of obstruction from stones/sludge. This is the primary therapeutic action that medication cannot provide. Very high confidence - this unambiguously answers why ERCP over medication."
+    }},
+    {{
+      "sentence_id": 2,
+      "relevance": "Not Relevant",
+      "confidence": 5,
+      "justification": "Elevated INR and procedural limitations don't explain why ERCP was chosen over medication. Very high confidence this is Not Relevant to the question asked."
+    }},
+    {{
+      "sentence_id": 3,
+      "relevance": "Not Relevant",
+      "confidence": 5,
+      "justification": "Post-procedure antibiotic management doesn't explain the ERCP decision. Very high confidence - clearly unrelated to ERCP vs medication choice."
+    }},
+    {{
+      "sentence_id": 4,
+      "relevance": "Not Relevant",
+      "confidence": 5,
+      "justification": "Discontinuing Vancomycin is unrelated to why ERCP was chosen. Very high confidence."
+    }},
+    {{
+      "sentence_id": 5,
+      "relevance": "Essential",
+      "confidence": 5,
+      "justification": "Need for repeat ERCP due to continued worsening labs shows the problem required ongoing procedural intervention, not just medication. Very high confidence - directly supports why ERCP was necessary."
+    }},
+    {{
+      "sentence_id": 6,
+      "relevance": "Essential",
+      "confidence": 5,
+      "justification": "Stent obstruction by sludge/stones demonstrates mechanical blockage requiring procedural removal, not medical dissolution. Very high confidence - this is core evidence for why medication alone was insufficient."
+    }},
+    {{
+      "sentence_id": 7,
+      "relevance": "Essential",
+      "confidence": 5,
+      "justification": "Sphincterotomy with stone removal shows ERCP provided mechanical solution that medication cannot achieve. Very high confidence - directly demonstrates why ERCP was necessary."
+    }},
+    {{
+      "sentence_id": 8,
+      "relevance": "Supplementary",
+      "confidence": 4,
+      "justification": "Confirms successful outcome but doesn't explain why ERCP was chosen over medication. High confidence it's Supplementary - provides reassurance but not essential to the decision rationale."
+    }}
+  ]
+}}
+```
+
+## Output Format
+
+Return a JSON object with your reasoning and classification for each sentence, including confidence scores:
+
+```json
+{{
+  "reasoning": "Brief explanation of your overall approach and confidence considerations",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "confidence": 5,
+      "justification": "Why this classification was chosen and why this confidence level"
+    }}
+  ]
+}}
+```
+
+## Remember
+- **Always include confidence scores** on the 1-5 scale
+- **Be honest**: Low confidence (1-2) is acceptable and informative
+- **Very High (5)** should be reserved for completely unambiguous cases
+- **Medium (3)** means you see reasonable arguments for multiple classifications
+- When uncertain about classification, your confidence score should reflect that uncertainty
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Sentences:**
+{evidence_count}
+
+Classify each sentence with confidence scores.

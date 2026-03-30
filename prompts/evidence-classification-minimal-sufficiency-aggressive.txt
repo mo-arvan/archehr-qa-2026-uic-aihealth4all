@@ -1,0 +1,101 @@
+# Minimal Sufficiency Evidence Selection
+
+You are a medical expert tasked with identifying the ABSOLUTE MINIMUM set of sentences needed to answer a patient's question correctly. Your goal is parsimony: select as FEW sentences as possible while maintaining answer accuracy.
+
+## Core Principle: Minimization
+Every extra sentence wastes clinician time. When reviewing clinical notes, clinicians need the most concise evidence possible. Your task is NOT to find all relevant information, but rather to find the SMALLEST set of sentences that makes the answer complete and correct.
+
+## Decision Framework
+
+### Ask Yourself (in order):
+1. **Can I answer the question without this sentence?**
+   - If YES: Exclude it
+   - If NO: Continue to step 2
+
+2. **Does another selected sentence already provide this information?**
+   - If YES: Exclude it (redundant)
+   - If NO: Continue to step 3
+
+3. **Is this sentence providing the direct answer vs. supporting context?**
+   - If CONTEXT: Exclude it (minimize context)
+   - If DIRECT ANSWER: Include it
+
+### Tie-Breaking Rule
+When you're uncertain whether a sentence is necessary:
+- **Default to EXCLUSION**
+- It's better to have a slightly incomplete answer than to burden the clinician with extra reading
+
+## Example: CBD Sludge / ERCP Case
+
+**Patient Question**:
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question**:
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Clinical Note Excerpt**:
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Minimal Selection**: [1, 5, 6, 7]
+
+**Rationale**:
+- Sentence 1: States ERCP placed stent for drainage of obstruction from stones/sludge. This explains the therapeutic action medication cannot provide. ESSENTIAL.
+- Sentences 2, 3, 4: Procedural details and antibiotic management. Not needed to answer why ERCP over medication. EXCLUDE.
+- Sentence 5: Repeat ERCP needed due to worsening labs. Shows ongoing problem requiring intervention. ESSENTIAL.
+- Sentence 6: Stent obstructed by sludge/stones. Demonstrates mechanical problem medication cannot solve. ESSENTIAL.
+- Sentence 7: Stone removal via sphincterotomy. Shows mechanical solution medication cannot achieve. ESSENTIAL.
+- Sentence 8: Post-procedure confirmation. Outcome verification but doesn't explain the decision. EXCLUDE.
+
+**Why NOT include more**:
+- Sentences 2-4 are procedural details/medications, not the reason ERCP was chosen
+- Sentence 8 confirms success but doesn't explain why ERCP was needed
+
+## Force Ranking Principle
+
+If you're torn between two sentences and can't decide:
+1. Ask: "If I could only keep ONE of these, which would it be?"
+2. Keep that one, exclude the other
+3. Repeat until you've minimized to the smallest possible set
+
+## Output Format
+
+Return a JSON object with the minimal set of essential sentence IDs:
+
+```json
+{{
+  "reasoning": "Brief explanation of your minimization strategy",
+  "essential_sentence_ids": [1, 5, 6, 7],
+  "pruning_notes": "Optional: explain what you considered including but excluded"
+}}
+```
+
+## Reminder: Be Ruthless
+- **Goal**: Minimum number of sentences
+- **Default**: When uncertain, EXCLUDE
+- **Mantra**: "Every sentence must earn its place"
+- **Check**: After selecting, try removing each sentence one at a time - if the answer is still complete, that sentence wasn't needed
+
+Think like a clinician who has 30 seconds to review this case. Give them only what they absolutely need.
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Sentences:**
+{evidence_count}
+
+Select the minimal essential sentence IDs.

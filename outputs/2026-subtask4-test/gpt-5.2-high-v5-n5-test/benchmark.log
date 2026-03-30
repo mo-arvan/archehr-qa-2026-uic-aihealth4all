@@ -1,0 +1,25 @@
+[2026-03-03 04:47:28,453][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-test', 'data_dir': 'data-restricted/v1.4/'}, 'method': {'method': 'answer_evidence_alignment', 'alignment_prompt_file_path': 'prompts/answer-evidence-alignment-v5.txt', 'max_retries': 10, 'num_samples': 5}, 'model': {'model_name': 'gpt-5.2', 'reasoning_effort': 'high'}}
+[2026-03-03 04:47:28,490][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-test', 'data_dir': 'data-restricted/v1.4/'}
+[2026-03-03 04:47:28,519][ehr-qa][INFO] - Task has 100 cases; 0 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-03-03 05:25:00,107][ehr-qa][WARNING] - [case 68] Retry 1/10: Retryable error (ValidationError), waiting 1.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 05:49:46,413][ehr-qa][WARNING] - [case 96] Retry 1/10: Retryable error (ValidationError), waiting 1.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 05:51:03,031][ehr-qa][WARNING] - [case 97] Retry 1/10: Retryable error (ValidationError), waiting 1.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 05:51:20,841][ehr-qa][WARNING] - [case 97] Retry 2/10: Retryable error (ValidationError), waiting 2.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: EOF while parsing a string at line 1 column 209 [type=json_invalid, input_value='{"reasoning":"Answer 1 i... for toxic ingestion of', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 05:51:45,656][ehr-qa][WARNING] - [case 97] Retry 1/10: Retryable error (ValidationError), waiting 1.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 05:53:19,380][ehr-qa][WARNING] - [case 99] Retry 1/10: Retryable error (ValidationError), waiting 1.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 06:05:45,092][ehr-qa][WARNING] - [case 112] Retry 1/10: Retryable error (ValidationError), waiting 1.0s: 1 validation error for AnswerEvidenceAlignmentResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-03 06:14:35,221][ehr-qa][INFO] - Subtask 4 submission saved to /app/outputs/2026-subtask4-test/gpt-5.2-high-v5-n5-test/results/submission_subtask4.json

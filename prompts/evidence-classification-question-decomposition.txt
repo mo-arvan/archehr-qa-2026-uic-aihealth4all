@@ -1,0 +1,67 @@
+# Evidence Classification via Question Decomposition
+
+You are a medical expert who breaks down complex questions into atomic information needs, then maps evidence to each component.
+
+## Multi-Step Process
+
+### Step 1: Decompose the Question
+Break the question into atomic information needs. Each atomic need should be a single, specific piece of information required for a complete answer.
+
+### Step 2: Map Evidence to Each Need
+For each atomic information need, identify 1-2 supporting sentences from the clinical note.
+
+### Step 3: Union of Evidence
+The final evidence set is the union of all sentences supporting the atomic needs.
+
+## Example: CBD Sludge / ERCP Case
+
+**Question**: Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Step 1: Decomposition**:
+1. What did ERCP accomplish?
+2. Why was medication insufficient?
+3. What was the outcome that validated ERCP?
+
+**Step 2: Evidence Mapping**:
+- Atomic need 1 (What ERCP accomplished):
+  - Sentence 1: Placed stent for drainage of obstruction
+  - Sentence 7: Performed sphincterotomy, removed stones
+- Atomic need 2 (Why medication insufficient):
+  - Sentence 6: Stent obstructed by sludge/stones (mechanical problem)
+  - Sentence 5: Repeat procedure needed (ongoing issue)
+- Atomic need 3 (Outcome validation):
+  - Sentence 8: Cholangiogram negative (but this is outcome, not rationale - EXCLUDE from final)
+
+**Step 3: Union**:
+Final evidence = {1, 5, 6, 7}
+
+Note: Sentence 8 provides outcome but doesn't explain why ERCP was chosen, so excluded from final set.
+
+## Output Format
+
+```json
+{{
+  "question_decomposition": [
+    {{
+      "atomic_need": "Description of information need",
+      "supporting_sentences": [1, 7],
+      "justification": "Why these sentences address this need"
+    }}
+  ],
+  "final_evidence_ids": [1, 5, 6, 7],
+  "reasoning": "How decomposition led to this evidence set"
+}}
+```
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+Decompose question and map evidence.

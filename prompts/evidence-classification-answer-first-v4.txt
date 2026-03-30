@@ -1,0 +1,47 @@
+# Answer-Grounded Evidence Classification
+
+You are a medical expert. A clinician question has been answered using the clinical note.
+Below are {k_candidates} generated answers (each with citations to note sentence IDs).
+
+Task: Assign EACH note sentence exactly one label:
+- Essential
+- Supplementary
+- Not Relevant
+
+Rules:
+1) Essential:
+- Label a sentence Essential if it is cited by at least one generated answer.
+
+2) Supplementary (rare):
+- If a sentence is not cited, label it Supplementary only if it directly clarifies a cited Essential sentence.
+- Otherwise do not use Supplementary.
+
+3) Not Relevant:
+- Any sentence that is not cited and does not directly clarify an Essential sentence is Not Relevant.
+
+How to interpret citations in the generated answers:
+- Use citations as the only signal of which note sentences the answers rely on.
+- If a claim has no citation, ignore that claim for evidence labeling.
+- Use only citations that are explicit sentence ID lists (e.g., |5,13,14|).
+
+Output JSON:
+{{
+  "reasoning": "Brief explanation of how citations determined Essential; Supplementary used sparingly for direct clarifications.",
+  "sentence_evidence_list": [
+    {"sentence_id": 1, "relevance": "Not Relevant"},
+    ...
+  ]
+}}
+
+---
+Clinician Question:
+{clinician_question}
+
+Generated Answers ({k_candidates} candidates):
+{generated_answers}
+
+Clinical Note Excerpt:
+{evidence_list}
+
+Number of Sentences:
+{evidence_count}

@@ -1,0 +1,9 @@
+{
+  "micro_precision": 80.0,
+  "micro_recall": 86.95652173913044,
+  "micro_f1": 83.33333333333333,
+  "macro_precision": 82.86201298701299,
+  "macro_recall": 88.50775613275613,
+  "macro_f1": 84.56179014147784,
+  "overall_score": 83.33333333333333
+}

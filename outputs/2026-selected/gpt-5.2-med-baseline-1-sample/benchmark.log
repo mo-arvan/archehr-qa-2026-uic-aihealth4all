@@ -1,0 +1,228 @@
+[2026-02-14 00:09:51,776][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}, 'method': {'method': 'grounded', 'evidence_prompt_file_path': 'prompts/evidence-classification-baseline.txt', 'qa_prompt_file_path': 'prompts/answer-generation.txt', 'num_samples': 1, 'include_supplementary': True, 'evidence_batch_size': 'use_all', 'max_retries': 10, 'max_answer_words': 75}, 'model': {'model_name': 'gpt-5.2', 'reasoning_effort': 'medium'}}
+[2026-02-14 00:09:51,789][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}
+[2026-02-14 00:09:51,794][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-02-14 00:09:51,831][ehr-qa][DEBUG] - [case 1] Generating 1 samples for batch (sentences 1-9)
+[2026-02-14 00:09:51,831][ehr-qa][DEBUG] - [case 1] Generating sample 1/1
+[2026-02-14 00:09:51,831][ehr-qa][DEBUG] - [case 1] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-14 00:09:51,831][ehr-qa][DEBUG] - [case 1] Making initial API call
+[2026-02-14 00:10:01,974][ehr-qa][DEBUG] - [case 1] Successfully validated response on attempt 1
+[2026-02-14 00:10:01,974][ehr-qa][DEBUG] - [case 1] Aggregating 1 samples for batch
+[2026-02-14 00:10:01,974][ehr-qa][DEBUG] - [case 1] Batch validation passed for sentences 1-9
+[2026-02-14 00:10:01,975][ehr-qa][DEBUG] - [case 1] Making initial API call
+[2026-02-14 00:10:07,924][ehr-qa][DEBUG] - [case 1] Successfully validated response on attempt 1
+[2026-02-14 00:10:07,925][ehr-qa][DEBUG] - [case 2] Generating 1 samples for batch (sentences 1-11)
+[2026-02-14 00:10:07,925][ehr-qa][DEBUG] - [case 2] Generating sample 1/1
+[2026-02-14 00:10:07,925][ehr-qa][DEBUG] - [case 2] Starting classification sample generation. Expected 11 sentence IDs
+[2026-02-14 00:10:07,925][ehr-qa][DEBUG] - [case 2] Making initial API call
+[2026-02-14 00:10:22,729][ehr-qa][DEBUG] - [case 2] Successfully validated response on attempt 1
+[2026-02-14 00:10:22,730][ehr-qa][DEBUG] - [case 2] Aggregating 1 samples for batch
+[2026-02-14 00:10:22,730][ehr-qa][DEBUG] - [case 2] Batch validation passed for sentences 1-11
+[2026-02-14 00:10:22,730][ehr-qa][DEBUG] - [case 2] Making initial API call
+[2026-02-14 00:10:29,919][ehr-qa][DEBUG] - [case 2] Successfully validated response on attempt 1
+[2026-02-14 00:10:29,920][ehr-qa][DEBUG] - [case 3] Generating 1 samples for batch (sentences 1-10)
+[2026-02-14 00:10:29,920][ehr-qa][DEBUG] - [case 3] Generating sample 1/1
+[2026-02-14 00:10:29,920][ehr-qa][DEBUG] - [case 3] Starting classification sample generation. Expected 10 sentence IDs
+[2026-02-14 00:10:29,920][ehr-qa][DEBUG] - [case 3] Making initial API call
+[2026-02-14 00:10:41,501][ehr-qa][DEBUG] - [case 3] Successfully validated response on attempt 1
+[2026-02-14 00:10:41,501][ehr-qa][DEBUG] - [case 3] Aggregating 1 samples for batch
+[2026-02-14 00:10:41,501][ehr-qa][DEBUG] - [case 3] Batch validation passed for sentences 1-10
+[2026-02-14 00:10:41,501][ehr-qa][DEBUG] - [case 3] Making initial API call
+[2026-02-14 00:10:50,263][ehr-qa][DEBUG] - [case 3] Successfully validated response on attempt 1
+[2026-02-14 00:10:50,264][ehr-qa][DEBUG] - [case 4] Generating 1 samples for batch (sentences 1-21)
+[2026-02-14 00:10:50,264][ehr-qa][DEBUG] - [case 4] Generating sample 1/1
+[2026-02-14 00:10:50,264][ehr-qa][DEBUG] - [case 4] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-14 00:10:50,264][ehr-qa][DEBUG] - [case 4] Making initial API call
+[2026-02-14 00:11:06,399][ehr-qa][DEBUG] - [case 4] Successfully validated response on attempt 1
+[2026-02-14 00:11:06,399][ehr-qa][DEBUG] - [case 4] Aggregating 1 samples for batch
+[2026-02-14 00:11:06,400][ehr-qa][DEBUG] - [case 4] Batch validation passed for sentences 1-21
+[2026-02-14 00:11:06,400][ehr-qa][DEBUG] - [case 4] Making initial API call
+[2026-02-14 00:11:12,878][ehr-qa][DEBUG] - [case 4] Successfully validated response on attempt 1
+[2026-02-14 00:11:12,879][ehr-qa][DEBUG] - [case 5] Generating 1 samples for batch (sentences 1-23)
+[2026-02-14 00:11:12,879][ehr-qa][DEBUG] - [case 5] Generating sample 1/1
+[2026-02-14 00:11:12,879][ehr-qa][DEBUG] - [case 5] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-14 00:11:12,879][ehr-qa][DEBUG] - [case 5] Making initial API call
+[2026-02-14 00:11:41,940][ehr-qa][DEBUG] - [case 5] Successfully validated response on attempt 1
+[2026-02-14 00:11:41,940][ehr-qa][DEBUG] - [case 5] Aggregating 1 samples for batch
+[2026-02-14 00:11:41,940][ehr-qa][DEBUG] - [case 5] Batch validation passed for sentences 1-23
+[2026-02-14 00:11:41,940][ehr-qa][DEBUG] - [case 5] Making initial API call
+[2026-02-14 00:11:48,523][ehr-qa][DEBUG] - [case 5] Successfully validated response on attempt 1
+[2026-02-14 00:11:48,524][ehr-qa][DEBUG] - [case 6] Generating 1 samples for batch (sentences 1-25)
+[2026-02-14 00:11:48,524][ehr-qa][DEBUG] - [case 6] Generating sample 1/1
+[2026-02-14 00:11:48,524][ehr-qa][DEBUG] - [case 6] Starting classification sample generation. Expected 25 sentence IDs
+[2026-02-14 00:11:48,524][ehr-qa][DEBUG] - [case 6] Making initial API call
+[2026-02-14 00:12:06,039][ehr-qa][DEBUG] - [case 6] Successfully validated response on attempt 1
+[2026-02-14 00:12:06,039][ehr-qa][DEBUG] - [case 6] Aggregating 1 samples for batch
+[2026-02-14 00:12:06,039][ehr-qa][DEBUG] - [case 6] Batch validation passed for sentences 1-25
+[2026-02-14 00:12:06,039][ehr-qa][DEBUG] - [case 6] Making initial API call
+[2026-02-14 00:12:14,659][ehr-qa][DEBUG] - [case 6] Successfully validated response on attempt 1
+[2026-02-14 00:12:14,660][ehr-qa][DEBUG] - [case 7] Generating 1 samples for batch (sentences 1-30)
+[2026-02-14 00:12:14,660][ehr-qa][DEBUG] - [case 7] Generating sample 1/1
+[2026-02-14 00:12:14,660][ehr-qa][DEBUG] - [case 7] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-14 00:12:14,660][ehr-qa][DEBUG] - [case 7] Making initial API call
+[2026-02-14 00:12:23,543][ehr-qa][DEBUG] - [case 7] Successfully validated response on attempt 1
+[2026-02-14 00:12:23,543][ehr-qa][DEBUG] - [case 7] Aggregating 1 samples for batch
+[2026-02-14 00:12:23,544][ehr-qa][DEBUG] - [case 7] Batch validation passed for sentences 1-30
+[2026-02-14 00:12:23,544][ehr-qa][DEBUG] - [case 7] Making initial API call
+[2026-02-14 00:12:26,742][ehr-qa][DEBUG] - [case 7] Successfully validated response on attempt 1
+[2026-02-14 00:12:26,743][ehr-qa][DEBUG] - [case 8] Generating 1 samples for batch (sentences 1-54)
+[2026-02-14 00:12:26,743][ehr-qa][DEBUG] - [case 8] Generating sample 1/1
+[2026-02-14 00:12:26,743][ehr-qa][DEBUG] - [case 8] Starting classification sample generation. Expected 54 sentence IDs
+[2026-02-14 00:12:26,743][ehr-qa][DEBUG] - [case 8] Making initial API call
+[2026-02-14 00:12:40,533][ehr-qa][DEBUG] - [case 8] Successfully validated response on attempt 1
+[2026-02-14 00:12:40,533][ehr-qa][DEBUG] - [case 8] Aggregating 1 samples for batch
+[2026-02-14 00:12:40,533][ehr-qa][DEBUG] - [case 8] Batch validation passed for sentences 1-54
+[2026-02-14 00:12:40,533][ehr-qa][DEBUG] - [case 8] Making initial API call
+[2026-02-14 00:12:50,554][ehr-qa][DEBUG] - [case 8] Successfully validated response on attempt 1
+[2026-02-14 00:12:50,556][ehr-qa][DEBUG] - [case 9] Generating 1 samples for batch (sentences 1-21)
+[2026-02-14 00:12:50,556][ehr-qa][DEBUG] - [case 9] Generating sample 1/1
+[2026-02-14 00:12:50,556][ehr-qa][DEBUG] - [case 9] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-14 00:12:50,556][ehr-qa][DEBUG] - [case 9] Making initial API call
+[2026-02-14 00:13:04,419][ehr-qa][DEBUG] - [case 9] Successfully validated response on attempt 1
+[2026-02-14 00:13:04,419][ehr-qa][DEBUG] - [case 9] Aggregating 1 samples for batch
+[2026-02-14 00:13:04,419][ehr-qa][DEBUG] - [case 9] Batch validation passed for sentences 1-21
+[2026-02-14 00:13:04,419][ehr-qa][DEBUG] - [case 9] Making initial API call
+[2026-02-14 00:13:48,538][ehr-qa][DEBUG] - [case 9] Successfully validated response on attempt 1
+[2026-02-14 00:13:48,539][ehr-qa][DEBUG] - [case 10] Generating 1 samples for batch (sentences 1-32)
+[2026-02-14 00:13:48,539][ehr-qa][DEBUG] - [case 10] Generating sample 1/1
+[2026-02-14 00:13:48,539][ehr-qa][DEBUG] - [case 10] Starting classification sample generation. Expected 32 sentence IDs
+[2026-02-14 00:13:48,540][ehr-qa][DEBUG] - [case 10] Making initial API call
+[2026-02-14 00:14:06,779][ehr-qa][DEBUG] - [case 10] Successfully validated response on attempt 1
+[2026-02-14 00:14:06,779][ehr-qa][DEBUG] - [case 10] Aggregating 1 samples for batch
+[2026-02-14 00:14:06,779][ehr-qa][DEBUG] - [case 10] Batch validation passed for sentences 1-32
+[2026-02-14 00:14:06,779][ehr-qa][DEBUG] - [case 10] Making initial API call
+[2026-02-14 00:14:13,451][ehr-qa][INFO] - [case 10] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 79 words (limit: 75). Please shorten.
+[2026-02-14 00:14:13,451][ehr-qa][DEBUG] - [case 10] Retry 1/10: Making correction call
+[2026-02-14 00:14:16,466][ehr-qa][INFO] - [case 10] Validation failed on attempt 2: Please fix the following issues:
+Answer is too long: 76 words (limit: 75). Please shorten.
+[2026-02-14 00:14:16,466][ehr-qa][DEBUG] - [case 10] Retry 2/10: Making correction call
+[2026-02-14 00:14:38,975][ehr-qa][DEBUG] - [case 10] Successfully validated response on attempt 3
+[2026-02-14 00:14:38,976][ehr-qa][DEBUG] - [case 11] Generating 1 samples for batch (sentences 1-27)
+[2026-02-14 00:14:38,976][ehr-qa][DEBUG] - [case 11] Generating sample 1/1
+[2026-02-14 00:14:38,976][ehr-qa][DEBUG] - [case 11] Starting classification sample generation. Expected 27 sentence IDs
+[2026-02-14 00:14:38,976][ehr-qa][DEBUG] - [case 11] Making initial API call
+[2026-02-14 00:14:47,814][ehr-qa][DEBUG] - [case 11] Successfully validated response on attempt 1
+[2026-02-14 00:14:47,815][ehr-qa][DEBUG] - [case 11] Aggregating 1 samples for batch
+[2026-02-14 00:14:47,815][ehr-qa][DEBUG] - [case 11] Batch validation passed for sentences 1-27
+[2026-02-14 00:14:47,815][ehr-qa][DEBUG] - [case 11] Making initial API call
+[2026-02-14 00:14:57,938][ehr-qa][DEBUG] - [case 11] Successfully validated response on attempt 1
+[2026-02-14 00:14:57,939][ehr-qa][DEBUG] - [case 12] Generating 1 samples for batch (sentences 1-14)
+[2026-02-14 00:14:57,939][ehr-qa][DEBUG] - [case 12] Generating sample 1/1
+[2026-02-14 00:14:57,939][ehr-qa][DEBUG] - [case 12] Starting classification sample generation. Expected 14 sentence IDs
+[2026-02-14 00:14:57,939][ehr-qa][DEBUG] - [case 12] Making initial API call
+[2026-02-14 00:15:05,801][ehr-qa][DEBUG] - [case 12] Successfully validated response on attempt 1
+[2026-02-14 00:15:05,801][ehr-qa][DEBUG] - [case 12] Aggregating 1 samples for batch
+[2026-02-14 00:15:05,801][ehr-qa][DEBUG] - [case 12] Batch validation passed for sentences 1-14
+[2026-02-14 00:15:05,801][ehr-qa][DEBUG] - [case 12] Making initial API call
+[2026-02-14 00:15:10,704][ehr-qa][DEBUG] - [case 12] Successfully validated response on attempt 1
+[2026-02-14 00:15:10,705][ehr-qa][DEBUG] - [case 13] Generating 1 samples for batch (sentences 1-12)
+[2026-02-14 00:15:10,705][ehr-qa][DEBUG] - [case 13] Generating sample 1/1
+[2026-02-14 00:15:10,705][ehr-qa][DEBUG] - [case 13] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-14 00:15:10,705][ehr-qa][DEBUG] - [case 13] Making initial API call
+[2026-02-14 00:15:18,964][ehr-qa][DEBUG] - [case 13] Successfully validated response on attempt 1
+[2026-02-14 00:15:18,964][ehr-qa][DEBUG] - [case 13] Aggregating 1 samples for batch
+[2026-02-14 00:15:18,964][ehr-qa][DEBUG] - [case 13] Batch validation passed for sentences 1-12
+[2026-02-14 00:15:18,964][ehr-qa][DEBUG] - [case 13] Making initial API call
+[2026-02-14 00:15:27,912][ehr-qa][INFO] - [case 13] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 89 words (limit: 75). Please shorten.
+[2026-02-14 00:15:27,912][ehr-qa][DEBUG] - [case 13] Retry 1/10: Making correction call
+[2026-02-14 00:15:31,825][ehr-qa][INFO] - [case 13] Validation failed on attempt 2: Please fix the following issues:
+Answer is too long: 86 words (limit: 75). Please shorten.
+[2026-02-14 00:15:31,825][ehr-qa][DEBUG] - [case 13] Retry 2/10: Making correction call
+[2026-02-14 00:15:40,176][ehr-qa][DEBUG] - [case 13] Successfully validated response on attempt 3
+[2026-02-14 00:15:40,177][ehr-qa][DEBUG] - [case 14] Generating 1 samples for batch (sentences 1-9)
+[2026-02-14 00:15:40,177][ehr-qa][DEBUG] - [case 14] Generating sample 1/1
+[2026-02-14 00:15:40,177][ehr-qa][DEBUG] - [case 14] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-14 00:15:40,177][ehr-qa][DEBUG] - [case 14] Making initial API call
+[2026-02-14 00:16:08,713][ehr-qa][DEBUG] - [case 14] Successfully validated response on attempt 1
+[2026-02-14 00:16:08,713][ehr-qa][DEBUG] - [case 14] Aggregating 1 samples for batch
+[2026-02-14 00:16:08,713][ehr-qa][DEBUG] - [case 14] Batch validation passed for sentences 1-9
+[2026-02-14 00:16:08,713][ehr-qa][DEBUG] - [case 14] Making initial API call
+[2026-02-14 00:16:14,158][ehr-qa][DEBUG] - [case 14] Successfully validated response on attempt 1
+[2026-02-14 00:16:14,159][ehr-qa][DEBUG] - [case 15] Generating 1 samples for batch (sentences 1-12)
+[2026-02-14 00:16:14,159][ehr-qa][DEBUG] - [case 15] Generating sample 1/1
+[2026-02-14 00:16:14,159][ehr-qa][DEBUG] - [case 15] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-14 00:16:14,159][ehr-qa][DEBUG] - [case 15] Making initial API call
+[2026-02-14 00:16:22,512][ehr-qa][DEBUG] - [case 15] Successfully validated response on attempt 1
+[2026-02-14 00:16:22,512][ehr-qa][DEBUG] - [case 15] Aggregating 1 samples for batch
+[2026-02-14 00:16:22,512][ehr-qa][DEBUG] - [case 15] Batch validation passed for sentences 1-12
+[2026-02-14 00:16:22,512][ehr-qa][DEBUG] - [case 15] Making initial API call
+[2026-02-14 00:16:28,770][ehr-qa][DEBUG] - [case 15] Successfully validated response on attempt 1
+[2026-02-14 00:16:28,772][ehr-qa][DEBUG] - [case 16] Generating 1 samples for batch (sentences 1-30)
+[2026-02-14 00:16:28,772][ehr-qa][DEBUG] - [case 16] Generating sample 1/1
+[2026-02-14 00:16:28,772][ehr-qa][DEBUG] - [case 16] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-14 00:16:28,772][ehr-qa][DEBUG] - [case 16] Making initial API call
+[2026-02-14 00:16:42,778][ehr-qa][DEBUG] - [case 16] Successfully validated response on attempt 1
+[2026-02-14 00:16:42,778][ehr-qa][DEBUG] - [case 16] Aggregating 1 samples for batch
+[2026-02-14 00:16:42,779][ehr-qa][DEBUG] - [case 16] Batch validation passed for sentences 1-30
+[2026-02-14 00:16:42,779][ehr-qa][DEBUG] - [case 16] Making initial API call
+[2026-02-14 00:16:57,212][ehr-qa][DEBUG] - [case 16] Successfully validated response on attempt 1
+[2026-02-14 00:16:57,213][ehr-qa][DEBUG] - [case 17] Generating 1 samples for batch (sentences 1-38)
+[2026-02-14 00:16:57,213][ehr-qa][DEBUG] - [case 17] Generating sample 1/1
+[2026-02-14 00:16:57,213][ehr-qa][DEBUG] - [case 17] Starting classification sample generation. Expected 38 sentence IDs
+[2026-02-14 00:16:57,213][ehr-qa][DEBUG] - [case 17] Making initial API call
+[2026-02-14 00:17:24,127][ehr-qa][DEBUG] - [case 17] Successfully validated response on attempt 1
+[2026-02-14 00:17:24,127][ehr-qa][DEBUG] - [case 17] Aggregating 1 samples for batch
+[2026-02-14 00:17:24,127][ehr-qa][DEBUG] - [case 17] Batch validation passed for sentences 1-38
+[2026-02-14 00:17:24,128][ehr-qa][DEBUG] - [case 17] Making initial API call
+[2026-02-14 00:17:38,760][ehr-qa][DEBUG] - [case 17] Successfully validated response on attempt 1
+[2026-02-14 00:17:38,762][ehr-qa][DEBUG] - [case 18] Generating 1 samples for batch (sentences 1-23)
+[2026-02-14 00:17:38,762][ehr-qa][DEBUG] - [case 18] Generating sample 1/1
+[2026-02-14 00:17:38,762][ehr-qa][DEBUG] - [case 18] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-14 00:17:38,762][ehr-qa][DEBUG] - [case 18] Making initial API call
+[2026-02-14 00:17:53,578][ehr-qa][DEBUG] - [case 18] Successfully validated response on attempt 1
+[2026-02-14 00:17:53,578][ehr-qa][DEBUG] - [case 18] Aggregating 1 samples for batch
+[2026-02-14 00:17:53,578][ehr-qa][DEBUG] - [case 18] Batch validation passed for sentences 1-23
+[2026-02-14 00:17:53,578][ehr-qa][DEBUG] - [case 18] Making initial API call
+[2026-02-14 00:18:04,919][ehr-qa][DEBUG] - [case 18] Successfully validated response on attempt 1
+[2026-02-14 00:18:04,920][ehr-qa][DEBUG] - [case 19] Generating 1 samples for batch (sentences 1-18)
+[2026-02-14 00:18:04,920][ehr-qa][DEBUG] - [case 19] Generating sample 1/1
+[2026-02-14 00:18:04,920][ehr-qa][DEBUG] - [case 19] Starting classification sample generation. Expected 18 sentence IDs
+[2026-02-14 00:18:04,920][ehr-qa][DEBUG] - [case 19] Making initial API call
+[2026-02-14 00:18:13,688][ehr-qa][DEBUG] - [case 19] Successfully validated response on attempt 1
+[2026-02-14 00:18:13,688][ehr-qa][DEBUG] - [case 19] Aggregating 1 samples for batch
+[2026-02-14 00:18:13,688][ehr-qa][DEBUG] - [case 19] Batch validation passed for sentences 1-18
+[2026-02-14 00:18:13,688][ehr-qa][DEBUG] - [case 19] Making initial API call
+[2026-02-14 00:18:23,978][ehr-qa][INFO] - [case 19] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 79 words (limit: 75). Please shorten.
+[2026-02-14 00:18:23,978][ehr-qa][DEBUG] - [case 19] Retry 1/10: Making correction call
+[2026-02-14 00:18:29,020][ehr-qa][DEBUG] - [case 19] Successfully validated response on attempt 2
+[2026-02-14 00:18:29,021][ehr-qa][DEBUG] - [case 20] Generating 1 samples for batch (sentences 1-9)
+[2026-02-14 00:18:29,021][ehr-qa][DEBUG] - [case 20] Generating sample 1/1
+[2026-02-14 00:18:29,021][ehr-qa][DEBUG] - [case 20] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-14 00:18:29,021][ehr-qa][DEBUG] - [case 20] Making initial API call
+[2026-02-14 00:18:38,009][ehr-qa][DEBUG] - [case 20] Successfully validated response on attempt 1
+[2026-02-14 00:18:38,009][ehr-qa][DEBUG] - [case 20] Aggregating 1 samples for batch
+[2026-02-14 00:18:38,009][ehr-qa][DEBUG] - [case 20] Batch validation passed for sentences 1-9
+[2026-02-14 00:18:38,009][ehr-qa][DEBUG] - [case 20] Making initial API call
+[2026-02-14 00:18:45,067][ehr-qa][DEBUG] - [case 20] Successfully validated response on attempt 1
+[2026-02-14 00:18:45,068][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/2026-02-14/00-09-51/results/submission.json
+[2026-02-14 00:18:45,068][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/2026-02-14/00-09-51/results/submission_subtask2.json
+[2026-02-14 00:18:45,068][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/2026-02-14/00-09-51/results/submission_subtask3.json
+[2026-02-14 00:18:45,068][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-02-14 00:18:45,076][ehr-qa][INFO] - Metrics:
+[2026-02-14 00:18:45,079][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.6747  0.4628    0.5490 121.0000
+supplementary     0.1389  0.5769    0.2239  26.0000
+not-relevant      0.8397  0.7082    0.7683 281.0000
+accuracy          0.6308  0.6308    0.6308   0.6308
+macro avg         0.5511  0.5826    0.5137 428.0000
+weighted avg      0.7505  0.6308    0.6733 428.0000
+
+[2026-02-14 00:18:45,079][ehr-qa][INFO] - Confusion Matrix:
+[2026-02-14 00:18:45,080][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.4628                    0.2645                   0.2727
+Actual: supplementary                0.2308                    0.5769                   0.1923
+Actual: not-relevant                 0.0747                    0.2171                   0.7082
+
+[2026-02-14 00:18:45,089][ehr-qa][INFO] - Binary Metrics:
+[2026-02-14 00:18:45,091][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.5707  0.7415    0.6450 147.0000
+not-relevant     0.8397  0.7082    0.7683 281.0000
+accuracy         0.7196  0.7196    0.7196   0.7196
+macro avg        0.7052  0.7248    0.7067 428.0000
+weighted avg     0.7473  0.7196    0.7260 428.0000
+

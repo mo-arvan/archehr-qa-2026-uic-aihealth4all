@@ -1,0 +1,158 @@
+# Evidence Classification Task
+
+You are a medical expert tasked with identifying the minimal set of clinically relevant sentences from a clinical note that are essential to answer a patient's question.
+
+## Input
+- **Patient Question**: The patient's original question or concern (narrative form)
+- **Clinician Question**: Concise clinical interpretation of the question
+- **Clinical Note**: Numbered sentences from the patient's electronic health record
+
+## Task
+Classify each sentence into one of three categories:
+1. **Essential**: Sentence is necessary to answer the question. Without this sentence, the answer would be incomplete or incorrect.
+2. **Supplementary**: Sentence provides a specific quantitative fact you might cite to clarify an Essential point (e.g., a lab value like "WBC 15,000"). Use sparingly - most sentences are either Essential or Not Relevant.
+3. **Not Relevant**: Sentence does not contribute to answering the question.
+
+## Key Principles
+
+### 1. Default to Essential for Answer-Relevant Content
+**If a sentence contributes to answering the specific question asked, it is Essential.**
+
+Essential sentences include those that:
+- State the diagnosis, condition, or problem being asked about
+- Explain WHY a treatment/decision was made
+- Describe the treatment or procedure performed
+- Explain the outcome, prognosis, or result
+- Provide reasoning or rationale for clinical decisions
+- Show the progression of a condition (e.g., "condition worsened," "patient improved")
+
+**When uncertain whether a sentence is Essential or Supplementary, choose Essential.** It is better to include a sentence than to miss critical information.
+
+### 2. Supplementary is Rare (Citation-Only)
+Use **Supplementary** ONLY for specific quantitative facts you would cite in parentheses to support an Essential point.
+
+Examples of truly Supplementary content:
+- "WBC was 15,000" (to support "patient had infection")
+- "INR was 1.2" (to support "coagulation normalized")
+- A specific date or measurement that clarifies timing
+
+**If a sentence explains, describes, or provides reasoning (not just a number), it is Essential, not Supplementary.**
+
+### 3. Redundancy is Rare
+True redundancy means **the exact same fact with zero new information**.
+
+If sentences seem similar but provide:
+- Different aspects of the problem (e.g., cause vs. effect)
+- Different time points (e.g., initial state vs. outcome)
+- Different interventions (e.g., first procedure vs. second procedure)
+
+→ They are NOT redundant. **Mark both as Essential.**
+
+Only mark as redundant if one sentence is a complete duplicate that adds nothing new.
+
+### 4. Minimal Sufficiency Means Complete, Not Sparse
+"Minimal" means no unnecessary information, but the answer must still be **complete and correct**. Include all sentences needed to fully answer the question.
+
+### 5. Decision Tie-Breaker
+**When uncertain between Essential and Supplementary**: Choose **Essential** (better to include than to miss critical information)
+
+## Example: CBD Sludge / ERCP Case
+
+**Patient Question**:
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question**:
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Clinical Note Excerpt** (with sentences numbered):
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Correct Classification**:
+- Sentence 1: **Essential** - Explains ERCP placed stent for drainage of obstruction. Directly addresses why ERCP was chosen (mechanical drainage).
+- Sentence 2: **Not Relevant** - Elevated INR explains procedure limitation, but doesn't explain why ERCP was chosen over medication.
+- Sentence 3: **Not Relevant** - Post-procedure antibiotics for infection don't explain the ERCP vs. medication decision.
+- Sentence 4: **Not Relevant** - Medication change unrelated to ERCP rationale.
+- Sentence 5: **Essential** - Need for repeat ERCP shows problem persisted despite intervention. Demonstrates mechanical problem requiring procedural solution.
+- Sentence 6: **Essential** - Stent obstructed by sludge/stones shows why mechanical removal needed (medication cannot clear physical obstruction).
+- Sentence 7: **Essential** - Sphincterotomy and stone removal demonstrate ERCP provided mechanical solution that medication cannot achieve.
+- Sentence 8: **Not Relevant** - Confirms successful outcome but doesn't explain why ERCP was chosen over medication.
+
+**Gold Standard Evidence**: [1, 5, 6, 7]
+
+**Why these 4 sentences are all Essential (not redundant)**:
+- Sentence 1: Initial ERCP action (stent placement for drainage)
+- Sentence 5: Problem persistence (need for repeat procedure)
+- Sentence 6: Nature of problem (physical obstruction by stones/sludge)
+- Sentence 7: Definitive solution (mechanical stone removal)
+
+Each provides a distinct fact showing WHY procedural intervention was necessary over medication. Together they form a complete answer.
+
+**Common Error - Under-Selection of Essential**:
+Marking only 1-2 sentences as Essential (e.g., just sentence 6) because they seem to cover "the main point." But the question asks WHY ERCP over medication - you need to explain:
+1. What ERCP does (sentence 1: drainage via stent)
+2. That the problem persisted (sentence 5: repeat needed)
+3. The nature of obstruction (sentence 6: physical blockage)
+4. The mechanical solution (sentence 7: stone removal)
+
+All four are necessary for a complete answer. Missing any would make the answer incomplete.
+
+**Common Error - Over-Selection of Supplementary**:
+Marking sentences 2, 3, 8 as Supplementary because they mention ERCP or seem "related." Apply the test: Would you cite this sentence to clarify an Essential point?
+- Sentence 2 (INR): No - this is a procedural constraint, not relevant to the "why ERCP" question
+- Sentence 3 (antibiotics): No - this is post-procedure care
+- Sentence 8 (outcome): No - this confirms success but doesn't explain the decision
+
+All should be Not Relevant.
+
+## Output Format
+
+Return a JSON object with your reasoning and classification for each sentence:
+
+```json
+{{
+  "reasoning": "Brief explanation of your overall approach to this case",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "justification": "Why this classification was chosen"
+    }},
+    {{
+      "sentence_id": 2,
+      "relevance": "Not Relevant",
+      "justification": "Why this classification was chosen"
+    }}
+  ]
+}}
+```
+
+## Remember
+- **Essential** = Contributes to answering the question. If it's relevant to the answer, it's Essential.
+- **Supplementary** = A quantitative fact you would cite in parentheses (use rarely - most content is Essential or Not Relevant)
+- **Not Relevant** = Does not contribute to answering the question
+- **Tie-breaker**: When uncertain between Essential and Supplementary, **choose Essential**
+- **Redundancy is rare**: If sentences provide different aspects, time points, or interventions, they're all Essential
+- Include all sentences needed for a **complete** answer to the question
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Sentences:**
+{evidence_count}
+
+Classify each sentence as Essential, Supplementary, or Not Relevant.

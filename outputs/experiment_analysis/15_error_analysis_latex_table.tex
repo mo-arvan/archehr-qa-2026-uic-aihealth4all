@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\caption{Error analysis and correction effectiveness across development and test sets.}
+\label{tab:error-analysis}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Dev (35 exp) & Test (10 exp) \\
+\midrule
+Cases analyzed & 701 & 470 \\
+\midrule
+\multicolumn{3}{l}{\textit{Cumulative compliance}} \\
+\quad After attempt 1 & 85.9\% & 64.3\% \\
+\quad After attempt 2 & 90.9\% & 72.8\% \\
+\quad After attempt 3 & 96.1\% & 86.2\% \\
+\quad Final & 100.0\% & 100.0\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Error breakdown}} \\
+\quad Word count violation & 98 (77.8\%) & 168 (94.9\%) \\
+\quad API content filter & 4 (3.2\%) & 7 (4.0\%) \\
+\quad Pipeline failure & 1 (0.8\%) & 0 \\
+\quad Model refusal & 7 (5.6\%) & 1 (0.6\%) \\
+\quad Citation error & 9 (7.1\%) & 0 \\
+\quad Schema error & 7 (5.6\%) & 1 (0.6\%) \\
+\midrule
+\multicolumn{3}{l}{\textit{Word count detail}} \\
+\quad Median overshoot & 6 words & 9 words \\
+\quad Mean overshoot & 10.8 words & 13.7 words \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,104 @@
+# Answer–Evidence Alignment
+
+You are a medical expert. A reference answer to a patient's clinical question has been provided, along with the clinical note excerpt the answer is grounded in. Your task is to **align each answer sentence to the specific note sentence(s) that directly support it**.
+
+## Task
+
+For each numbered answer sentence, identify which note sentence(s) it is supported by. An answer sentence may be supported by zero, one, or multiple note sentences.
+
+## Definitions
+
+- **Supported:** A note sentence is a supporting citation if the answer sentence's claim cannot be made without that note sentence. The note sentence must contain the specific fact, finding, or event stated in the answer sentence.
+- **Not supported:** If the answer sentence paraphrases general medical knowledge or synthesises information in a way that is not traceable to a specific note sentence, use an empty list.
+
+## Key Principles
+
+- **Precision over completeness:** Cite only note sentences that directly support the answer sentence. Do not add extra citations out of caution.
+- **Many-to-many allowed:** One note sentence may support multiple answer sentences. One answer sentence may cite multiple note sentences.
+- **Empty list is valid:** If an answer sentence is not directly supported by any note sentence, return `[]`.
+- **Use sentence IDs as strings:** e.g., `"1"`, `"5"`, not integers.
+
+## Example: CBD Sludge / ERCP Case
+
+**Clinician Question:**
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Answer Sentences (to be aligned):**
+1: An endoscopic retrograde cholangiopancreatography, ERCP, was recommended to place a common bile duct stent.
+2: This stent was placed to allow drainage of the biliary obstruction which was caused by stones and sludge.
+3: Due to no improvement in liver function, the patient needed a repeat ERCP.
+4: The repeat ERCP showed that the biliary stent placed in the first ERCP was obstructed by stones and sludge.
+5: The stones and stent were successfully removed during this procedure by performing a sphincterotomy.
+
+**Clinical Note Excerpt:**
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Correct Alignment:**
+
+```json
+{{
+  "reasoning": "Answer sentence 1 states ERCP placed a common bile duct stent — directly from note sentence 1. Answer sentence 2 states the purpose of the stent (drainage of biliary obstruction from stones/sludge) — also from note sentence 1. Answer sentence 3 states no liver improvement led to repeat ERCP — from note sentence 5 (LFTs and bilirubin upward trend). Answer sentence 4 states the stent was obstructed — from note sentence 6. Answer sentence 5 states sphincterotomy removed stones — from note sentence 7.",
+  "alignments": [
+    {{"answer_id": "1", "evidence_id": ["1"]}},
+    {{"answer_id": "2", "evidence_id": ["1"]}},
+    {{"answer_id": "3", "evidence_id": ["5"]}},
+    {{"answer_id": "4", "evidence_id": ["6"]}},
+    {{"answer_id": "5", "evidence_id": ["7"]}}
+  ]
+}}
+```
+
+**Common Error — Over-citing:**
+Citing note sentence 5 for answer sentence 4 ("The repeat ERCP showed...") because it mentions "repeat ERCP". But sentence 5 describes *why* a repeat was needed (worsening labs), not what was found. Sentence 6 describes what was found (stent obstructed). Cite the sentence that provides the *specific fact*, not the sentence that provides context.
+
+**Common Error — Citing synthesized conclusions:**
+If the answer sentence draws a conclusion or inference that no single note sentence directly states, use an empty list `[]`. For example, if the answer says "The workup showed her pain was unrelated to cardiovascular issues" but no note sentence explicitly states this conclusion — even though individual test results are documented in the note — the correct citation is `[]`. Do not cite note sentences that are merely *consistent with* the conclusion; cite only sentences that *directly state* the claim.
+
+**Common Error — Citing background instead of the direct claim:**
+When the clinical note contains both a detailed clinical narrative AND a patient-facing discharge summary describing the same fact, cite the sentence that most directly and completely states the claim. Do not cite background, history, or detailed event descriptions when a more direct summary statement exists. For example, if the answer says "the patient no longer needs Coumadin," cite "You will not have to continue your coumadin" (the direct instruction) — not "She has a history of DVT on coumadin, which was discontinued after filter placement" (the clinical background).
+
+**Common Error — Under-citing:**
+Leaving answer sentence 2 with an empty list because "it's covered by answer sentence 1". Sentence 2 makes a distinct claim about the *purpose* of the stent, which also comes from note sentence 1. Each answer sentence must be evaluated independently.
+
+## Output Format
+
+Return a JSON object with your reasoning and alignments:
+
+```json
+{{
+  "reasoning": "Brief explanation of alignment decisions, noting any ambiguous or unsupported sentences.",
+  "alignments": [
+    {{"answer_id": "1", "evidence_id": ["1"]}},
+    {{"answer_id": "2", "evidence_id": []}},
+    ...
+  ]
+}}
+```
+
+The `alignments` list must include every answer sentence ID (1 through {answer_count}).
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Answer Sentences:**
+{answer_sentences}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Answer Sentences:**
+{answer_count}
+
+Align each answer sentence to its supporting note sentence(s). Every answer sentence ID must appear in the output.

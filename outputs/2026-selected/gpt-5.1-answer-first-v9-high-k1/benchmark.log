@@ -1,0 +1,349 @@
+[2026-02-17 00:23:38,090][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}, 'method': {'method': 'answer_first', 'evidence_prompt_file_path': 'prompts/evidence-classification-answer-first-v4.txt', 'qa_prompt_file_path': 'prompts/answer-generation-answer-first-v9.txt', 'num_samples': 1, 'k_candidates': 1, 'include_supplementary': True, 'max_retries': 10, 'max_answer_words': 75, 'evidence_batch_size': 'use_all', 'evidence_batch_overlap': 0}, 'model': {'model_name': 'gpt-5.1', 'reasoning_effort': 'high'}}
+[2026-02-17 00:23:38,107][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}
+[2026-02-17 00:23:38,112][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-02-17 00:23:38,157][ehr-qa][INFO] - [case 1] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:23:38,157][ehr-qa][INFO] - [case 1] Step 1: Generating 1 answer candidates
+[2026-02-17 00:23:38,157][ehr-qa][INFO] - [case 1] Generating answer from all evidence
+[2026-02-17 00:24:05,558][ehr-qa][INFO] - [case 1] Successfully generated answer
+[2026-02-17 00:24:05,558][ehr-qa][INFO] - [case 1] Successfully generated 1/1 answer candidates
+[2026-02-17 00:24:05,558][ehr-qa][INFO] - [case 1] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:24:05,558][ehr-qa][INFO] - [case 1] Classifying evidence using 1 generated answers
+[2026-02-17 00:24:10,327][ehr-qa][INFO] - [case 1] Evidence classification completed: 6 Essential, 0 Supplementary, 3 Not Relevant
+[2026-02-17 00:24:10,327][ehr-qa][INFO] - [case 1] Answer-first pipeline completed successfully
+[2026-02-17 00:24:10,328][ehr-qa][INFO] - [case 2] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:24:10,328][ehr-qa][INFO] - [case 2] Step 1: Generating 1 answer candidates
+[2026-02-17 00:24:10,328][ehr-qa][INFO] - [case 2] Generating answer from all evidence
+[2026-02-17 00:24:53,910][ehr-qa][INFO] - [case 2] Successfully generated answer
+[2026-02-17 00:24:53,910][ehr-qa][INFO] - [case 2] Successfully generated 1/1 answer candidates
+[2026-02-17 00:24:53,910][ehr-qa][INFO] - [case 2] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:24:53,910][ehr-qa][INFO] - [case 2] Classifying evidence using 1 generated answers
+[2026-02-17 00:25:01,146][ehr-qa][INFO] - [case 2] Evidence classification completed: 3 Essential, 0 Supplementary, 8 Not Relevant
+[2026-02-17 00:25:01,146][ehr-qa][INFO] - [case 2] Answer-first pipeline completed successfully
+[2026-02-17 00:25:01,147][ehr-qa][INFO] - [case 3] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:25:01,147][ehr-qa][INFO] - [case 3] Step 1: Generating 1 answer candidates
+[2026-02-17 00:25:01,147][ehr-qa][INFO] - [case 3] Generating answer from all evidence
+[2026-02-17 00:25:20,420][ehr-qa][INFO] - [case 3] Successfully generated answer
+[2026-02-17 00:25:20,420][ehr-qa][INFO] - [case 3] Successfully generated 1/1 answer candidates
+[2026-02-17 00:25:20,420][ehr-qa][INFO] - [case 3] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:25:20,420][ehr-qa][INFO] - [case 3] Classifying evidence using 1 generated answers
+[2026-02-17 00:25:24,019][ehr-qa][INFO] - [case 3] Evidence classification completed: 7 Essential, 1 Supplementary, 2 Not Relevant
+[2026-02-17 00:25:24,019][ehr-qa][INFO] - [case 3] Answer-first pipeline completed successfully
+[2026-02-17 00:25:24,020][ehr-qa][INFO] - [case 4] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:25:24,020][ehr-qa][INFO] - [case 4] Step 1: Generating 1 answer candidates
+[2026-02-17 00:25:24,020][ehr-qa][INFO] - [case 4] Generating answer from all evidence
+[2026-02-17 00:25:43,130][ehr-qa][INFO] - [case 4] Successfully generated answer
+[2026-02-17 00:25:43,131][ehr-qa][INFO] - [case 4] Successfully generated 1/1 answer candidates
+[2026-02-17 00:25:43,131][ehr-qa][INFO] - [case 4] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:25:43,131][ehr-qa][INFO] - [case 4] Classifying evidence using 1 generated answers
+[2026-02-17 00:26:00,211][ehr-qa][INFO] - [case 4] Evidence classification completed: 8 Essential, 3 Supplementary, 10 Not Relevant
+[2026-02-17 00:26:00,211][ehr-qa][INFO] - [case 4] Answer-first pipeline completed successfully
+[2026-02-17 00:26:00,212][ehr-qa][INFO] - [case 5] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:26:00,212][ehr-qa][INFO] - [case 5] Step 1: Generating 1 answer candidates
+[2026-02-17 00:26:00,212][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-02-17 00:26:02,677][ehr-qa][ERROR] - [case 5] Non-retryable error (ValidationError): 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+Traceback (most recent call last):
+  File "/app/src/retry.py", line 85, in call_with_retry
+    response = api_call()
+               ^^^^^^^^^^
+  File "/app/src/qa_model.py", line 961, in make_api_call
+    return self.client.responses.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1190, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1075, in request
+    return self._process_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1164, in _process_response
+    return api_response.parse()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_response.py", line 325, in parse
+    parsed = self._options.post_parser(parsed)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1184, in parser
+    return parse_response(
+           ^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/lib/_parsing/_responses.py", line 75, in parse_response
+    "parsed": parse_text(item.text, text_format=text_format),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/lib/_parsing/_responses.py", line 143, in parse_text
+    return cast(TextFormatT, model_parse_json(text_format, text))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_compat.py", line 171, in model_parse_json
+    return model.model_validate_json(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/pydantic/main.py", line 766, in model_validate_json
+    return cls.__pydantic_validator__.validate_json(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-02-17 00:26:02,681][ehr-qa][WARNING] - [case 5] Error generating answer candidate 1: 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-02-17 00:26:02,681][ehr-qa][ERROR] - [case 5] Failed to generate any answer candidates
+[2026-02-17 00:26:02,681][ehr-qa][ERROR] - Error processing case 5: Failed to generate any answer candidates
+[2026-02-17 00:26:02,682][ehr-qa][INFO] - [case 6] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:26:02,682][ehr-qa][INFO] - [case 6] Step 1: Generating 1 answer candidates
+[2026-02-17 00:26:02,682][ehr-qa][INFO] - [case 6] Generating answer from all evidence
+[2026-02-17 00:27:00,978][ehr-qa][INFO] - [case 6] Successfully generated answer
+[2026-02-17 00:27:00,979][ehr-qa][INFO] - [case 6] Successfully generated 1/1 answer candidates
+[2026-02-17 00:27:00,979][ehr-qa][INFO] - [case 6] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:27:00,979][ehr-qa][INFO] - [case 6] Classifying evidence using 1 generated answers
+[2026-02-17 00:27:09,806][ehr-qa][INFO] - [case 6] Evidence classification completed: 7 Essential, 0 Supplementary, 18 Not Relevant
+[2026-02-17 00:27:09,806][ehr-qa][INFO] - [case 6] Answer-first pipeline completed successfully
+[2026-02-17 00:27:09,807][ehr-qa][INFO] - [case 7] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:27:09,807][ehr-qa][INFO] - [case 7] Step 1: Generating 1 answer candidates
+[2026-02-17 00:27:09,807][ehr-qa][INFO] - [case 7] Generating answer from all evidence
+[2026-02-17 00:27:39,419][ehr-qa][INFO] - [case 7] Successfully generated answer
+[2026-02-17 00:27:39,419][ehr-qa][INFO] - [case 7] Successfully generated 1/1 answer candidates
+[2026-02-17 00:27:39,419][ehr-qa][INFO] - [case 7] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:27:39,419][ehr-qa][INFO] - [case 7] Classifying evidence using 1 generated answers
+[2026-02-17 00:27:48,064][ehr-qa][INFO] - [case 7] Evidence classification completed: 5 Essential, 1 Supplementary, 24 Not Relevant
+[2026-02-17 00:27:48,064][ehr-qa][INFO] - [case 7] Answer-first pipeline completed successfully
+[2026-02-17 00:27:48,066][ehr-qa][INFO] - [case 8] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:27:48,066][ehr-qa][INFO] - [case 8] Step 1: Generating 1 answer candidates
+[2026-02-17 00:27:48,066][ehr-qa][INFO] - [case 8] Generating answer from all evidence
+[2026-02-17 00:28:35,155][ehr-qa][INFO] - [case 8] Successfully generated answer
+[2026-02-17 00:28:35,155][ehr-qa][INFO] - [case 8] Successfully generated 1/1 answer candidates
+[2026-02-17 00:28:35,155][ehr-qa][INFO] - [case 8] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:28:35,155][ehr-qa][INFO] - [case 8] Classifying evidence using 1 generated answers
+[2026-02-17 00:28:50,058][ehr-qa][INFO] - [case 8] Evidence classification completed: 15 Essential, 0 Supplementary, 39 Not Relevant
+[2026-02-17 00:28:50,058][ehr-qa][INFO] - [case 8] Answer-first pipeline completed successfully
+[2026-02-17 00:28:50,060][ehr-qa][INFO] - [case 9] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:28:50,060][ehr-qa][INFO] - [case 9] Step 1: Generating 1 answer candidates
+[2026-02-17 00:28:50,060][ehr-qa][INFO] - [case 9] Generating answer from all evidence
+[2026-02-17 00:29:11,878][ehr-qa][ERROR] - [case 9] Non-retryable error (ValidationError): 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+Traceback (most recent call last):
+  File "/app/src/retry.py", line 85, in call_with_retry
+    response = api_call()
+               ^^^^^^^^^^
+  File "/app/src/qa_model.py", line 961, in make_api_call
+    return self.client.responses.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1190, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1075, in request
+    return self._process_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1164, in _process_response
+    return api_response.parse()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_response.py", line 325, in parse
+    parsed = self._options.post_parser(parsed)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1184, in parser
+    return parse_response(
+           ^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/lib/_parsing/_responses.py", line 75, in parse_response
+    "parsed": parse_text(item.text, text_format=text_format),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/lib/_parsing/_responses.py", line 143, in parse_text
+    return cast(TextFormatT, model_parse_json(text_format, text))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_compat.py", line 171, in model_parse_json
+    return model.model_validate_json(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/pydantic/main.py", line 766, in model_validate_json
+    return cls.__pydantic_validator__.validate_json(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-02-17 00:29:11,879][ehr-qa][WARNING] - [case 9] Error generating answer candidate 1: 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-02-17 00:29:11,879][ehr-qa][ERROR] - [case 9] Failed to generate any answer candidates
+[2026-02-17 00:29:11,879][ehr-qa][ERROR] - Error processing case 9: Failed to generate any answer candidates
+[2026-02-17 00:29:11,880][ehr-qa][INFO] - [case 10] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:29:11,880][ehr-qa][INFO] - [case 10] Step 1: Generating 1 answer candidates
+[2026-02-17 00:29:11,880][ehr-qa][INFO] - [case 10] Generating answer from all evidence
+[2026-02-17 00:29:45,893][ehr-qa][INFO] - [case 10] Successfully generated answer
+[2026-02-17 00:29:45,893][ehr-qa][INFO] - [case 10] Successfully generated 1/1 answer candidates
+[2026-02-17 00:29:45,893][ehr-qa][INFO] - [case 10] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:29:45,893][ehr-qa][INFO] - [case 10] Classifying evidence using 1 generated answers
+[2026-02-17 00:30:00,603][ehr-qa][INFO] - [case 10] Evidence classification completed: 12 Essential, 0 Supplementary, 20 Not Relevant
+[2026-02-17 00:30:00,603][ehr-qa][INFO] - [case 10] Answer-first pipeline completed successfully
+[2026-02-17 00:30:00,605][ehr-qa][INFO] - [case 11] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:30:00,605][ehr-qa][INFO] - [case 11] Step 1: Generating 1 answer candidates
+[2026-02-17 00:30:00,605][ehr-qa][INFO] - [case 11] Generating answer from all evidence
+[2026-02-17 00:30:39,540][ehr-qa][INFO] - [case 11] Successfully generated answer
+[2026-02-17 00:30:39,541][ehr-qa][INFO] - [case 11] Successfully generated 1/1 answer candidates
+[2026-02-17 00:30:39,541][ehr-qa][INFO] - [case 11] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:30:39,541][ehr-qa][INFO] - [case 11] Classifying evidence using 1 generated answers
+[2026-02-17 00:31:03,884][ehr-qa][INFO] - [case 11] Evidence classification completed: 20 Essential, 4 Supplementary, 3 Not Relevant
+[2026-02-17 00:31:03,884][ehr-qa][INFO] - [case 11] Answer-first pipeline completed successfully
+[2026-02-17 00:31:03,886][ehr-qa][INFO] - [case 12] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:31:03,886][ehr-qa][INFO] - [case 12] Step 1: Generating 1 answer candidates
+[2026-02-17 00:31:03,886][ehr-qa][INFO] - [case 12] Generating answer from all evidence
+[2026-02-17 00:31:25,064][ehr-qa][INFO] - [case 12] Successfully generated answer
+[2026-02-17 00:31:25,064][ehr-qa][INFO] - [case 12] Successfully generated 1/1 answer candidates
+[2026-02-17 00:31:25,064][ehr-qa][INFO] - [case 12] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:31:25,064][ehr-qa][INFO] - [case 12] Classifying evidence using 1 generated answers
+[2026-02-17 00:31:28,087][ehr-qa][INFO] - [case 12] Evidence classification completed: 5 Essential, 0 Supplementary, 9 Not Relevant
+[2026-02-17 00:31:28,087][ehr-qa][INFO] - [case 12] Answer-first pipeline completed successfully
+[2026-02-17 00:31:28,088][ehr-qa][INFO] - [case 13] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:31:28,088][ehr-qa][INFO] - [case 13] Step 1: Generating 1 answer candidates
+[2026-02-17 00:31:28,088][ehr-qa][INFO] - [case 13] Generating answer from all evidence
+[2026-02-17 00:32:14,761][ehr-qa][INFO] - [case 13] Successfully generated answer
+[2026-02-17 00:32:14,761][ehr-qa][INFO] - [case 13] Successfully generated 1/1 answer candidates
+[2026-02-17 00:32:14,761][ehr-qa][INFO] - [case 13] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:32:14,761][ehr-qa][INFO] - [case 13] Classifying evidence using 1 generated answers
+[2026-02-17 00:32:22,123][ehr-qa][INFO] - [case 13] Evidence classification completed: 8 Essential, 1 Supplementary, 3 Not Relevant
+[2026-02-17 00:32:22,123][ehr-qa][INFO] - [case 13] Answer-first pipeline completed successfully
+[2026-02-17 00:32:22,124][ehr-qa][INFO] - [case 14] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:32:22,125][ehr-qa][INFO] - [case 14] Step 1: Generating 1 answer candidates
+[2026-02-17 00:32:22,125][ehr-qa][INFO] - [case 14] Generating answer from all evidence
+[2026-02-17 00:32:37,651][ehr-qa][INFO] - [case 14] Successfully generated answer
+[2026-02-17 00:32:37,651][ehr-qa][INFO] - [case 14] Successfully generated 1/1 answer candidates
+[2026-02-17 00:32:37,651][ehr-qa][INFO] - [case 14] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:32:37,651][ehr-qa][INFO] - [case 14] Classifying evidence using 1 generated answers
+[2026-02-17 00:32:41,899][ehr-qa][INFO] - [case 14] Evidence classification completed: 6 Essential, 3 Supplementary, 0 Not Relevant
+[2026-02-17 00:32:41,899][ehr-qa][INFO] - [case 14] Answer-first pipeline completed successfully
+[2026-02-17 00:32:41,900][ehr-qa][INFO] - [case 15] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:32:41,900][ehr-qa][INFO] - [case 15] Step 1: Generating 1 answer candidates
+[2026-02-17 00:32:41,900][ehr-qa][INFO] - [case 15] Generating answer from all evidence
+[2026-02-17 00:33:12,418][ehr-qa][INFO] - [case 15] Successfully generated answer
+[2026-02-17 00:33:12,418][ehr-qa][INFO] - [case 15] Successfully generated 1/1 answer candidates
+[2026-02-17 00:33:12,418][ehr-qa][INFO] - [case 15] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:33:12,418][ehr-qa][INFO] - [case 15] Classifying evidence using 1 generated answers
+[2026-02-17 00:33:16,449][ehr-qa][INFO] - [case 15] Evidence classification completed: 8 Essential, 0 Supplementary, 4 Not Relevant
+[2026-02-17 00:33:16,450][ehr-qa][INFO] - [case 15] Answer-first pipeline completed successfully
+[2026-02-17 00:33:16,451][ehr-qa][INFO] - [case 16] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:33:16,451][ehr-qa][INFO] - [case 16] Step 1: Generating 1 answer candidates
+[2026-02-17 00:33:16,451][ehr-qa][INFO] - [case 16] Generating answer from all evidence
+[2026-02-17 00:34:14,421][ehr-qa][INFO] - [case 16] Successfully generated answer
+[2026-02-17 00:34:14,422][ehr-qa][INFO] - [case 16] Successfully generated 1/1 answer candidates
+[2026-02-17 00:34:14,422][ehr-qa][INFO] - [case 16] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:34:14,422][ehr-qa][INFO] - [case 16] Classifying evidence using 1 generated answers
+[2026-02-17 00:34:44,463][ehr-qa][INFO] - [case 16] Evidence classification completed: 7 Essential, 4 Supplementary, 19 Not Relevant
+[2026-02-17 00:34:44,463][ehr-qa][INFO] - [case 16] Answer-first pipeline completed successfully
+[2026-02-17 00:34:44,464][ehr-qa][INFO] - [case 17] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:34:44,464][ehr-qa][INFO] - [case 17] Step 1: Generating 1 answer candidates
+[2026-02-17 00:34:44,464][ehr-qa][INFO] - [case 17] Generating answer from all evidence
+[2026-02-17 00:35:13,826][ehr-qa][INFO] - [case 17] Successfully generated answer
+[2026-02-17 00:35:13,826][ehr-qa][INFO] - [case 17] Successfully generated 1/1 answer candidates
+[2026-02-17 00:35:13,827][ehr-qa][INFO] - [case 17] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:35:13,827][ehr-qa][INFO] - [case 17] Classifying evidence using 1 generated answers
+[2026-02-17 00:35:29,502][ehr-qa][INFO] - [case 17] Evidence classification completed: 14 Essential, 0 Supplementary, 24 Not Relevant
+[2026-02-17 00:35:29,502][ehr-qa][INFO] - [case 17] Answer-first pipeline completed successfully
+[2026-02-17 00:35:29,504][ehr-qa][INFO] - [case 18] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:35:29,504][ehr-qa][INFO] - [case 18] Step 1: Generating 1 answer candidates
+[2026-02-17 00:35:29,504][ehr-qa][INFO] - [case 18] Generating answer from all evidence
+[2026-02-17 00:35:59,776][ehr-qa][INFO] - [case 18] Successfully generated answer
+[2026-02-17 00:35:59,776][ehr-qa][INFO] - [case 18] Successfully generated 1/1 answer candidates
+[2026-02-17 00:35:59,776][ehr-qa][INFO] - [case 18] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:35:59,776][ehr-qa][INFO] - [case 18] Classifying evidence using 1 generated answers
+[2026-02-17 00:36:07,400][ehr-qa][INFO] - [case 18] Evidence classification completed: 5 Essential, 0 Supplementary, 18 Not Relevant
+[2026-02-17 00:36:07,400][ehr-qa][INFO] - [case 18] Answer-first pipeline completed successfully
+[2026-02-17 00:36:07,401][ehr-qa][INFO] - [case 19] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:36:07,401][ehr-qa][INFO] - [case 19] Step 1: Generating 1 answer candidates
+[2026-02-17 00:36:07,401][ehr-qa][INFO] - [case 19] Generating answer from all evidence
+[2026-02-17 00:36:31,759][ehr-qa][INFO] - [case 19] Successfully generated answer
+[2026-02-17 00:36:31,760][ehr-qa][INFO] - [case 19] Successfully generated 1/1 answer candidates
+[2026-02-17 00:36:31,760][ehr-qa][INFO] - [case 19] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:36:31,760][ehr-qa][INFO] - [case 19] Classifying evidence using 1 generated answers
+[2026-02-17 00:36:41,607][ehr-qa][INFO] - [case 19] Evidence classification completed: 7 Essential, 0 Supplementary, 11 Not Relevant
+[2026-02-17 00:36:41,607][ehr-qa][INFO] - [case 19] Answer-first pipeline completed successfully
+[2026-02-17 00:36:41,608][ehr-qa][INFO] - [case 20] Starting answer-first pipeline with 1 candidates
+[2026-02-17 00:36:41,608][ehr-qa][INFO] - [case 20] Step 1: Generating 1 answer candidates
+[2026-02-17 00:36:41,608][ehr-qa][INFO] - [case 20] Generating answer from all evidence
+[2026-02-17 00:37:26,556][ehr-qa][INFO] - [case 20] Successfully generated answer
+[2026-02-17 00:37:26,556][ehr-qa][INFO] - [case 20] Successfully generated 1/1 answer candidates
+[2026-02-17 00:37:26,556][ehr-qa][INFO] - [case 20] Step 2: Classifying evidence based on generated answers
+[2026-02-17 00:37:26,556][ehr-qa][INFO] - [case 20] Classifying evidence using 1 generated answers
+[2026-02-17 00:37:30,444][ehr-qa][INFO] - [case 20] Evidence classification completed: 7 Essential, 0 Supplementary, 2 Not Relevant
+[2026-02-17 00:37:30,445][ehr-qa][INFO] - [case 20] Answer-first pipeline completed successfully
+[2026-02-17 00:37:30,447][ehr-qa][WARNING] - Mismatch in number of submission entries and task entries. Submission: 18, Task: 20
+[2026-02-17 00:37:30,448][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v9-high-k1/results/submission.json
+[2026-02-17 00:37:30,448][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v9-high-k1/results/submission_subtask2.json
+[2026-02-17 00:37:30,448][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v9-high-k1/results/submission_subtask3.json
+[2026-02-17 00:37:30,448][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-02-17 00:37:30,468][ehr-qa][INFO] - Metrics:
+[2026-02-17 00:37:30,484][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.5200  0.7647    0.6190 102.0000
+supplementary     0.0000  0.0000    0.0000  21.0000
+not-relevant      0.8802  0.7318    0.7992 261.0000
+accuracy          0.7005  0.7005    0.7005   0.7005
+macro avg         0.4667  0.4988    0.4727 384.0000
+weighted avg      0.7364  0.7005    0.7076 384.0000
+
+[2026-02-17 00:37:30,484][ehr-qa][INFO] - Confusion Matrix:
+[2026-02-17 00:37:30,485][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.7647                    0.0294                   0.2059
+Actual: supplementary                0.7619                    0.0000                   0.2381
+Actual: not-relevant                 0.2146                    0.0536                   0.7318
+
+[2026-02-17 00:37:30,502][ehr-qa][INFO] - Binary Metrics:
+[2026-02-17 00:37:30,504][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.5808  0.7886    0.6690 123.0000
+not-relevant     0.8802  0.7318    0.7992 261.0000
+accuracy         0.7500  0.7500    0.7500   0.7500
+macro avg        0.7305  0.7602    0.7341 384.0000
+weighted avg     0.7843  0.7500    0.7575 384.0000
+
+[2026-03-12 20:06:02,898][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}, 'method': {'method': 'answer_first', 'evidence_prompt_file_path': 'prompts/evidence-classification-answer-first-v4.txt', 'qa_prompt_file_path': 'prompts/answer-generation-answer-first-v9.txt', 'num_samples': 1, 'k_candidates': 1, 'include_supplementary': True, 'max_retries': 10, 'max_answer_words': 75, 'evidence_batch_size': 'use_all', 'evidence_batch_overlap': 0}, 'model': {'model_name': 'gpt-5.1', 'reasoning_effort': 'high'}}
+[2026-03-12 20:06:02,915][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}
+[2026-03-12 20:06:02,921][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-03-12 20:06:02,958][ehr-qa][INFO] - [case 5] Starting answer-first pipeline with 1 candidates
+[2026-03-12 20:06:02,958][ehr-qa][INFO] - [case 5] Step 1: Generating 1 answer candidates
+[2026-03-12 20:06:02,958][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-03-12 20:06:56,401][ehr-qa][INFO] - [case 5] Successfully generated answer
+[2026-03-12 20:06:56,401][ehr-qa][INFO] - [case 5] Successfully generated 1/1 answer candidates
+[2026-03-12 20:06:56,401][ehr-qa][INFO] - [case 5] Step 2: Classifying evidence based on generated answers
+[2026-03-12 20:06:56,401][ehr-qa][INFO] - [case 5] Classifying evidence using 1 generated answers
+[2026-03-12 20:07:17,243][ehr-qa][INFO] - [case 5] Evidence classification completed: 8 Essential, 1 Supplementary, 14 Not Relevant
+[2026-03-12 20:07:17,243][ehr-qa][INFO] - [case 5] Answer-first pipeline completed successfully
+[2026-03-12 20:07:17,247][ehr-qa][INFO] - [case 9] Starting answer-first pipeline with 1 candidates
+[2026-03-12 20:07:17,247][ehr-qa][INFO] - [case 9] Step 1: Generating 1 answer candidates
+[2026-03-12 20:07:17,247][ehr-qa][INFO] - [case 9] Generating answer from all evidence
+[2026-03-12 20:08:31,291][ehr-qa][INFO] - [case 9] Successfully generated answer
+[2026-03-12 20:08:31,291][ehr-qa][INFO] - [case 9] Successfully generated 1/1 answer candidates
+[2026-03-12 20:08:31,291][ehr-qa][INFO] - [case 9] Step 2: Classifying evidence based on generated answers
+[2026-03-12 20:08:31,291][ehr-qa][INFO] - [case 9] Classifying evidence using 1 generated answers
+[2026-03-12 20:08:48,466][ehr-qa][INFO] - [case 9] Evidence classification completed: 10 Essential, 1 Supplementary, 10 Not Relevant
+[2026-03-12 20:08:48,466][ehr-qa][INFO] - [case 9] Answer-first pipeline completed successfully
+[2026-03-12 20:08:48,475][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v9-high-k1/results/submission.json
+[2026-03-12 20:08:48,475][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v9-high-k1/results/submission_subtask2.json
+[2026-03-12 20:08:48,476][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v9-high-k1/results/submission_subtask3.json
+[2026-03-12 20:08:48,476][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-03-12 20:08:48,485][ehr-qa][INFO] - Metrics:
+[2026-03-12 20:08:48,487][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.5357  0.7438    0.6228 121.0000
+supplementary     0.0000  0.0000    0.0000  26.0000
+not-relevant      0.8589  0.7367    0.7931 281.0000
+accuracy          0.6939  0.6939    0.6939   0.6939
+macro avg         0.4649  0.4935    0.4720 428.0000
+weighted avg      0.7154  0.6939    0.6968 428.0000
+
+[2026-03-12 20:08:48,487][ehr-qa][INFO] - Confusion Matrix:
+[2026-03-12 20:08:48,488][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.7438                    0.0413                   0.2149
+Actual: supplementary                0.6923                    0.0000                   0.3077
+Actual: not-relevant                 0.2135                    0.0498                   0.7367
+
+[2026-03-12 20:08:48,498][ehr-qa][INFO] - Binary Metrics:
+[2026-03-12 20:08:48,499][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.6043  0.7687    0.6766 147.0000
+not-relevant     0.8589  0.7367    0.7931 281.0000
+accuracy         0.7477  0.7477    0.7477   0.7477
+macro avg        0.7316  0.7527    0.7349 428.0000
+weighted avg     0.7715  0.7477    0.7531 428.0000
+

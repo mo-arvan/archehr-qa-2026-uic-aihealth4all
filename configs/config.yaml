@@ -1,0 +1,9 @@
+defaults:
+  - dataset: "archehr-test"
+  - method: baseline
+  - model: gpt-5.2
+
+# CLI override examples:
+# - Change model: model=gpt-5.1
+# - Change method: method=answer_first
+# - Override params: method.num_samples=5 method.evidence_prompt_file_path="prompts/..."

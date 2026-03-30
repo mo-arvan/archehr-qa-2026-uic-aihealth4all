@@ -1,0 +1,293 @@
+[2026-02-14 23:13:50,375][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}, 'method': {'method': 'answer_first', 'evidence_prompt_file_path': 'prompts/evidence-classification-answer-first-v4.txt', 'qa_prompt_file_path': 'prompts/answer-generation-answer-first-v4.txt', 'num_samples': 1, 'k_candidates': 3, 'include_supplementary': True, 'max_retries': 10, 'max_answer_words': 75, 'evidence_batch_size': 'use_all', 'evidence_batch_overlap': 0}, 'model': {'model_name': 'gpt-5.1', 'reasoning_effort': 'medium'}}
+[2026-02-14 23:13:50,389][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}
+[2026-02-14 23:13:50,394][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-02-14 23:13:50,431][ehr-qa][INFO] - [case 1] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:13:50,431][ehr-qa][INFO] - [case 1] Step 1: Generating 3 answer candidates
+[2026-02-14 23:13:50,431][ehr-qa][INFO] - [case 1] Generating answer from all evidence
+[2026-02-14 23:13:56,126][ehr-qa][INFO] - [case 1] Successfully generated answer
+[2026-02-14 23:13:56,126][ehr-qa][INFO] - [case 1] Generating answer from all evidence
+[2026-02-14 23:14:01,695][ehr-qa][INFO] - [case 1] Successfully generated answer
+[2026-02-14 23:14:01,695][ehr-qa][INFO] - [case 1] Generating answer from all evidence
+[2026-02-14 23:14:06,403][ehr-qa][INFO] - [case 1] Successfully generated answer
+[2026-02-14 23:14:06,403][ehr-qa][INFO] - [case 1] Successfully generated 3/3 answer candidates
+[2026-02-14 23:14:06,403][ehr-qa][INFO] - [case 1] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:14:06,403][ehr-qa][INFO] - [case 1] Classifying evidence using 3 generated answers
+[2026-02-14 23:14:11,666][ehr-qa][INFO] - [case 1] Evidence classification completed: 6 Essential, 0 Supplementary, 3 Not Relevant
+[2026-02-14 23:14:11,667][ehr-qa][INFO] - [case 1] Answer-first pipeline completed successfully
+[2026-02-14 23:14:11,668][ehr-qa][INFO] - [case 2] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:14:11,668][ehr-qa][INFO] - [case 2] Step 1: Generating 3 answer candidates
+[2026-02-14 23:14:11,668][ehr-qa][INFO] - [case 2] Generating answer from all evidence
+[2026-02-14 23:14:15,717][ehr-qa][INFO] - [case 2] Successfully generated answer
+[2026-02-14 23:14:15,717][ehr-qa][INFO] - [case 2] Generating answer from all evidence
+[2026-02-14 23:14:20,710][ehr-qa][INFO] - [case 2] Successfully generated answer
+[2026-02-14 23:14:20,710][ehr-qa][INFO] - [case 2] Generating answer from all evidence
+[2026-02-14 23:14:26,109][ehr-qa][INFO] - [case 2] Successfully generated answer
+[2026-02-14 23:14:26,109][ehr-qa][INFO] - [case 2] Successfully generated 3/3 answer candidates
+[2026-02-14 23:14:26,109][ehr-qa][INFO] - [case 2] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:14:26,109][ehr-qa][INFO] - [case 2] Classifying evidence using 3 generated answers
+[2026-02-14 23:14:33,428][ehr-qa][INFO] - [case 2] Evidence classification completed: 7 Essential, 1 Supplementary, 3 Not Relevant
+[2026-02-14 23:14:33,428][ehr-qa][INFO] - [case 2] Answer-first pipeline completed successfully
+[2026-02-14 23:14:33,429][ehr-qa][INFO] - [case 3] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:14:33,429][ehr-qa][INFO] - [case 3] Step 1: Generating 3 answer candidates
+[2026-02-14 23:14:33,429][ehr-qa][INFO] - [case 3] Generating answer from all evidence
+[2026-02-14 23:14:36,599][ehr-qa][INFO] - [case 3] Successfully generated answer
+[2026-02-14 23:14:36,599][ehr-qa][INFO] - [case 3] Generating answer from all evidence
+[2026-02-14 23:14:41,196][ehr-qa][INFO] - [case 3] Successfully generated answer
+[2026-02-14 23:14:41,196][ehr-qa][INFO] - [case 3] Generating answer from all evidence
+[2026-02-14 23:14:43,856][ehr-qa][INFO] - [case 3] Successfully generated answer
+[2026-02-14 23:14:43,856][ehr-qa][INFO] - [case 3] Successfully generated 3/3 answer candidates
+[2026-02-14 23:14:43,856][ehr-qa][INFO] - [case 3] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:14:43,856][ehr-qa][INFO] - [case 3] Classifying evidence using 3 generated answers
+[2026-02-14 23:14:47,368][ehr-qa][INFO] - [case 3] Evidence classification completed: 7 Essential, 0 Supplementary, 3 Not Relevant
+[2026-02-14 23:14:47,368][ehr-qa][INFO] - [case 3] Answer-first pipeline completed successfully
+[2026-02-14 23:14:47,369][ehr-qa][INFO] - [case 4] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:14:47,369][ehr-qa][INFO] - [case 4] Step 1: Generating 3 answer candidates
+[2026-02-14 23:14:47,369][ehr-qa][INFO] - [case 4] Generating answer from all evidence
+[2026-02-14 23:14:52,905][ehr-qa][INFO] - [case 4] Successfully generated answer
+[2026-02-14 23:14:52,905][ehr-qa][INFO] - [case 4] Generating answer from all evidence
+[2026-02-14 23:14:55,493][ehr-qa][INFO] - [case 4] Successfully generated answer
+[2026-02-14 23:14:55,493][ehr-qa][INFO] - [case 4] Generating answer from all evidence
+[2026-02-14 23:14:59,653][ehr-qa][INFO] - [case 4] Successfully generated answer
+[2026-02-14 23:14:59,653][ehr-qa][INFO] - [case 4] Successfully generated 3/3 answer candidates
+[2026-02-14 23:14:59,653][ehr-qa][INFO] - [case 4] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:14:59,653][ehr-qa][INFO] - [case 4] Classifying evidence using 3 generated answers
+[2026-02-14 23:15:08,534][ehr-qa][INFO] - [case 4] Evidence classification completed: 10 Essential, 0 Supplementary, 11 Not Relevant
+[2026-02-14 23:15:08,534][ehr-qa][INFO] - [case 4] Answer-first pipeline completed successfully
+[2026-02-14 23:15:08,535][ehr-qa][INFO] - [case 5] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:15:08,535][ehr-qa][INFO] - [case 5] Step 1: Generating 3 answer candidates
+[2026-02-14 23:15:08,535][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-02-14 23:15:11,329][ehr-qa][INFO] - [case 5] Successfully generated answer
+[2026-02-14 23:15:11,329][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-02-14 23:15:15,163][ehr-qa][INFO] - [case 5] Successfully generated answer
+[2026-02-14 23:15:15,163][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-02-14 23:15:20,002][ehr-qa][INFO] - [case 5] Successfully generated answer
+[2026-02-14 23:15:20,002][ehr-qa][INFO] - [case 5] Successfully generated 3/3 answer candidates
+[2026-02-14 23:15:20,002][ehr-qa][INFO] - [case 5] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:15:20,002][ehr-qa][INFO] - [case 5] Classifying evidence using 3 generated answers
+[2026-02-14 23:15:25,989][ehr-qa][INFO] - [case 5] Evidence classification completed: 7 Essential, 0 Supplementary, 16 Not Relevant
+[2026-02-14 23:15:25,989][ehr-qa][INFO] - [case 5] Answer-first pipeline completed successfully
+[2026-02-14 23:15:25,990][ehr-qa][INFO] - [case 6] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:15:25,990][ehr-qa][INFO] - [case 6] Step 1: Generating 3 answer candidates
+[2026-02-14 23:15:25,990][ehr-qa][INFO] - [case 6] Generating answer from all evidence
+[2026-02-14 23:15:32,606][ehr-qa][INFO] - [case 6] Successfully generated answer
+[2026-02-14 23:15:32,606][ehr-qa][INFO] - [case 6] Generating answer from all evidence
+[2026-02-14 23:15:40,663][ehr-qa][INFO] - [case 6] Successfully generated answer
+[2026-02-14 23:15:40,663][ehr-qa][INFO] - [case 6] Generating answer from all evidence
+[2026-02-14 23:15:46,305][ehr-qa][INFO] - [case 6] Successfully generated answer
+[2026-02-14 23:15:46,305][ehr-qa][INFO] - [case 6] Successfully generated 3/3 answer candidates
+[2026-02-14 23:15:46,305][ehr-qa][INFO] - [case 6] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:15:46,305][ehr-qa][INFO] - [case 6] Classifying evidence using 3 generated answers
+[2026-02-14 23:15:51,907][ehr-qa][INFO] - [case 6] Evidence classification completed: 7 Essential, 0 Supplementary, 18 Not Relevant
+[2026-02-14 23:15:51,908][ehr-qa][INFO] - [case 6] Answer-first pipeline completed successfully
+[2026-02-14 23:15:51,909][ehr-qa][INFO] - [case 7] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:15:51,909][ehr-qa][INFO] - [case 7] Step 1: Generating 3 answer candidates
+[2026-02-14 23:15:51,909][ehr-qa][INFO] - [case 7] Generating answer from all evidence
+[2026-02-14 23:15:58,261][ehr-qa][INFO] - [case 7] Successfully generated answer
+[2026-02-14 23:15:58,261][ehr-qa][INFO] - [case 7] Generating answer from all evidence
+[2026-02-14 23:16:02,547][ehr-qa][INFO] - [case 7] Successfully generated answer
+[2026-02-14 23:16:02,547][ehr-qa][INFO] - [case 7] Generating answer from all evidence
+[2026-02-14 23:16:08,262][ehr-qa][INFO] - [case 7] Successfully generated answer
+[2026-02-14 23:16:08,262][ehr-qa][INFO] - [case 7] Successfully generated 3/3 answer candidates
+[2026-02-14 23:16:08,262][ehr-qa][INFO] - [case 7] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:16:08,262][ehr-qa][INFO] - [case 7] Classifying evidence using 3 generated answers
+[2026-02-14 23:16:15,633][ehr-qa][INFO] - [case 7] Evidence classification completed: 8 Essential, 0 Supplementary, 22 Not Relevant
+[2026-02-14 23:16:15,633][ehr-qa][INFO] - [case 7] Answer-first pipeline completed successfully
+[2026-02-14 23:16:15,634][ehr-qa][INFO] - [case 8] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:16:15,634][ehr-qa][INFO] - [case 8] Step 1: Generating 3 answer candidates
+[2026-02-14 23:16:15,634][ehr-qa][INFO] - [case 8] Generating answer from all evidence
+[2026-02-14 23:16:23,599][ehr-qa][INFO] - [case 8] Successfully generated answer
+[2026-02-14 23:16:23,599][ehr-qa][INFO] - [case 8] Generating answer from all evidence
+[2026-02-14 23:16:36,258][ehr-qa][INFO] - [case 8] Successfully generated answer
+[2026-02-14 23:16:36,258][ehr-qa][INFO] - [case 8] Generating answer from all evidence
+[2026-02-14 23:16:50,086][ehr-qa][INFO] - [case 8] Successfully generated answer
+[2026-02-14 23:16:50,086][ehr-qa][INFO] - [case 8] Successfully generated 3/3 answer candidates
+[2026-02-14 23:16:50,086][ehr-qa][INFO] - [case 8] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:16:50,086][ehr-qa][INFO] - [case 8] Classifying evidence using 3 generated answers
+[2026-02-14 23:17:01,794][ehr-qa][INFO] - [case 8] Evidence classification completed: 15 Essential, 0 Supplementary, 39 Not Relevant
+[2026-02-14 23:17:01,794][ehr-qa][INFO] - [case 8] Answer-first pipeline completed successfully
+[2026-02-14 23:17:01,795][ehr-qa][INFO] - [case 9] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:17:01,795][ehr-qa][INFO] - [case 9] Step 1: Generating 3 answer candidates
+[2026-02-14 23:17:01,795][ehr-qa][INFO] - [case 9] Generating answer from all evidence
+[2026-02-14 23:17:19,630][ehr-qa][INFO] - [case 9] Successfully generated answer
+[2026-02-14 23:17:19,630][ehr-qa][INFO] - [case 9] Generating answer from all evidence
+[2026-02-14 23:17:33,823][ehr-qa][INFO] - [case 9] Successfully generated answer
+[2026-02-14 23:17:33,823][ehr-qa][INFO] - [case 9] Generating answer from all evidence
+[2026-02-14 23:17:50,529][ehr-qa][INFO] - [case 9] Successfully generated answer
+[2026-02-14 23:17:50,529][ehr-qa][INFO] - [case 9] Successfully generated 3/3 answer candidates
+[2026-02-14 23:17:50,529][ehr-qa][INFO] - [case 9] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:17:50,529][ehr-qa][INFO] - [case 9] Classifying evidence using 3 generated answers
+[2026-02-14 23:18:05,072][ehr-qa][INFO] - [case 9] Evidence classification completed: 14 Essential, 1 Supplementary, 6 Not Relevant
+[2026-02-14 23:18:05,072][ehr-qa][INFO] - [case 9] Answer-first pipeline completed successfully
+[2026-02-14 23:18:05,073][ehr-qa][INFO] - [case 10] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:18:05,073][ehr-qa][INFO] - [case 10] Step 1: Generating 3 answer candidates
+[2026-02-14 23:18:05,073][ehr-qa][INFO] - [case 10] Generating answer from all evidence
+[2026-02-14 23:18:08,629][ehr-qa][INFO] - [case 10] Successfully generated answer
+[2026-02-14 23:18:08,629][ehr-qa][INFO] - [case 10] Generating answer from all evidence
+[2026-02-14 23:18:13,658][ehr-qa][INFO] - [case 10] Successfully generated answer
+[2026-02-14 23:18:13,658][ehr-qa][INFO] - [case 10] Generating answer from all evidence
+[2026-02-14 23:18:17,597][ehr-qa][INFO] - [case 10] Successfully generated answer
+[2026-02-14 23:18:17,597][ehr-qa][INFO] - [case 10] Successfully generated 3/3 answer candidates
+[2026-02-14 23:18:17,597][ehr-qa][INFO] - [case 10] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:18:17,597][ehr-qa][INFO] - [case 10] Classifying evidence using 3 generated answers
+[2026-02-14 23:18:28,316][ehr-qa][INFO] - [case 10] Evidence classification completed: 9 Essential, 1 Supplementary, 22 Not Relevant
+[2026-02-14 23:18:28,316][ehr-qa][INFO] - [case 10] Answer-first pipeline completed successfully
+[2026-02-14 23:18:28,317][ehr-qa][INFO] - [case 11] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:18:28,317][ehr-qa][INFO] - [case 11] Step 1: Generating 3 answer candidates
+[2026-02-14 23:18:28,317][ehr-qa][INFO] - [case 11] Generating answer from all evidence
+[2026-02-14 23:18:35,132][ehr-qa][INFO] - [case 11] Successfully generated answer
+[2026-02-14 23:18:35,132][ehr-qa][INFO] - [case 11] Generating answer from all evidence
+[2026-02-14 23:18:46,078][ehr-qa][INFO] - [case 11] Successfully generated answer
+[2026-02-14 23:18:46,078][ehr-qa][INFO] - [case 11] Generating answer from all evidence
+[2026-02-14 23:18:56,987][ehr-qa][INFO] - [case 11] Successfully generated answer
+[2026-02-14 23:18:56,987][ehr-qa][INFO] - [case 11] Successfully generated 3/3 answer candidates
+[2026-02-14 23:18:56,988][ehr-qa][INFO] - [case 11] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:18:56,988][ehr-qa][INFO] - [case 11] Classifying evidence using 3 generated answers
+[2026-02-14 23:19:10,228][ehr-qa][INFO] - [case 11] Evidence classification completed: 11 Essential, 9 Supplementary, 7 Not Relevant
+[2026-02-14 23:19:10,228][ehr-qa][INFO] - [case 11] Answer-first pipeline completed successfully
+[2026-02-14 23:19:10,230][ehr-qa][INFO] - [case 12] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:19:10,230][ehr-qa][INFO] - [case 12] Step 1: Generating 3 answer candidates
+[2026-02-14 23:19:10,230][ehr-qa][INFO] - [case 12] Generating answer from all evidence
+[2026-02-14 23:19:16,569][ehr-qa][INFO] - [case 12] Successfully generated answer
+[2026-02-14 23:19:16,569][ehr-qa][INFO] - [case 12] Generating answer from all evidence
+[2026-02-14 23:19:21,993][ehr-qa][INFO] - [case 12] Successfully generated answer
+[2026-02-14 23:19:21,993][ehr-qa][INFO] - [case 12] Generating answer from all evidence
+[2026-02-14 23:19:31,730][ehr-qa][INFO] - [case 12] Successfully generated answer
+[2026-02-14 23:19:31,730][ehr-qa][INFO] - [case 12] Successfully generated 3/3 answer candidates
+[2026-02-14 23:19:31,730][ehr-qa][INFO] - [case 12] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:19:31,730][ehr-qa][INFO] - [case 12] Classifying evidence using 3 generated answers
+[2026-02-14 23:19:34,538][ehr-qa][INFO] - [case 12] Evidence classification completed: 5 Essential, 0 Supplementary, 9 Not Relevant
+[2026-02-14 23:19:34,538][ehr-qa][INFO] - [case 12] Answer-first pipeline completed successfully
+[2026-02-14 23:19:34,539][ehr-qa][INFO] - [case 13] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:19:34,539][ehr-qa][INFO] - [case 13] Step 1: Generating 3 answer candidates
+[2026-02-14 23:19:34,539][ehr-qa][INFO] - [case 13] Generating answer from all evidence
+[2026-02-14 23:19:38,919][ehr-qa][INFO] - [case 13] Successfully generated answer
+[2026-02-14 23:19:38,919][ehr-qa][INFO] - [case 13] Generating answer from all evidence
+[2026-02-14 23:19:45,608][ehr-qa][INFO] - [case 13] Successfully generated answer
+[2026-02-14 23:19:45,608][ehr-qa][INFO] - [case 13] Generating answer from all evidence
+[2026-02-14 23:19:53,867][ehr-qa][INFO] - [case 13] Successfully generated answer
+[2026-02-14 23:19:53,867][ehr-qa][INFO] - [case 13] Successfully generated 3/3 answer candidates
+[2026-02-14 23:19:53,867][ehr-qa][INFO] - [case 13] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:19:53,867][ehr-qa][INFO] - [case 13] Classifying evidence using 3 generated answers
+[2026-02-14 23:19:58,821][ehr-qa][INFO] - [case 13] Evidence classification completed: 6 Essential, 0 Supplementary, 6 Not Relevant
+[2026-02-14 23:19:58,821][ehr-qa][INFO] - [case 13] Answer-first pipeline completed successfully
+[2026-02-14 23:19:58,822][ehr-qa][INFO] - [case 14] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:19:58,822][ehr-qa][INFO] - [case 14] Step 1: Generating 3 answer candidates
+[2026-02-14 23:19:58,822][ehr-qa][INFO] - [case 14] Generating answer from all evidence
+[2026-02-14 23:20:07,451][ehr-qa][INFO] - [case 14] Successfully generated answer
+[2026-02-14 23:20:07,451][ehr-qa][INFO] - [case 14] Generating answer from all evidence
+[2026-02-14 23:20:15,089][ehr-qa][INFO] - [case 14] Successfully generated answer
+[2026-02-14 23:20:15,089][ehr-qa][INFO] - [case 14] Generating answer from all evidence
+[2026-02-14 23:20:23,297][ehr-qa][INFO] - [case 14] Successfully generated answer
+[2026-02-14 23:20:23,297][ehr-qa][INFO] - [case 14] Successfully generated 3/3 answer candidates
+[2026-02-14 23:20:23,297][ehr-qa][INFO] - [case 14] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:20:23,297][ehr-qa][INFO] - [case 14] Classifying evidence using 3 generated answers
+[2026-02-14 23:20:25,549][ehr-qa][INFO] - [case 14] Evidence classification completed: 3 Essential, 0 Supplementary, 6 Not Relevant
+[2026-02-14 23:20:25,549][ehr-qa][INFO] - [case 14] Answer-first pipeline completed successfully
+[2026-02-14 23:20:25,550][ehr-qa][INFO] - [case 15] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:20:25,550][ehr-qa][INFO] - [case 15] Step 1: Generating 3 answer candidates
+[2026-02-14 23:20:25,550][ehr-qa][INFO] - [case 15] Generating answer from all evidence
+[2026-02-14 23:20:32,027][ehr-qa][INFO] - [case 15] Successfully generated answer
+[2026-02-14 23:20:32,027][ehr-qa][INFO] - [case 15] Generating answer from all evidence
+[2026-02-14 23:20:41,623][ehr-qa][INFO] - [case 15] Successfully generated answer
+[2026-02-14 23:20:41,624][ehr-qa][INFO] - [case 15] Generating answer from all evidence
+[2026-02-14 23:20:46,262][ehr-qa][INFO] - [case 15] Successfully generated answer
+[2026-02-14 23:20:46,262][ehr-qa][INFO] - [case 15] Successfully generated 3/3 answer candidates
+[2026-02-14 23:20:46,262][ehr-qa][INFO] - [case 15] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:20:46,262][ehr-qa][INFO] - [case 15] Classifying evidence using 3 generated answers
+[2026-02-14 23:20:50,618][ehr-qa][INFO] - [case 15] Evidence classification completed: 7 Essential, 0 Supplementary, 5 Not Relevant
+[2026-02-14 23:20:50,618][ehr-qa][INFO] - [case 15] Answer-first pipeline completed successfully
+[2026-02-14 23:20:50,619][ehr-qa][INFO] - [case 16] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:20:50,619][ehr-qa][INFO] - [case 16] Step 1: Generating 3 answer candidates
+[2026-02-14 23:20:50,619][ehr-qa][INFO] - [case 16] Generating answer from all evidence
+[2026-02-14 23:21:08,960][ehr-qa][INFO] - [case 16] Successfully generated answer
+[2026-02-14 23:21:08,960][ehr-qa][INFO] - [case 16] Generating answer from all evidence
+[2026-02-14 23:21:27,306][ehr-qa][INFO] - [case 16] Successfully generated answer
+[2026-02-14 23:21:27,306][ehr-qa][INFO] - [case 16] Generating answer from all evidence
+[2026-02-14 23:21:44,043][ehr-qa][INFO] - [case 16] Successfully generated answer
+[2026-02-14 23:21:44,043][ehr-qa][INFO] - [case 16] Successfully generated 3/3 answer candidates
+[2026-02-14 23:21:44,043][ehr-qa][INFO] - [case 16] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:21:44,043][ehr-qa][INFO] - [case 16] Classifying evidence using 3 generated answers
+[2026-02-14 23:21:52,008][ehr-qa][INFO] - [case 16] Evidence classification completed: 11 Essential, 1 Supplementary, 18 Not Relevant
+[2026-02-14 23:21:52,008][ehr-qa][INFO] - [case 16] Answer-first pipeline completed successfully
+[2026-02-14 23:21:52,009][ehr-qa][INFO] - [case 17] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:21:52,010][ehr-qa][INFO] - [case 17] Step 1: Generating 3 answer candidates
+[2026-02-14 23:21:52,010][ehr-qa][INFO] - [case 17] Generating answer from all evidence
+[2026-02-14 23:21:59,865][ehr-qa][INFO] - [case 17] Successfully generated answer
+[2026-02-14 23:21:59,865][ehr-qa][INFO] - [case 17] Generating answer from all evidence
+[2026-02-14 23:22:05,074][ehr-qa][INFO] - [case 17] Successfully generated answer
+[2026-02-14 23:22:05,074][ehr-qa][INFO] - [case 17] Generating answer from all evidence
+[2026-02-14 23:22:13,047][ehr-qa][INFO] - [case 17] Successfully generated answer
+[2026-02-14 23:22:13,047][ehr-qa][INFO] - [case 17] Successfully generated 3/3 answer candidates
+[2026-02-14 23:22:13,047][ehr-qa][INFO] - [case 17] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:22:13,047][ehr-qa][INFO] - [case 17] Classifying evidence using 3 generated answers
+[2026-02-14 23:22:32,081][ehr-qa][INFO] - [case 17] Evidence classification completed: 13 Essential, 0 Supplementary, 25 Not Relevant
+[2026-02-14 23:22:32,081][ehr-qa][INFO] - [case 17] Answer-first pipeline completed successfully
+[2026-02-14 23:22:32,083][ehr-qa][INFO] - [case 18] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:22:32,083][ehr-qa][INFO] - [case 18] Step 1: Generating 3 answer candidates
+[2026-02-14 23:22:32,083][ehr-qa][INFO] - [case 18] Generating answer from all evidence
+[2026-02-14 23:22:37,105][ehr-qa][INFO] - [case 18] Successfully generated answer
+[2026-02-14 23:22:37,105][ehr-qa][INFO] - [case 18] Generating answer from all evidence
+[2026-02-14 23:22:44,501][ehr-qa][INFO] - [case 18] Successfully generated answer
+[2026-02-14 23:22:44,501][ehr-qa][INFO] - [case 18] Generating answer from all evidence
+[2026-02-14 23:22:51,016][ehr-qa][INFO] - [case 18] Successfully generated answer
+[2026-02-14 23:22:51,016][ehr-qa][INFO] - [case 18] Successfully generated 3/3 answer candidates
+[2026-02-14 23:22:51,016][ehr-qa][INFO] - [case 18] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:22:51,016][ehr-qa][INFO] - [case 18] Classifying evidence using 3 generated answers
+[2026-02-14 23:22:56,253][ehr-qa][INFO] - [case 18] Evidence classification completed: 4 Essential, 0 Supplementary, 19 Not Relevant
+[2026-02-14 23:22:56,254][ehr-qa][INFO] - [case 18] Answer-first pipeline completed successfully
+[2026-02-14 23:22:56,255][ehr-qa][INFO] - [case 19] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:22:56,255][ehr-qa][INFO] - [case 19] Step 1: Generating 3 answer candidates
+[2026-02-14 23:22:56,255][ehr-qa][INFO] - [case 19] Generating answer from all evidence
+[2026-02-14 23:22:59,332][ehr-qa][INFO] - [case 19] Successfully generated answer
+[2026-02-14 23:22:59,332][ehr-qa][INFO] - [case 19] Generating answer from all evidence
+[2026-02-14 23:23:02,233][ehr-qa][INFO] - [case 19] Successfully generated answer
+[2026-02-14 23:23:02,233][ehr-qa][INFO] - [case 19] Generating answer from all evidence
+[2026-02-14 23:23:06,460][ehr-qa][INFO] - [case 19] Successfully generated answer
+[2026-02-14 23:23:06,460][ehr-qa][INFO] - [case 19] Successfully generated 3/3 answer candidates
+[2026-02-14 23:23:06,460][ehr-qa][INFO] - [case 19] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:23:06,460][ehr-qa][INFO] - [case 19] Classifying evidence using 3 generated answers
+[2026-02-14 23:23:12,062][ehr-qa][INFO] - [case 19] Evidence classification completed: 8 Essential, 0 Supplementary, 10 Not Relevant
+[2026-02-14 23:23:12,062][ehr-qa][INFO] - [case 19] Answer-first pipeline completed successfully
+[2026-02-14 23:23:12,064][ehr-qa][INFO] - [case 20] Starting answer-first pipeline with 3 candidates
+[2026-02-14 23:23:12,064][ehr-qa][INFO] - [case 20] Step 1: Generating 3 answer candidates
+[2026-02-14 23:23:12,064][ehr-qa][INFO] - [case 20] Generating answer from all evidence
+[2026-02-14 23:23:18,331][ehr-qa][INFO] - [case 20] Successfully generated answer
+[2026-02-14 23:23:18,331][ehr-qa][INFO] - [case 20] Generating answer from all evidence
+[2026-02-14 23:23:22,896][ehr-qa][INFO] - [case 20] Successfully generated answer
+[2026-02-14 23:23:22,896][ehr-qa][INFO] - [case 20] Generating answer from all evidence
+[2026-02-14 23:23:26,949][ehr-qa][INFO] - [case 20] Successfully generated answer
+[2026-02-14 23:23:26,949][ehr-qa][INFO] - [case 20] Successfully generated 3/3 answer candidates
+[2026-02-14 23:23:26,949][ehr-qa][INFO] - [case 20] Step 2: Classifying evidence based on generated answers
+[2026-02-14 23:23:26,949][ehr-qa][INFO] - [case 20] Classifying evidence using 3 generated answers
+[2026-02-14 23:23:29,907][ehr-qa][INFO] - [case 20] Evidence classification completed: 6 Essential, 1 Supplementary, 2 Not Relevant
+[2026-02-14 23:23:29,907][ehr-qa][INFO] - [case 20] Answer-first pipeline completed successfully
+[2026-02-14 23:23:29,908][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/submission.json
+[2026-02-14 23:23:29,908][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/submission_subtask2.json
+[2026-02-14 23:23:29,908][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/submission_subtask3.json
+[2026-02-14 23:23:29,909][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-02-14 23:23:29,917][ehr-qa][INFO] - Metrics:
+[2026-02-14 23:23:29,919][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.5976  0.8099    0.6877 121.0000
+supplementary     0.0714  0.0385    0.0500  26.0000
+not-relevant      0.8880  0.7900    0.8362 281.0000
+accuracy          0.7500  0.7500    0.7500   0.7500
+macro avg         0.5190  0.5461    0.5246 428.0000
+weighted avg      0.7563  0.7500    0.7464 428.0000
+
+[2026-02-14 23:23:29,919][ehr-qa][INFO] - Confusion Matrix:
+[2026-02-14 23:23:29,920][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.8099                    0.0083                   0.1818
+Actual: supplementary                0.7308                    0.0385                   0.2308
+Actual: not-relevant                 0.1673                    0.0427                   0.7900
+
+[2026-02-14 23:23:29,930][ehr-qa][INFO] - Binary Metrics:
+[2026-02-14 23:23:29,931][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.6685  0.8095    0.7323 147.0000
+not-relevant     0.8880  0.7900    0.8362 281.0000
+accuracy         0.7967  0.7967    0.7967   0.7967
+macro avg        0.7783  0.7998    0.7842 428.0000
+weighted avg     0.8126  0.7967    0.8005 428.0000
+

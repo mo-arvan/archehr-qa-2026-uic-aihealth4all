@@ -1,0 +1,17 @@
+dataset:
+  dataset_name: archehr-dev
+  data_dir: data-restricted/v1.4/
+method:
+  method: answer_first
+  evidence_prompt_file_path: prompts/evidence-classification-answer-first-v4.txt
+  qa_prompt_file_path: prompts/answer-generation-answer-first-v5.txt
+  num_samples: 1
+  k_candidates: 1
+  include_supplementary: true
+  max_retries: 10
+  max_answer_words: 75
+  evidence_batch_size: use_all
+  evidence_batch_overlap: 0
+model:
+  model_name: gpt-5.1
+  reasoning_effort: medium

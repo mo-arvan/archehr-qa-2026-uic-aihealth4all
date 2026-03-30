@@ -1,0 +1,247 @@
+# Evidence Classification with Contrastive Learning
+
+You are a medical expert learning from both positive and negative examples of evidence selection. Use the examples below to calibrate your classification strategy.
+
+## Task
+Classify each sentence as Essential, Supplementary, or Not Relevant. Additionally, you must explicitly justify your EXCLUSIONS (why you did NOT select certain sentences).
+
+## Key Principles
+- **Minimal Sufficiency**: Include only what is strictly necessary to answer the question.
+- **Direct Relevance**: Essential sentences must directly address the question; procedural details and boilerplate are typically Not Relevant.
+- **Learn from errors**: Over-selection inflates precision loss; under-selection misses key evidence. Use the contrastive examples below to avoid both.
+
+---
+
+## Example 1: CBD Sludge / ERCP Case (Gastroenterology)
+
+**Patient Question**:
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question**:
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Clinical Note Excerpt**:
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
+4: The Vancomycin was discontinued.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Correct Classification**:
+- Sentence 1: Essential (explains ERCP was done to place stent for drainage of obstruction from stones/sludge - directly addresses why ERCP over medication)
+- Sentence 2: Not Relevant (elevated INR and procedure limitations don't explain why ERCP over medication)
+- Sentence 3: Not Relevant (post-procedure antibiotics don't explain the ERCP decision)
+- Sentence 4: Not Relevant (discontinuing Vancomycin unrelated to ERCP rationale)
+- Sentence 5: Essential (need for repeat ERCP shows ongoing problem despite initial intervention)
+- Sentence 6: Essential (stent obstruction by sludge/stones shows why procedural intervention needed, not just medication)
+- Sentence 7: Essential (successful stone removal via sphincterotomy shows ERCP provided mechanical solution that medication cannot)
+- Sentence 8: Supplementary (successful outcome confirmation but doesn't explain why ERCP chosen)
+
+**Gold Standard Evidence**: [1, 5, 6, 7]
+
+**Common OVER-SELECTION Error** (Precision 0.50, Recall 1.00, F1 0.67):
+Including all sentences [1, 2, 3, 4, 5, 6, 7, 8] because they all mention the ERCP procedure.
+**Why this is wrong**: Sentence 2 (elevated INR) is a procedural constraint, not why ERCP was chosen over medication. Sentences 3–4 (antibiotics, Vancomycin) are post-procedure care. Sentence 8 is outcome verification, not decision rationale.
+
+**Common UNDER-SELECTION Error** (Precision 1.00, Recall 0.50, F1 0.67):
+Including only [5, 6] because they mention the obstruction problem.
+**Why this is wrong**: Missing sentence 1 (initial ERCP purpose – stent for drainage). Missing sentence 7 (mechanical solution – stone removal via sphincterotomy – that medication cannot provide).
+
+---
+
+## Example 2: Head Injury Recovery (Neurology / Trauma)
+
+**Patient Question**:
+my son fell and lost conciousness for a couple mins. we rushed him to hospital took a CT scan there was bleeding in the brain we got him admitted in icu and he was under observ.. they were givin him pain killers and injected to prevent him from vomitting yesterday i got him back home but he is continously irritated and has headache when awake what do ido
+
+**Clinician Question**:
+What is the expected course of recovery for him?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions: You were admitted to the hospital after sustaining a trauamtic brain injury due to a fall.
+2: This injury did not require any operations.
+3: It was also noted on chest xray that there is an area of consolidation in your lung.
+4: The infectious Disease doctors consulted for recommendations on antibiotic treatment.
+5: Because of your head injury you may experience some of the following symptoms: drowsiness, headaches, dizziness, irritability, short term memory loss - these are all normal and should decrease over the next several weeks.
+6: It is being strongly recommended that you follow up with Dr. who is a doctor specializing in trauamtic brain injuries.
+7: His contact information has been provided to you.
+8: Please report any:
+9: *fever *new onset sweats *chills *headaches *cough *difficulty breathing *yellow/green sputum *shortness of breath
+10: Please report any: *visual changes *weakness on one side of your body *speech difficulty
+
+**Correct Classification**:
+- Sentence 1: Not Relevant (admission context, doesn't address recovery expectations)
+- Sentence 2: Not Relevant (operative status doesn't inform recovery course)
+- Sentence 3: Not Relevant (lung finding unrelated to head injury recovery)
+- Sentence 4: Not Relevant (antibiotic consult unrelated to head injury recovery)
+- Sentence 5: Essential (directly lists expected symptoms and timeframe for recovery)
+- Sentence 6: Essential (follow-up recommendation is part of recovery plan)
+- Sentence 7: Not Relevant (logistical detail, not recovery information)
+- Sentence 8: Supplementary (generic preamble to warning signs)
+- Sentence 9: Supplementary (warning signs related to general health, not specific to head injury recovery)
+- Sentence 10: Essential (neurological warning signs specific to brain injury recovery)
+
+**Gold Standard Evidence**: [5, 6, 10]
+
+**Key Lesson**: Discharge instruction boilerplate (sentences 1–4, 7) is almost never essential. Over-selection often comes from including "relevant-sounding" context (e.g. admission reason, operations). Under-selection misses the content that directly answers the question: expected symptoms (5), follow-up plan (6), and neurological warning signs (10).
+
+---
+
+## Example 3: Stomach Cancer Concern (Gastroenterology)
+
+**Patient Question**:
+I have had for almost one month extreme pain in my lower left side directly after eating. I've had, recently, a urinalysis, bloodwork, and been to ER for a ultrasonic scan of stomach, and a barium CT yesterday. They can't seem to find out what's wrong, I am under lots of stress at work and thought it might be diverticulitis but hospital drs. yesterday said that is out and also any urinary tract infection is out. What would you say about cancer in the stomach?
+
+**Clinician Question**:
+Was there any evidence for stomach cancer?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions: You were admitted to the hospital with a partial small bowel obstruction.
+2: With time, your obstruction dramatically improved and you were able to eat regular food.
+3: Constipation will worsen your symptoms.
+4: Unfortunately, you have trouble tolerating stool softeners and you get diarrhea very easily.
+5: Fiber is the most gentle treatment for constipation.
+6: Please take fiber supplements (Metamucil) twice daily.
+7: Consider also taking each day if you can tolerate it, but start with a small dose (half a scoop).
+8: You will follow up with your oncologist (Dr.) for consideration of further treatment of your bladder cancer.
+9: You will also follow up with your gastroenterologist (Dr.).
+
+**Correct Classification**:
+- Sentence 1: Essential (identifies actual diagnosis - partial bowel obstruction, not stomach cancer)
+- Sentence 2: Essential (obstruction resolved, further evidence against cancer)
+- Sentence 3: Essential (explains ongoing symptom management, links to the obstruction diagnosis)
+- Sentence 4: Not Relevant (personal tolerance detail, not relevant to cancer question)
+- Sentence 5: Not Relevant (general fiber information)
+- Sentence 6: Essential (treatment recommendation addresses the actual condition)
+- Sentence 7: Not Relevant (dosing detail)
+- Sentence 8: Essential (mentions bladder cancer follow-up - directly relevant to cancer concern, though different location)
+- Sentence 9: Not Relevant (generic follow-up logistics)
+
+**Gold Standard Evidence**: [1, 2, 3, 6, 8]
+
+**Key Lesson**: When the patient asks about a specific concern (e.g. stomach cancer), sentences that establish the actual diagnosis (here, bowel obstruction) ARE essential because they directly answer by ruling out the concern. Under-selection often excludes 1, 2, 3 or 8 because they don't literally say "stomach cancer"; over-selection includes 4, 5, 7, 9 (tolerance, fiber, dosing, logistics).
+
+---
+
+## Example 4: Infection and Infertility Concern (Infectious Disease / Urology)
+
+**Patient Question**:
+Hi. I came to the hospital with testicle pain and swelling and got antibiotics for a penis skin infection. My pain went away but now my testicles have become very weird hanging and it seems like they shrunk in size. I went to the ER and they told me it was all normal. I tried masturbating and when I ejaculated the sperm was very watery and there is no white just clear like water. Very little sticky. What's really going on here? I'm afraid it might have spread to my prostate and seminal vesicles too... Does this mean I'm infertile?
+
+**Clinician Question**:
+Did his infection spread to other anatomies causing infertility?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions:
+2: It was a pleasure to take care of you at the hospital.
+3: You came for further evaluation of penis and scrotum swelling.
+4: Further evaluation revealed that you likely have a skin infection on the surface of the penis.
+5: Antibiotics are being prescribed to help take care of this infection.
+6: You will require close follow-up to confirm eradication of your infection.
+7: It is important that you continue to take your medications as indicated.
+8: The following changes have been made to your medications:
+9: We ADDED Bactrim and Levofloxacin for treatment of your skin infection, which you should take until finished with the prescription.
+10: We ADDED emtricitabine-tenofovir and lopinavir-ritonavir for prophylaxis for possible HIV infection.
+11: You will take this for a total 2-week course.
+12: Your new provider will direct you further concerning this treatment.
+
+**Correct Classification**:
+- Sentence 1: Not Relevant (header)
+- Sentence 2: Not Relevant (pleasantry)
+- Sentence 3: Not Relevant (reason for visit restated, doesn't address spread/infertility)
+- Sentence 4: Not Relevant (diagnosis of surface infection - doesn't address whether it spread)
+- Sentence 5: Not Relevant (general antibiotic statement)
+- Sentence 6: Not Relevant (follow-up logistics)
+- Sentence 7: Not Relevant (generic medication compliance)
+- Sentence 8: Not Relevant (header for medication list)
+- Sentence 9: Essential (names specific antibiotics for skin infection - directly relevant to what was treated and scope of infection)
+- Sentence 10: Essential (HIV prophylaxis indicates scope of clinical concern and additional treatment)
+- Sentence 11: Not Relevant (duration detail)
+- Sentence 12: Not Relevant (referral logistics)
+
+**Gold Standard Evidence**: [9, 10]
+
+**Key Lesson**: Only 2 of 12 sentences are essential. Over-selection often includes headers, pleasantries, and generic instructions (1–8, 11–12). The question asks about infection spread and infertility; only the specific medication details (9, 10) provide what was actually treated and the scope of concern. Exclude anything that does not directly address "spread" or "infertility."
+
+---
+
+## Example 5: Migraine Diagnosis with Dizziness (Neurology)
+
+**Patient Question**:
+Last week my 61 yr old sister woke up with a terrible headache and was not able to walk because she felt the room was spinning. She went to Intermountain Medical Center in Salt lake City, Utah and was admitted. After many tests, she was told she was having a migraine headache and was sent home with a prescription for sumatriptan. The headache has gotten better, but she is still very dizzy. So what is the dizziness from I never heard of a migraine that can cause your head to spin like that.
+
+**Clinician Question**:
+How did they diagnose her with migraine for spinning sensation?
+
+**Clinical Note Excerpt**:
+1: Discharge Instructions: You were evaluated in the Neurology Wards for headaches that were of an unusual quality.
+2: We conducted a series of tests to investigate the cause of your headaches, including a CT scan and an MRI, a series of laboratory tests as well as a lumbar puncture.
+3: Through these tests, we were able to rule out serious intracranial causes that can cause a headache, including pseudotumor cerebri, which is a condition where elevated intracranial pressure can cause headaches and subsequent visual damage.
+4: We also checked an MRV (MR venogram) which ruled out cerebral venous thrombosis (a blood clot in the veins of your brain).
+5: - We started you on a new medication called verapamil.
+6: Take this once daily even if you do not have headaches (everyday, by mouth).
+7: - Inform your PCP of this change, and please follow up with your primary care appointment and neurology appointment.
+8: - You can request your PCP to set up a referral to see a neurologist in the community if you would prefer to do so.
+9: - To achieve optimal control of your migraines, avoid caffeinated products and keep a relatively regular sleep wake cycle (go to bed early, wake up early).
+
+**Correct Classification**:
+- Sentence 1: Not Relevant (admission context, doesn't explain diagnostic process)
+- Sentence 2: Essential (lists specific diagnostic tests performed - directly answers "how did they diagnose")
+- Sentence 3: Essential (explains what was ruled out through testing - part of differential diagnosis process)
+- Sentence 4: Essential (another condition ruled out - completes the diagnostic workup explanation)
+- Sentence 5: Essential (treatment started based on diagnosis - confirms migraine diagnosis)
+- Sentence 6: Essential (medication instructions are part of the treatment plan following diagnosis)
+- Sentence 7: Not Relevant (follow-up logistics don't explain diagnostic process)
+- Sentence 8: Not Relevant (referral option, not diagnostic information)
+- Sentence 9: Essential (migraine management advice confirms the diagnosis and addresses the spinning/dizziness concern)
+
+**Gold Standard Evidence**: [2, 3, 4, 5, 6, 9]
+
+**Key Lesson**: When the question asks "how did they diagnose", most diagnostic and treatment sentences ARE essential because they form the chain: tests performed (2) → conditions ruled out (3, 4) → treatment started (5, 6) → lifestyle management confirming migraine (9). Under-selection often drops 3, 4, 5, or 9; over-selection adds 1, 7, 8 (context and logistics that don't explain the diagnostic process).
+
+---
+
+## Output Format
+
+Return a JSON object with your reasoning and classification for each sentence. For each sentence include a justification that states why it was included (Essential/Supplementary) or why it was EXCLUDED (Not Relevant):
+
+```json
+{{
+  "reasoning": "Overall approach informed by contrastive examples",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "justification": "Why included: explains ERCP therapeutic action medication cannot provide"
+    }},
+    {{
+      "sentence_id": 2,
+      "relevance": "Not Relevant",
+      "justification": "Why excluded: procedural constraint, not decision rationale"
+    }}
+  ]
+}}
+```
+
+## Remember
+- **Essential** = Cannot answer the question correctly without this sentence
+- **Supplementary** = Adds helpful context but answer is complete without it
+- **Not Relevant** = Does not contribute to answering the question
+- Justify EXCLUSIONS explicitly (why you did NOT mark a sentence as Essential)
+- When in doubt between Essential and Supplementary, choose Supplementary
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+Classify each sentence as Essential, Supplementary, or Not Relevant, with explicit justifications for both inclusions and exclusions.

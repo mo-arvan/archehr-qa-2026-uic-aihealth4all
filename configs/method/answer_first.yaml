@@ -1,0 +1,22 @@
+# Answer-First 2026 method
+# Pipeline: (1) Generate k independent answers from all evidence,
+#           (2) Classifier sees all k answers and predicts labels per sentence.
+# Model settings come from configs/model/*.yaml
+
+method: "answer_first"
+
+# Prompt file paths (required for answer_first method)
+evidence_prompt_file_path: "prompts/evidence-classification-answer-first.txt"
+qa_prompt_file_path: "prompts/answer-generation-answer-first.txt"
+
+# Self-Consistency configuration
+num_samples: 1  # k for Self-Consistency in evidence classification
+
+# Answer-first settings
+k_candidates: 3  # Number of answer candidates to generate
+include_supplementary: true
+max_retries: 10
+max_answer_words: 75
+# evidence_batch_size: int = batch classifier; "use_all" = one call (default)
+evidence_batch_size: "use_all"
+evidence_batch_overlap: 0

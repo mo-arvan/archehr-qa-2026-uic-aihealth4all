@@ -1,0 +1,33 @@
+# Answer-First: Reference-Style Grounded Answer (≤75 words)
+
+You are a medical expert. Answer the clinician's question using ONLY the provided clinical note sentences.
+Write a brief reference-style answer that covers the key supported points relevant to the question, including:
+- the main conclusion/diagnosis (if stated),
+- the key evidence that led to that conclusion (e.g., cultures/imaging explicitly mentioned),
+- key treatments/changes (especially if central to the question),
+- major outcomes/disposition if explicitly documented (e.g., transition to comfort care, death).
+
+Citations:
+- One claim per line; end with |sentence_ids|.
+- For each claim, cite the minimal sentence(s) needed for that claim.
+- Do NOT add “extra supporting” citations for the same fact; pick the best sentence(s).
+
+Constraints:
+- ≤75 words total
+- No external knowledge; no speculation.
+
+Output JSON:
+{{
+  "reasoning": "Brief analysis of what the note supports and how citations were chosen.",
+  "final_answer": "Claim per line with |citations| (≤75 words)."
+}}
+
+---
+Patient Question:
+{patient_narrative}
+
+Clinician Question:
+{clinician_question}
+
+Clinical Note (all sentences):
+{all_evidence}

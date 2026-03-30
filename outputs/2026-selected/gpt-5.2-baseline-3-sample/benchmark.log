@@ -1,0 +1,413 @@
+[2026-02-13 23:31:37,839][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}, 'method': {'method': 'grounded', 'evidence_prompt_file_path': 'prompts/evidence-classification-baseline.txt', 'qa_prompt_file_path': 'prompts/answer-generation.txt', 'correction_prompt_file_path': 'prompts/gqa-corrections.txt', 'response_format': 'dict_qa_response', 'num_samples': 3, 'include_supplementary': True, 'evidence_batch_size': 'use_all', 'max_retries': 10, 'max_answer_words': 75}, 'model': {'model_name': 'gpt-5.2', 'reasoning_effort': 'none'}}
+[2026-02-13 23:31:37,853][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}
+[2026-02-13 23:31:37,858][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-02-13 23:31:37,895][ehr-qa][DEBUG] - [case 1] Generating 3 samples for batch (sentences 1-9)
+[2026-02-13 23:31:37,895][ehr-qa][DEBUG] - [case 1] Generating sample 1/3
+[2026-02-13 23:31:37,895][ehr-qa][DEBUG] - [case 1] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:31:37,895][ehr-qa][DEBUG] - [case 1] Making initial API call
+[2026-02-13 23:31:43,070][ehr-qa][DEBUG] - [case 1] Successfully validated response on attempt 1
+[2026-02-13 23:31:43,071][ehr-qa][DEBUG] - [case 1] Generating sample 2/3
+[2026-02-13 23:31:43,071][ehr-qa][DEBUG] - [case 1] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:31:43,071][ehr-qa][DEBUG] - [case 1] Making initial API call
+[2026-02-13 23:31:47,049][ehr-qa][DEBUG] - [case 1] Successfully validated response on attempt 1
+[2026-02-13 23:31:47,049][ehr-qa][DEBUG] - [case 1] Generating sample 3/3
+[2026-02-13 23:31:47,049][ehr-qa][DEBUG] - [case 1] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:31:47,049][ehr-qa][DEBUG] - [case 1] Making initial API call
+[2026-02-13 23:31:51,316][ehr-qa][DEBUG] - [case 1] Successfully validated response on attempt 1
+[2026-02-13 23:31:51,316][ehr-qa][DEBUG] - [case 1] Aggregating 3 samples for batch
+[2026-02-13 23:31:51,316][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=9): Unanimous: 9/9 (100.0%), High agreement (≥2): 0/9 (0.0%), Split decisions: 0/9 (0.0%)
+[2026-02-13 23:31:51,316][ehr-qa][DEBUG] - [case 1] Batch validation passed for sentences 1-9
+[2026-02-13 23:31:51,316][ehr-qa][DEBUG] - [case 1] Making initial API call
+[2026-02-13 23:31:55,886][ehr-qa][DEBUG] - [case 1] Successfully validated response on attempt 1
+[2026-02-13 23:31:55,888][ehr-qa][DEBUG] - [case 2] Generating 3 samples for batch (sentences 1-11)
+[2026-02-13 23:31:55,888][ehr-qa][DEBUG] - [case 2] Generating sample 1/3
+[2026-02-13 23:31:55,888][ehr-qa][DEBUG] - [case 2] Starting classification sample generation. Expected 11 sentence IDs
+[2026-02-13 23:31:55,888][ehr-qa][DEBUG] - [case 2] Making initial API call
+[2026-02-13 23:32:00,640][ehr-qa][DEBUG] - [case 2] Successfully validated response on attempt 1
+[2026-02-13 23:32:00,640][ehr-qa][DEBUG] - [case 2] Generating sample 2/3
+[2026-02-13 23:32:00,640][ehr-qa][DEBUG] - [case 2] Starting classification sample generation. Expected 11 sentence IDs
+[2026-02-13 23:32:00,641][ehr-qa][DEBUG] - [case 2] Making initial API call
+[2026-02-13 23:32:05,918][ehr-qa][DEBUG] - [case 2] Successfully validated response on attempt 1
+[2026-02-13 23:32:05,918][ehr-qa][DEBUG] - [case 2] Generating sample 3/3
+[2026-02-13 23:32:05,918][ehr-qa][DEBUG] - [case 2] Starting classification sample generation. Expected 11 sentence IDs
+[2026-02-13 23:32:05,918][ehr-qa][DEBUG] - [case 2] Making initial API call
+[2026-02-13 23:32:09,990][ehr-qa][DEBUG] - [case 2] Successfully validated response on attempt 1
+[2026-02-13 23:32:09,990][ehr-qa][DEBUG] - [case 2] Aggregating 3 samples for batch
+[2026-02-13 23:32:09,990][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=11): Unanimous: 8/11 (72.7%), High agreement (≥2): 3/11 (27.3%), Split decisions: 0/11 (0.0%)
+[2026-02-13 23:32:09,990][ehr-qa][DEBUG] - [case 2] Batch validation passed for sentences 1-11
+[2026-02-13 23:32:09,990][ehr-qa][DEBUG] - [case 2] Making initial API call
+[2026-02-13 23:32:14,181][ehr-qa][DEBUG] - [case 2] Successfully validated response on attempt 1
+[2026-02-13 23:32:14,182][ehr-qa][DEBUG] - [case 3] Generating 3 samples for batch (sentences 1-10)
+[2026-02-13 23:32:14,182][ehr-qa][DEBUG] - [case 3] Generating sample 1/3
+[2026-02-13 23:32:14,182][ehr-qa][DEBUG] - [case 3] Starting classification sample generation. Expected 10 sentence IDs
+[2026-02-13 23:32:14,182][ehr-qa][DEBUG] - [case 3] Making initial API call
+[2026-02-13 23:32:18,225][ehr-qa][DEBUG] - [case 3] Successfully validated response on attempt 1
+[2026-02-13 23:32:18,225][ehr-qa][DEBUG] - [case 3] Generating sample 2/3
+[2026-02-13 23:32:18,225][ehr-qa][DEBUG] - [case 3] Starting classification sample generation. Expected 10 sentence IDs
+[2026-02-13 23:32:18,225][ehr-qa][DEBUG] - [case 3] Making initial API call
+[2026-02-13 23:32:22,268][ehr-qa][DEBUG] - [case 3] Successfully validated response on attempt 1
+[2026-02-13 23:32:22,268][ehr-qa][DEBUG] - [case 3] Generating sample 3/3
+[2026-02-13 23:32:22,269][ehr-qa][DEBUG] - [case 3] Starting classification sample generation. Expected 10 sentence IDs
+[2026-02-13 23:32:22,269][ehr-qa][DEBUG] - [case 3] Making initial API call
+[2026-02-13 23:32:26,277][ehr-qa][DEBUG] - [case 3] Successfully validated response on attempt 1
+[2026-02-13 23:32:26,277][ehr-qa][DEBUG] - [case 3] Aggregating 3 samples for batch
+[2026-02-13 23:32:26,277][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=10): Unanimous: 8/10 (80.0%), High agreement (≥2): 2/10 (20.0%), Split decisions: 0/10 (0.0%)
+[2026-02-13 23:32:26,277][ehr-qa][DEBUG] - [case 3] Batch validation passed for sentences 1-10
+[2026-02-13 23:32:26,277][ehr-qa][DEBUG] - [case 3] Making initial API call
+[2026-02-13 23:32:29,758][ehr-qa][DEBUG] - [case 3] Successfully validated response on attempt 1
+[2026-02-13 23:32:29,759][ehr-qa][DEBUG] - [case 4] Generating 3 samples for batch (sentences 1-21)
+[2026-02-13 23:32:29,759][ehr-qa][DEBUG] - [case 4] Generating sample 1/3
+[2026-02-13 23:32:29,759][ehr-qa][DEBUG] - [case 4] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-13 23:32:29,759][ehr-qa][DEBUG] - [case 4] Making initial API call
+[2026-02-13 23:32:35,843][ehr-qa][DEBUG] - [case 4] Successfully validated response on attempt 1
+[2026-02-13 23:32:35,843][ehr-qa][DEBUG] - [case 4] Generating sample 2/3
+[2026-02-13 23:32:35,843][ehr-qa][DEBUG] - [case 4] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-13 23:32:35,843][ehr-qa][DEBUG] - [case 4] Making initial API call
+[2026-02-13 23:32:42,865][ehr-qa][DEBUG] - [case 4] Successfully validated response on attempt 1
+[2026-02-13 23:32:42,865][ehr-qa][DEBUG] - [case 4] Generating sample 3/3
+[2026-02-13 23:32:42,865][ehr-qa][DEBUG] - [case 4] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-13 23:32:42,865][ehr-qa][DEBUG] - [case 4] Making initial API call
+[2026-02-13 23:32:48,196][ehr-qa][DEBUG] - [case 4] Successfully validated response on attempt 1
+[2026-02-13 23:32:48,196][ehr-qa][DEBUG] - [case 4] Aggregating 3 samples for batch
+[2026-02-13 23:32:48,196][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=21): Unanimous: 18/21 (85.7%), High agreement (≥2): 3/21 (14.3%), Split decisions: 0/21 (0.0%)
+[2026-02-13 23:32:48,196][ehr-qa][DEBUG] - [case 4] Batch validation passed for sentences 1-21
+[2026-02-13 23:32:48,196][ehr-qa][DEBUG] - [case 4] Making initial API call
+[2026-02-13 23:32:52,102][ehr-qa][DEBUG] - [case 4] Successfully validated response on attempt 1
+[2026-02-13 23:32:52,103][ehr-qa][DEBUG] - [case 5] Generating 3 samples for batch (sentences 1-23)
+[2026-02-13 23:32:52,103][ehr-qa][DEBUG] - [case 5] Generating sample 1/3
+[2026-02-13 23:32:52,103][ehr-qa][DEBUG] - [case 5] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-13 23:32:52,103][ehr-qa][DEBUG] - [case 5] Making initial API call
+[2026-02-13 23:32:58,206][ehr-qa][DEBUG] - [case 5] Successfully validated response on attempt 1
+[2026-02-13 23:32:58,206][ehr-qa][DEBUG] - [case 5] Generating sample 2/3
+[2026-02-13 23:32:58,206][ehr-qa][DEBUG] - [case 5] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-13 23:32:58,206][ehr-qa][DEBUG] - [case 5] Making initial API call
+[2026-02-13 23:33:03,958][ehr-qa][DEBUG] - [case 5] Successfully validated response on attempt 1
+[2026-02-13 23:33:03,958][ehr-qa][DEBUG] - [case 5] Generating sample 3/3
+[2026-02-13 23:33:03,958][ehr-qa][DEBUG] - [case 5] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-13 23:33:03,958][ehr-qa][DEBUG] - [case 5] Making initial API call
+[2026-02-13 23:33:09,423][ehr-qa][DEBUG] - [case 5] Successfully validated response on attempt 1
+[2026-02-13 23:33:09,423][ehr-qa][DEBUG] - [case 5] Aggregating 3 samples for batch
+[2026-02-13 23:33:09,423][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=23): Unanimous: 22/23 (95.7%), High agreement (≥2): 1/23 (4.3%), Split decisions: 0/23 (0.0%)
+[2026-02-13 23:33:09,423][ehr-qa][DEBUG] - [case 5] Batch validation passed for sentences 1-23
+[2026-02-13 23:33:09,423][ehr-qa][DEBUG] - [case 5] Making initial API call
+[2026-02-13 23:33:13,641][ehr-qa][DEBUG] - [case 5] Successfully validated response on attempt 1
+[2026-02-13 23:33:13,643][ehr-qa][DEBUG] - [case 6] Generating 3 samples for batch (sentences 1-25)
+[2026-02-13 23:33:13,643][ehr-qa][DEBUG] - [case 6] Generating sample 1/3
+[2026-02-13 23:33:13,643][ehr-qa][DEBUG] - [case 6] Starting classification sample generation. Expected 25 sentence IDs
+[2026-02-13 23:33:13,643][ehr-qa][DEBUG] - [case 6] Making initial API call
+[2026-02-13 23:33:19,816][ehr-qa][DEBUG] - [case 6] Successfully validated response on attempt 1
+[2026-02-13 23:33:19,816][ehr-qa][DEBUG] - [case 6] Generating sample 2/3
+[2026-02-13 23:33:19,816][ehr-qa][DEBUG] - [case 6] Starting classification sample generation. Expected 25 sentence IDs
+[2026-02-13 23:33:19,816][ehr-qa][DEBUG] - [case 6] Making initial API call
+[2026-02-13 23:33:25,981][ehr-qa][DEBUG] - [case 6] Successfully validated response on attempt 1
+[2026-02-13 23:33:25,981][ehr-qa][DEBUG] - [case 6] Generating sample 3/3
+[2026-02-13 23:33:25,981][ehr-qa][DEBUG] - [case 6] Starting classification sample generation. Expected 25 sentence IDs
+[2026-02-13 23:33:25,981][ehr-qa][DEBUG] - [case 6] Making initial API call
+[2026-02-13 23:33:32,361][ehr-qa][DEBUG] - [case 6] Successfully validated response on attempt 1
+[2026-02-13 23:33:32,361][ehr-qa][DEBUG] - [case 6] Aggregating 3 samples for batch
+[2026-02-13 23:33:32,361][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=25): Unanimous: 20/25 (80.0%), High agreement (≥2): 5/25 (20.0%), Split decisions: 0/25 (0.0%)
+[2026-02-13 23:33:32,361][ehr-qa][DEBUG] - [case 6] Batch validation passed for sentences 1-25
+[2026-02-13 23:33:32,361][ehr-qa][DEBUG] - [case 6] Making initial API call
+[2026-02-13 23:33:36,618][ehr-qa][DEBUG] - [case 6] Successfully validated response on attempt 1
+[2026-02-13 23:33:36,620][ehr-qa][DEBUG] - [case 7] Generating 3 samples for batch (sentences 1-30)
+[2026-02-13 23:33:36,620][ehr-qa][DEBUG] - [case 7] Generating sample 1/3
+[2026-02-13 23:33:36,620][ehr-qa][DEBUG] - [case 7] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-13 23:33:36,620][ehr-qa][DEBUG] - [case 7] Making initial API call
+[2026-02-13 23:33:43,152][ehr-qa][DEBUG] - [case 7] Successfully validated response on attempt 1
+[2026-02-13 23:33:43,153][ehr-qa][DEBUG] - [case 7] Generating sample 2/3
+[2026-02-13 23:33:43,153][ehr-qa][DEBUG] - [case 7] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-13 23:33:43,153][ehr-qa][DEBUG] - [case 7] Making initial API call
+[2026-02-13 23:33:49,862][ehr-qa][DEBUG] - [case 7] Successfully validated response on attempt 1
+[2026-02-13 23:33:49,862][ehr-qa][DEBUG] - [case 7] Generating sample 3/3
+[2026-02-13 23:33:49,862][ehr-qa][DEBUG] - [case 7] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-13 23:33:49,862][ehr-qa][DEBUG] - [case 7] Making initial API call
+[2026-02-13 23:33:57,460][ehr-qa][DEBUG] - [case 7] Successfully validated response on attempt 1
+[2026-02-13 23:33:57,460][ehr-qa][DEBUG] - [case 7] Aggregating 3 samples for batch
+[2026-02-13 23:33:57,460][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=30): Unanimous: 24/30 (80.0%), High agreement (≥2): 6/30 (20.0%), Split decisions: 0/30 (0.0%)
+[2026-02-13 23:33:57,460][ehr-qa][DEBUG] - [case 7] Batch validation passed for sentences 1-30
+[2026-02-13 23:33:57,460][ehr-qa][DEBUG] - [case 7] Making initial API call
+[2026-02-13 23:34:01,146][ehr-qa][DEBUG] - [case 7] Successfully validated response on attempt 1
+[2026-02-13 23:34:01,148][ehr-qa][DEBUG] - [case 8] Generating 3 samples for batch (sentences 1-54)
+[2026-02-13 23:34:01,148][ehr-qa][DEBUG] - [case 8] Generating sample 1/3
+[2026-02-13 23:34:01,149][ehr-qa][DEBUG] - [case 8] Starting classification sample generation. Expected 54 sentence IDs
+[2026-02-13 23:34:01,149][ehr-qa][DEBUG] - [case 8] Making initial API call
+[2026-02-13 23:34:12,409][ehr-qa][DEBUG] - [case 8] Successfully validated response on attempt 1
+[2026-02-13 23:34:12,409][ehr-qa][DEBUG] - [case 8] Generating sample 2/3
+[2026-02-13 23:34:12,409][ehr-qa][DEBUG] - [case 8] Starting classification sample generation. Expected 54 sentence IDs
+[2026-02-13 23:34:12,409][ehr-qa][DEBUG] - [case 8] Making initial API call
+[2026-02-13 23:34:23,351][ehr-qa][DEBUG] - [case 8] Successfully validated response on attempt 1
+[2026-02-13 23:34:23,351][ehr-qa][DEBUG] - [case 8] Generating sample 3/3
+[2026-02-13 23:34:23,351][ehr-qa][DEBUG] - [case 8] Starting classification sample generation. Expected 54 sentence IDs
+[2026-02-13 23:34:23,351][ehr-qa][DEBUG] - [case 8] Making initial API call
+[2026-02-13 23:34:34,010][ehr-qa][DEBUG] - [case 8] Successfully validated response on attempt 1
+[2026-02-13 23:34:34,010][ehr-qa][DEBUG] - [case 8] Aggregating 3 samples for batch
+[2026-02-13 23:34:34,010][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=54): Unanimous: 40/54 (74.1%), High agreement (≥2): 14/54 (25.9%), Split decisions: 0/54 (0.0%)
+[2026-02-13 23:34:34,010][ehr-qa][DEBUG] - [case 8] Batch validation passed for sentences 1-54
+[2026-02-13 23:34:34,010][ehr-qa][DEBUG] - [case 8] Making initial API call
+[2026-02-13 23:34:39,615][ehr-qa][INFO] - [case 8] Validation failed on attempt 1: Please fix the following issues:
+Citation issues: Essential evidence 52 is not cited in the answer.
+Answer is too long: 84 words (limit: 75). Please shorten.
+[2026-02-13 23:34:39,615][ehr-qa][DEBUG] - [case 8] Retry 1/10: Making correction call
+[2026-02-13 23:34:43,252][ehr-qa][DEBUG] - [case 8] Successfully validated response on attempt 2
+[2026-02-13 23:34:43,254][ehr-qa][DEBUG] - [case 9] Generating 3 samples for batch (sentences 1-21)
+[2026-02-13 23:34:43,254][ehr-qa][DEBUG] - [case 9] Generating sample 1/3
+[2026-02-13 23:34:43,254][ehr-qa][DEBUG] - [case 9] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-13 23:34:43,254][ehr-qa][DEBUG] - [case 9] Making initial API call
+[2026-02-13 23:34:48,695][ehr-qa][DEBUG] - [case 9] Successfully validated response on attempt 1
+[2026-02-13 23:34:48,696][ehr-qa][DEBUG] - [case 9] Generating sample 2/3
+[2026-02-13 23:34:48,696][ehr-qa][DEBUG] - [case 9] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-13 23:34:48,696][ehr-qa][DEBUG] - [case 9] Making initial API call
+[2026-02-13 23:34:54,512][ehr-qa][DEBUG] - [case 9] Successfully validated response on attempt 1
+[2026-02-13 23:34:54,512][ehr-qa][DEBUG] - [case 9] Generating sample 3/3
+[2026-02-13 23:34:54,512][ehr-qa][DEBUG] - [case 9] Starting classification sample generation. Expected 21 sentence IDs
+[2026-02-13 23:34:54,512][ehr-qa][DEBUG] - [case 9] Making initial API call
+[2026-02-13 23:35:00,687][ehr-qa][DEBUG] - [case 9] Successfully validated response on attempt 1
+[2026-02-13 23:35:00,687][ehr-qa][DEBUG] - [case 9] Aggregating 3 samples for batch
+[2026-02-13 23:35:00,687][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=21): Unanimous: 16/21 (76.2%), High agreement (≥2): 5/21 (23.8%), Split decisions: 0/21 (0.0%)
+[2026-02-13 23:35:00,688][ehr-qa][DEBUG] - [case 9] Batch validation passed for sentences 1-21
+[2026-02-13 23:35:00,688][ehr-qa][DEBUG] - [case 9] Making initial API call
+[2026-02-13 23:35:08,671][ehr-qa][INFO] - [case 9] Validation failed on attempt 1: Please fix the following issues:
+Citation issues: Essential evidence 19 is not cited in the answer.
+Answer is too long: 103 words (limit: 75). Please shorten.
+[2026-02-13 23:35:08,671][ehr-qa][DEBUG] - [case 9] Retry 1/10: Making correction call
+[2026-02-13 23:35:12,810][ehr-qa][INFO] - [case 9] Validation failed on attempt 2: Please fix the following issues:
+Citation issues: Essential evidence 13 is not cited in the answer.
+Essential evidence 15 is not cited in the answer.
+Essential evidence 18 is not cited in the answer.
+Answer is too long: 86 words (limit: 75). Please shorten.
+[2026-02-13 23:35:12,810][ehr-qa][DEBUG] - [case 9] Retry 2/10: Making correction call
+[2026-02-13 23:35:16,719][ehr-qa][INFO] - [case 9] Validation failed on attempt 3: Please fix the following issues:
+Answer is too long: 88 words (limit: 75). Please shorten.
+[2026-02-13 23:35:16,719][ehr-qa][DEBUG] - [case 9] Retry 3/10: Making correction call
+[2026-02-13 23:35:19,420][ehr-qa][DEBUG] - [case 9] Successfully validated response on attempt 4
+[2026-02-13 23:35:19,421][ehr-qa][DEBUG] - [case 10] Generating 3 samples for batch (sentences 1-32)
+[2026-02-13 23:35:19,421][ehr-qa][DEBUG] - [case 10] Generating sample 1/3
+[2026-02-13 23:35:19,422][ehr-qa][DEBUG] - [case 10] Starting classification sample generation. Expected 32 sentence IDs
+[2026-02-13 23:35:19,422][ehr-qa][DEBUG] - [case 10] Making initial API call
+[2026-02-13 23:35:27,285][ehr-qa][DEBUG] - [case 10] Successfully validated response on attempt 1
+[2026-02-13 23:35:27,285][ehr-qa][DEBUG] - [case 10] Generating sample 2/3
+[2026-02-13 23:35:27,285][ehr-qa][DEBUG] - [case 10] Starting classification sample generation. Expected 32 sentence IDs
+[2026-02-13 23:35:27,285][ehr-qa][DEBUG] - [case 10] Making initial API call
+[2026-02-13 23:35:34,615][ehr-qa][DEBUG] - [case 10] Successfully validated response on attempt 1
+[2026-02-13 23:35:34,615][ehr-qa][DEBUG] - [case 10] Generating sample 3/3
+[2026-02-13 23:35:34,615][ehr-qa][DEBUG] - [case 10] Starting classification sample generation. Expected 32 sentence IDs
+[2026-02-13 23:35:34,615][ehr-qa][DEBUG] - [case 10] Making initial API call
+[2026-02-13 23:35:42,274][ehr-qa][DEBUG] - [case 10] Successfully validated response on attempt 1
+[2026-02-13 23:35:42,274][ehr-qa][DEBUG] - [case 10] Aggregating 3 samples for batch
+[2026-02-13 23:35:42,274][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=32): Unanimous: 27/32 (84.4%), High agreement (≥2): 5/32 (15.6%), Split decisions: 0/32 (0.0%)
+[2026-02-13 23:35:42,274][ehr-qa][DEBUG] - [case 10] Batch validation passed for sentences 1-32
+[2026-02-13 23:35:42,274][ehr-qa][DEBUG] - [case 10] Making initial API call
+[2026-02-13 23:35:46,885][ehr-qa][DEBUG] - [case 10] Successfully validated response on attempt 1
+[2026-02-13 23:35:46,887][ehr-qa][DEBUG] - [case 11] Generating 3 samples for batch (sentences 1-27)
+[2026-02-13 23:35:46,887][ehr-qa][DEBUG] - [case 11] Generating sample 1/3
+[2026-02-13 23:35:46,887][ehr-qa][DEBUG] - [case 11] Starting classification sample generation. Expected 27 sentence IDs
+[2026-02-13 23:35:46,887][ehr-qa][DEBUG] - [case 11] Making initial API call
+[2026-02-13 23:35:55,634][ehr-qa][DEBUG] - [case 11] Successfully validated response on attempt 1
+[2026-02-13 23:35:55,634][ehr-qa][DEBUG] - [case 11] Generating sample 2/3
+[2026-02-13 23:35:55,634][ehr-qa][DEBUG] - [case 11] Starting classification sample generation. Expected 27 sentence IDs
+[2026-02-13 23:35:55,634][ehr-qa][DEBUG] - [case 11] Making initial API call
+[2026-02-13 23:36:02,199][ehr-qa][DEBUG] - [case 11] Successfully validated response on attempt 1
+[2026-02-13 23:36:02,199][ehr-qa][DEBUG] - [case 11] Generating sample 3/3
+[2026-02-13 23:36:02,199][ehr-qa][DEBUG] - [case 11] Starting classification sample generation. Expected 27 sentence IDs
+[2026-02-13 23:36:02,199][ehr-qa][DEBUG] - [case 11] Making initial API call
+[2026-02-13 23:36:08,775][ehr-qa][DEBUG] - [case 11] Successfully validated response on attempt 1
+[2026-02-13 23:36:08,775][ehr-qa][DEBUG] - [case 11] Aggregating 3 samples for batch
+[2026-02-13 23:36:08,775][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=27): Unanimous: 26/27 (96.3%), High agreement (≥2): 1/27 (3.7%), Split decisions: 0/27 (0.0%)
+[2026-02-13 23:36:08,775][ehr-qa][DEBUG] - [case 11] Batch validation passed for sentences 1-27
+[2026-02-13 23:36:08,775][ehr-qa][DEBUG] - [case 11] Making initial API call
+[2026-02-13 23:36:13,867][ehr-qa][DEBUG] - [case 11] Successfully validated response on attempt 1
+[2026-02-13 23:36:13,868][ehr-qa][DEBUG] - [case 12] Generating 3 samples for batch (sentences 1-14)
+[2026-02-13 23:36:13,868][ehr-qa][DEBUG] - [case 12] Generating sample 1/3
+[2026-02-13 23:36:13,868][ehr-qa][DEBUG] - [case 12] Starting classification sample generation. Expected 14 sentence IDs
+[2026-02-13 23:36:13,868][ehr-qa][DEBUG] - [case 12] Making initial API call
+[2026-02-13 23:36:19,101][ehr-qa][DEBUG] - [case 12] Successfully validated response on attempt 1
+[2026-02-13 23:36:19,101][ehr-qa][DEBUG] - [case 12] Generating sample 2/3
+[2026-02-13 23:36:19,101][ehr-qa][DEBUG] - [case 12] Starting classification sample generation. Expected 14 sentence IDs
+[2026-02-13 23:36:19,101][ehr-qa][DEBUG] - [case 12] Making initial API call
+[2026-02-13 23:36:24,109][ehr-qa][DEBUG] - [case 12] Successfully validated response on attempt 1
+[2026-02-13 23:36:24,110][ehr-qa][DEBUG] - [case 12] Generating sample 3/3
+[2026-02-13 23:36:24,110][ehr-qa][DEBUG] - [case 12] Starting classification sample generation. Expected 14 sentence IDs
+[2026-02-13 23:36:24,110][ehr-qa][DEBUG] - [case 12] Making initial API call
+[2026-02-13 23:36:28,820][ehr-qa][DEBUG] - [case 12] Successfully validated response on attempt 1
+[2026-02-13 23:36:28,820][ehr-qa][DEBUG] - [case 12] Aggregating 3 samples for batch
+[2026-02-13 23:36:28,820][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=14): Unanimous: 12/14 (85.7%), High agreement (≥2): 2/14 (14.3%), Split decisions: 0/14 (0.0%)
+[2026-02-13 23:36:28,820][ehr-qa][DEBUG] - [case 12] Batch validation passed for sentences 1-14
+[2026-02-13 23:36:28,821][ehr-qa][DEBUG] - [case 12] Making initial API call
+[2026-02-13 23:36:32,696][ehr-qa][DEBUG] - [case 12] Successfully validated response on attempt 1
+[2026-02-13 23:36:32,697][ehr-qa][DEBUG] - [case 13] Generating 3 samples for batch (sentences 1-12)
+[2026-02-13 23:36:32,697][ehr-qa][DEBUG] - [case 13] Generating sample 1/3
+[2026-02-13 23:36:32,697][ehr-qa][DEBUG] - [case 13] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-13 23:36:32,697][ehr-qa][DEBUG] - [case 13] Making initial API call
+[2026-02-13 23:36:37,382][ehr-qa][DEBUG] - [case 13] Successfully validated response on attempt 1
+[2026-02-13 23:36:37,382][ehr-qa][DEBUG] - [case 13] Generating sample 2/3
+[2026-02-13 23:36:37,382][ehr-qa][DEBUG] - [case 13] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-13 23:36:37,382][ehr-qa][DEBUG] - [case 13] Making initial API call
+[2026-02-13 23:36:41,452][ehr-qa][DEBUG] - [case 13] Successfully validated response on attempt 1
+[2026-02-13 23:36:41,452][ehr-qa][DEBUG] - [case 13] Generating sample 3/3
+[2026-02-13 23:36:41,452][ehr-qa][DEBUG] - [case 13] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-13 23:36:41,452][ehr-qa][DEBUG] - [case 13] Making initial API call
+[2026-02-13 23:36:47,164][ehr-qa][DEBUG] - [case 13] Successfully validated response on attempt 1
+[2026-02-13 23:36:47,164][ehr-qa][DEBUG] - [case 13] Aggregating 3 samples for batch
+[2026-02-13 23:36:47,164][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=12): Unanimous: 8/12 (66.7%), High agreement (≥2): 4/12 (33.3%), Split decisions: 0/12 (0.0%)
+[2026-02-13 23:36:47,165][ehr-qa][DEBUG] - [case 13] Batch validation passed for sentences 1-12
+[2026-02-13 23:36:47,165][ehr-qa][DEBUG] - [case 13] Making initial API call
+[2026-02-13 23:36:51,834][ehr-qa][DEBUG] - [case 13] Successfully validated response on attempt 1
+[2026-02-13 23:36:51,835][ehr-qa][DEBUG] - [case 14] Generating 3 samples for batch (sentences 1-9)
+[2026-02-13 23:36:51,835][ehr-qa][DEBUG] - [case 14] Generating sample 1/3
+[2026-02-13 23:36:51,835][ehr-qa][DEBUG] - [case 14] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:36:51,835][ehr-qa][DEBUG] - [case 14] Making initial API call
+[2026-02-13 23:36:55,521][ehr-qa][DEBUG] - [case 14] Successfully validated response on attempt 1
+[2026-02-13 23:36:55,521][ehr-qa][DEBUG] - [case 14] Generating sample 2/3
+[2026-02-13 23:36:55,521][ehr-qa][DEBUG] - [case 14] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:36:55,521][ehr-qa][DEBUG] - [case 14] Making initial API call
+[2026-02-13 23:36:59,000][ehr-qa][DEBUG] - [case 14] Successfully validated response on attempt 1
+[2026-02-13 23:36:59,001][ehr-qa][DEBUG] - [case 14] Generating sample 3/3
+[2026-02-13 23:36:59,001][ehr-qa][DEBUG] - [case 14] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:36:59,001][ehr-qa][DEBUG] - [case 14] Making initial API call
+[2026-02-13 23:37:02,783][ehr-qa][DEBUG] - [case 14] Successfully validated response on attempt 1
+[2026-02-13 23:37:02,783][ehr-qa][DEBUG] - [case 14] Aggregating 3 samples for batch
+[2026-02-13 23:37:02,783][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=9): Unanimous: 6/9 (66.7%), High agreement (≥2): 3/9 (33.3%), Split decisions: 0/9 (0.0%)
+[2026-02-13 23:37:02,783][ehr-qa][DEBUG] - [case 14] Batch validation passed for sentences 1-9
+[2026-02-13 23:37:02,783][ehr-qa][DEBUG] - [case 14] Making initial API call
+[2026-02-13 23:37:07,017][ehr-qa][DEBUG] - [case 14] Successfully validated response on attempt 1
+[2026-02-13 23:37:07,018][ehr-qa][DEBUG] - [case 15] Generating 3 samples for batch (sentences 1-12)
+[2026-02-13 23:37:07,018][ehr-qa][DEBUG] - [case 15] Generating sample 1/3
+[2026-02-13 23:37:07,018][ehr-qa][DEBUG] - [case 15] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-13 23:37:07,018][ehr-qa][DEBUG] - [case 15] Making initial API call
+[2026-02-13 23:37:10,760][ehr-qa][DEBUG] - [case 15] Successfully validated response on attempt 1
+[2026-02-13 23:37:10,760][ehr-qa][DEBUG] - [case 15] Generating sample 2/3
+[2026-02-13 23:37:10,760][ehr-qa][DEBUG] - [case 15] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-13 23:37:10,760][ehr-qa][DEBUG] - [case 15] Making initial API call
+[2026-02-13 23:37:15,184][ehr-qa][DEBUG] - [case 15] Successfully validated response on attempt 1
+[2026-02-13 23:37:15,184][ehr-qa][DEBUG] - [case 15] Generating sample 3/3
+[2026-02-13 23:37:15,184][ehr-qa][DEBUG] - [case 15] Starting classification sample generation. Expected 12 sentence IDs
+[2026-02-13 23:37:15,184][ehr-qa][DEBUG] - [case 15] Making initial API call
+[2026-02-13 23:37:18,793][ehr-qa][DEBUG] - [case 15] Successfully validated response on attempt 1
+[2026-02-13 23:37:18,793][ehr-qa][DEBUG] - [case 15] Aggregating 3 samples for batch
+[2026-02-13 23:37:18,793][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=12): Unanimous: 12/12 (100.0%), High agreement (≥2): 0/12 (0.0%), Split decisions: 0/12 (0.0%)
+[2026-02-13 23:37:18,793][ehr-qa][DEBUG] - [case 15] Batch validation passed for sentences 1-12
+[2026-02-13 23:37:18,793][ehr-qa][DEBUG] - [case 15] Making initial API call
+[2026-02-13 23:37:22,573][ehr-qa][DEBUG] - [case 15] Successfully validated response on attempt 1
+[2026-02-13 23:37:22,575][ehr-qa][DEBUG] - [case 16] Generating 3 samples for batch (sentences 1-30)
+[2026-02-13 23:37:22,575][ehr-qa][DEBUG] - [case 16] Generating sample 1/3
+[2026-02-13 23:37:22,575][ehr-qa][DEBUG] - [case 16] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-13 23:37:22,575][ehr-qa][DEBUG] - [case 16] Making initial API call
+[2026-02-13 23:37:29,303][ehr-qa][DEBUG] - [case 16] Successfully validated response on attempt 1
+[2026-02-13 23:37:29,304][ehr-qa][DEBUG] - [case 16] Generating sample 2/3
+[2026-02-13 23:37:29,304][ehr-qa][DEBUG] - [case 16] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-13 23:37:29,304][ehr-qa][DEBUG] - [case 16] Making initial API call
+[2026-02-13 23:37:36,005][ehr-qa][DEBUG] - [case 16] Successfully validated response on attempt 1
+[2026-02-13 23:37:36,005][ehr-qa][DEBUG] - [case 16] Generating sample 3/3
+[2026-02-13 23:37:36,005][ehr-qa][DEBUG] - [case 16] Starting classification sample generation. Expected 30 sentence IDs
+[2026-02-13 23:37:36,005][ehr-qa][DEBUG] - [case 16] Making initial API call
+[2026-02-13 23:37:42,782][ehr-qa][DEBUG] - [case 16] Successfully validated response on attempt 1
+[2026-02-13 23:37:42,782][ehr-qa][DEBUG] - [case 16] Aggregating 3 samples for batch
+[2026-02-13 23:37:42,782][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=30): Unanimous: 25/30 (83.3%), High agreement (≥2): 5/30 (16.7%), Split decisions: 0/30 (0.0%)
+[2026-02-13 23:37:42,782][ehr-qa][DEBUG] - [case 16] Batch validation passed for sentences 1-30
+[2026-02-13 23:37:42,782][ehr-qa][DEBUG] - [case 16] Making initial API call
+[2026-02-13 23:37:45,128][ehr-qa][DEBUG] - [case 16] Successfully validated response on attempt 1
+[2026-02-13 23:37:45,130][ehr-qa][DEBUG] - [case 17] Generating 3 samples for batch (sentences 1-38)
+[2026-02-13 23:37:45,130][ehr-qa][DEBUG] - [case 17] Generating sample 1/3
+[2026-02-13 23:37:45,130][ehr-qa][DEBUG] - [case 17] Starting classification sample generation. Expected 38 sentence IDs
+[2026-02-13 23:37:45,130][ehr-qa][DEBUG] - [case 17] Making initial API call
+[2026-02-13 23:37:52,735][ehr-qa][DEBUG] - [case 17] Successfully validated response on attempt 1
+[2026-02-13 23:37:52,735][ehr-qa][DEBUG] - [case 17] Generating sample 2/3
+[2026-02-13 23:37:52,735][ehr-qa][DEBUG] - [case 17] Starting classification sample generation. Expected 38 sentence IDs
+[2026-02-13 23:37:52,735][ehr-qa][DEBUG] - [case 17] Making initial API call
+[2026-02-13 23:38:00,814][ehr-qa][DEBUG] - [case 17] Successfully validated response on attempt 1
+[2026-02-13 23:38:00,815][ehr-qa][DEBUG] - [case 17] Generating sample 3/3
+[2026-02-13 23:38:00,815][ehr-qa][DEBUG] - [case 17] Starting classification sample generation. Expected 38 sentence IDs
+[2026-02-13 23:38:00,815][ehr-qa][DEBUG] - [case 17] Making initial API call
+[2026-02-13 23:38:08,234][ehr-qa][DEBUG] - [case 17] Successfully validated response on attempt 1
+[2026-02-13 23:38:08,234][ehr-qa][DEBUG] - [case 17] Aggregating 3 samples for batch
+[2026-02-13 23:38:08,234][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=38): Unanimous: 30/38 (78.9%), High agreement (≥2): 8/38 (21.1%), Split decisions: 0/38 (0.0%)
+[2026-02-13 23:38:08,234][ehr-qa][DEBUG] - [case 17] Batch validation passed for sentences 1-38
+[2026-02-13 23:38:08,234][ehr-qa][DEBUG] - [case 17] Making initial API call
+[2026-02-13 23:38:12,734][ehr-qa][DEBUG] - [case 17] Successfully validated response on attempt 1
+[2026-02-13 23:38:12,735][ehr-qa][DEBUG] - [case 18] Generating 3 samples for batch (sentences 1-23)
+[2026-02-13 23:38:12,736][ehr-qa][DEBUG] - [case 18] Generating sample 1/3
+[2026-02-13 23:38:12,736][ehr-qa][DEBUG] - [case 18] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-13 23:38:12,736][ehr-qa][DEBUG] - [case 18] Making initial API call
+[2026-02-13 23:38:18,913][ehr-qa][DEBUG] - [case 18] Successfully validated response on attempt 1
+[2026-02-13 23:38:18,913][ehr-qa][DEBUG] - [case 18] Generating sample 2/3
+[2026-02-13 23:38:18,913][ehr-qa][DEBUG] - [case 18] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-13 23:38:18,913][ehr-qa][DEBUG] - [case 18] Making initial API call
+[2026-02-13 23:38:25,619][ehr-qa][DEBUG] - [case 18] Successfully validated response on attempt 1
+[2026-02-13 23:38:25,619][ehr-qa][DEBUG] - [case 18] Generating sample 3/3
+[2026-02-13 23:38:25,619][ehr-qa][DEBUG] - [case 18] Starting classification sample generation. Expected 23 sentence IDs
+[2026-02-13 23:38:25,619][ehr-qa][DEBUG] - [case 18] Making initial API call
+[2026-02-13 23:38:31,167][ehr-qa][DEBUG] - [case 18] Successfully validated response on attempt 1
+[2026-02-13 23:38:31,167][ehr-qa][DEBUG] - [case 18] Aggregating 3 samples for batch
+[2026-02-13 23:38:31,167][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=23): Unanimous: 20/23 (87.0%), High agreement (≥2): 3/23 (13.0%), Split decisions: 0/23 (0.0%)
+[2026-02-13 23:38:31,167][ehr-qa][DEBUG] - [case 18] Batch validation passed for sentences 1-23
+[2026-02-13 23:38:31,167][ehr-qa][DEBUG] - [case 18] Making initial API call
+[2026-02-13 23:38:34,230][ehr-qa][DEBUG] - [case 18] Successfully validated response on attempt 1
+[2026-02-13 23:38:34,232][ehr-qa][DEBUG] - [case 19] Generating 3 samples for batch (sentences 1-18)
+[2026-02-13 23:38:34,232][ehr-qa][DEBUG] - [case 19] Generating sample 1/3
+[2026-02-13 23:38:34,232][ehr-qa][DEBUG] - [case 19] Starting classification sample generation. Expected 18 sentence IDs
+[2026-02-13 23:38:34,232][ehr-qa][DEBUG] - [case 19] Making initial API call
+[2026-02-13 23:38:39,143][ehr-qa][DEBUG] - [case 19] Successfully validated response on attempt 1
+[2026-02-13 23:38:39,143][ehr-qa][DEBUG] - [case 19] Generating sample 2/3
+[2026-02-13 23:38:39,143][ehr-qa][DEBUG] - [case 19] Starting classification sample generation. Expected 18 sentence IDs
+[2026-02-13 23:38:39,143][ehr-qa][DEBUG] - [case 19] Making initial API call
+[2026-02-13 23:38:51,895][ehr-qa][DEBUG] - [case 19] Successfully validated response on attempt 1
+[2026-02-13 23:38:51,895][ehr-qa][DEBUG] - [case 19] Generating sample 3/3
+[2026-02-13 23:38:51,895][ehr-qa][DEBUG] - [case 19] Starting classification sample generation. Expected 18 sentence IDs
+[2026-02-13 23:38:51,895][ehr-qa][DEBUG] - [case 19] Making initial API call
+[2026-02-13 23:38:57,198][ehr-qa][DEBUG] - [case 19] Successfully validated response on attempt 1
+[2026-02-13 23:38:57,198][ehr-qa][DEBUG] - [case 19] Aggregating 3 samples for batch
+[2026-02-13 23:38:57,198][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=18): Unanimous: 15/18 (83.3%), High agreement (≥2): 3/18 (16.7%), Split decisions: 0/18 (0.0%)
+[2026-02-13 23:38:57,198][ehr-qa][DEBUG] - [case 19] Batch validation passed for sentences 1-18
+[2026-02-13 23:38:57,198][ehr-qa][DEBUG] - [case 19] Making initial API call
+[2026-02-13 23:39:02,626][ehr-qa][INFO] - [case 19] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 80 words (limit: 75). Please shorten.
+[2026-02-13 23:39:02,627][ehr-qa][DEBUG] - [case 19] Retry 1/10: Making correction call
+[2026-02-13 23:39:05,717][ehr-qa][DEBUG] - [case 19] Successfully validated response on attempt 2
+[2026-02-13 23:39:05,719][ehr-qa][DEBUG] - [case 20] Generating 3 samples for batch (sentences 1-9)
+[2026-02-13 23:39:05,719][ehr-qa][DEBUG] - [case 20] Generating sample 1/3
+[2026-02-13 23:39:05,719][ehr-qa][DEBUG] - [case 20] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:39:05,719][ehr-qa][DEBUG] - [case 20] Making initial API call
+[2026-02-13 23:39:09,325][ehr-qa][DEBUG] - [case 20] Successfully validated response on attempt 1
+[2026-02-13 23:39:09,325][ehr-qa][DEBUG] - [case 20] Generating sample 2/3
+[2026-02-13 23:39:09,325][ehr-qa][DEBUG] - [case 20] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:39:09,325][ehr-qa][DEBUG] - [case 20] Making initial API call
+[2026-02-13 23:39:12,898][ehr-qa][DEBUG] - [case 20] Successfully validated response on attempt 1
+[2026-02-13 23:39:12,898][ehr-qa][DEBUG] - [case 20] Generating sample 3/3
+[2026-02-13 23:39:12,898][ehr-qa][DEBUG] - [case 20] Starting classification sample generation. Expected 9 sentence IDs
+[2026-02-13 23:39:12,898][ehr-qa][DEBUG] - [case 20] Making initial API call
+[2026-02-13 23:39:17,911][ehr-qa][DEBUG] - [case 20] Successfully validated response on attempt 1
+[2026-02-13 23:39:17,911][ehr-qa][DEBUG] - [case 20] Aggregating 3 samples for batch
+[2026-02-13 23:39:17,911][ehr-qa][DEBUG] - Self-consistency agreement (k=3, n=9): Unanimous: 9/9 (100.0%), High agreement (≥2): 0/9 (0.0%), Split decisions: 0/9 (0.0%)
+[2026-02-13 23:39:17,911][ehr-qa][DEBUG] - [case 20] Batch validation passed for sentences 1-9
+[2026-02-13 23:39:17,911][ehr-qa][DEBUG] - [case 20] Making initial API call
+[2026-02-13 23:39:21,425][ehr-qa][DEBUG] - [case 20] Successfully validated response on attempt 1
+[2026-02-13 23:39:21,426][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/2026-02-13/23-31-37/results/submission.json
+[2026-02-13 23:39:21,426][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/2026-02-13/23-31-37/results/submission_subtask2.json
+[2026-02-13 23:39:21,426][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/2026-02-13/23-31-37/results/submission_subtask3.json
+[2026-02-13 23:39:21,426][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-02-13 23:39:21,436][ehr-qa][INFO] - Metrics:
+[2026-02-13 23:39:21,439][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.6806  0.4050    0.5078 121.0000
+supplementary     0.1429  0.5385    0.2258  26.0000
+not-relevant      0.8178  0.7509    0.7829 281.0000
+accuracy          0.6402  0.6402    0.6402   0.6402
+macro avg         0.5471  0.5648    0.5055 428.0000
+weighted avg      0.7380  0.6402    0.6713 428.0000
+
+[2026-02-13 23:39:21,439][ehr-qa][INFO] - Confusion Matrix:
+[2026-02-13 23:39:21,440][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.4050                    0.2645                   0.3306
+Actual: supplementary                0.1923                    0.5385                   0.2692
+Actual: not-relevant                 0.0641                    0.1851                   0.7509
+
+[2026-02-13 23:39:21,450][ehr-qa][INFO] - Binary Metrics:
+[2026-02-13 23:39:21,452][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.5882  0.6803    0.6309 147.0000
+not-relevant     0.8178  0.7509    0.7829 281.0000
+accuracy         0.7266  0.7266    0.7266   0.7266
+macro avg        0.7030  0.7156    0.7069 428.0000
+weighted avg     0.7390  0.7266    0.7307 428.0000
+

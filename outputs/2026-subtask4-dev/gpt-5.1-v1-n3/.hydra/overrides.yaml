@@ -1,0 +1,4 @@
+- method=answer_evidence_alignment
+- model=gpt-5.1
+- dataset=archehr-dev
+- method.num_samples=3

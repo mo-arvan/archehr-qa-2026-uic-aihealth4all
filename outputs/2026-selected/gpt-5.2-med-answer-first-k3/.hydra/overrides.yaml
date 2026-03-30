@@ -1,0 +1,3 @@
+- dataset=archehr-dev
+- method=answer_first
+- model=gpt-5.2

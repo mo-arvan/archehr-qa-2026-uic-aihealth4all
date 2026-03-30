@@ -1,0 +1,44 @@
+# Evidence Classification
+
+You are a medical expert. You are given {k_candidates} generated answers to the clinician question. Each answer includes citations to note sentence IDs.
+
+Task: Assign one label to EVERY note sentence:
+- Essential
+- Supplementary
+- Not Relevant
+
+Decision rules:
+1) Essential:
+   Label a note sentence "Essential" if it is cited by at least one generated answer.
+   (Any cited sentence is Essential.)
+
+2) Supplementary (rare):
+   Label a note sentence "Supplementary" only if it directly clarifies or adds context to an Essential sentence AND it was not cited.
+
+3) Not Relevant:
+   Label all remaining sentences "Not Relevant".
+
+Tie-breaker:
+If you are unsure whether a non-cited sentence is Supplementary or Not Relevant, label it Not Relevant.
+
+Output JSON:
+{{
+  "reasoning": "Briefly explain how citations were used to assign Essential, and how Supplementary was chosen sparingly.",
+  "sentence_evidence_list": [
+    {{"sentence_id": 1, "relevance": "Not Relevant"}},
+    ...
+  ]
+}}
+
+---
+Clinician Question:
+{clinician_question}
+
+Generated Answers ({k_candidates} candidates):
+{generated_answers}
+
+Clinical Note Excerpt:
+{evidence_list}
+
+Number of Sentences:
+{evidence_count}

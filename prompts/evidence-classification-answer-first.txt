@@ -1,0 +1,73 @@
+# Answer-Grounded Evidence Classification (Minimal Set)
+
+You are a medical expert. A clinician question has been answered using the clinical note. Below are **{k_candidates} independently generated answers** to that question. Your task is to classify **each sentence** in the note by whether it belongs to the **minimal set required to support these answers** — not every sentence that "supports" the answer, but only those without which the answer would be incomplete or unsupported.
+
+**Definitions (use the minimal set):**
+- **Essential:** The sentence is **required** to support the generated answers. If removed, the answer would be fundamentally incomplete or scientifically unsupported. Cannot derive or justify the key claims in the answers without this sentence.
+- **Supplementary:** Provides helpful context (e.g., lab values, history, related findings) that supports or clarifies the answers but is **not required** — the answer would still be complete and supported without it.
+- **Not Relevant:** The sentence does not support or relate to the answers (administrative, unrelated conditions, or unrevealing findings).
+
+**Remember:**
+- **Essential** = Cannot support/derive the answer correctly without this sentence.
+- **Supplementary** = Adds helpful context but the answer is complete without it.
+- **Not Relevant** = Does not contribute to answering the question.
+- **When in doubt between Essential and Supplementary, choose Supplementary.**
+- Focus on the **minimal set** needed to support the specific claims in the generated answers.
+
+# When to choose Supplementary
+
+Choose **Supplementary** when the sentence adds context (e.g. extra lab value, stable history, secondary symptom or finding) but the answer's key claims do **not** depend on it. If the answer would still be correct and supported without this sentence, label it **Supplementary**, not Essential. Typical Supplementary: additional lab values that reinforce but are not the sole source of a trend; background history that supports but is not the pivot for the conclusion; related findings that clarify but are not required to justify the main claim.
+
+# Strategic Heuristics (Based on Clinical Data Patterns)
+
+- **The "So What?" Test for Essentiality:** A sentence is only Essential if it is the source of the cause, the specific intervention that worked, or the definitive clinical outcome that the answers rely on.
+- **Lab Trends vs. Snapshots:** Mention of an "upward trend" or "normalized value" that the answer depends on is often Essential. Single baseline values that merely add context are usually Supplementary.
+- **Procedural Outcomes:** If the answer explains "Why was X done?", the sentence describing the finding during procedure X (e.g., "stent was acutely obstructed") is Essential. The sentence stating the procedure was finished (e.g., "procedure was uneventful") is usually Not Relevant.
+- **Rule-Outs:** For answers about "Is this a stroke/cancer?", sentences explicitly stating "CT ruled out X" or "EKG showed no ischemia" are Essential.
+- **Negative Findings:** If a test was done but was "unremarkable" or "negative," it is Not Relevant unless the answer specifically relies on ruling out that condition.
+
+# Input
+
+- **Clinician Question:** The question that was answered.
+- **Generated Answers:** {k_candidates} independently generated answers (with citations). Use them to decide which sentences are in the **minimal set** (Essential) vs merely helpful (Supplementary).
+- **Clinical Note Excerpt:** Numbered sentences. Classify every sentence.
+
+# Decision rule before labeling
+
+For each sentence, ask: **"Could I remove this sentence and still support the same key claims in the answers?"** If yes → Supplementary (or Not Relevant). If no → Essential.
+
+# Output
+
+For each sentence, assign exactly one of: Essential, Supplementary, Not Relevant. Your classification must cover every sentence in the note.
+
+Return a JSON object with your reasoning and a list of sentence evidence entries (each with sentence_id and relevance):
+
+```json
+{{
+  "reasoning": "Brief explanation of how the answers led to your classification, emphasizing minimal set.",
+  "sentence_evidence_list": [
+    {{"sentence_id": 1, "relevance": "Essential"}},
+    {{"sentence_id": 2, "relevance": "Supplementary"}},
+    {{"sentence_id": 3, "relevance": "Not Relevant"}},
+    ...
+  ]
+}}
+```
+
+The sentence_evidence_list must include all sentence IDs from the note (1 through {evidence_count}).
+
+---
+
+**Clinician Question:**
+{clinician_question}
+
+**Generated Answers ({k_candidates} candidates):**
+{generated_answers}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+**Number of Sentences:**
+{evidence_count}
+
+Classify each sentence as Essential, Supplementary, or Not Relevant. Use the minimal set: when in doubt between Essential and Supplementary, choose Supplementary.

@@ -1,0 +1,49 @@
+# Answer-Grounded Evidence Classification (Minimal-Citable Set)
+
+You are a medical expert. A clinician question has been answered using the clinical note.
+Below are {k_candidates} generated answers (with citations). Your task is to label EVERY note sentence as:
+- Essential / Supplementary / Not Relevant
+
+This task is about the MINIMAL SET OF SENTENCES ONE WOULD CITE in a short grounded answer.
+A sentence may be medically on-topic yet still be Not Relevant if it is not needed (redundant/extra detail).
+
+Step 0 — Identify the CORE CLAIMS:
+- From the generated answers, identify the "core claims" that are shared by MOST answers (majority of candidates).
+- Ignore idiosyncratic details that appear in only 1 answer; do not make them drive Essential selections.
+
+Definitions (minimal-citable interpretation):
+- Essential: Required to support at least one core claim (if removed, a core claim becomes unsupported).
+  Apply redundancy control: if multiple sentences support the same core claim, mark Essential only for the single most direct/explicit sentence (or minimal pair if both are required). Mark the rest Not Relevant unless they add a distinct necessary fact used in a core claim.
+- Supplementary: Directly clarifies an Essential sentence for a core claim, but would not be necessary to cite.
+  (Use sparingly. Each Supplementary sentence should support/clarify a specific Essential claim.)
+- Not Relevant: Not needed to support the core claims, INCLUDING redundant or intermediate details, background, or extra narrative that a minimal grounded answer would omit.
+
+Tie-breakers:
+- If unsure between Essential vs Supplementary → choose Supplementary.
+- If unsure between Supplementary vs Not Relevant → choose Not Relevant.
+
+Hard constraints:
+- You must assign exactly one label to every sentence_id from 1 to {evidence_count}.
+- Do not label something Essential just because it is related; only if it is needed to support a core claim.
+
+Output JSON:
+{{
+  "reasoning": "Briefly list the core claims and how you chose the minimal-citable evidence set (with redundancy handling).",
+  "sentence_evidence_list": [
+    {{"sentence_id": 1, "relevance": "Not Relevant"}},
+    ...
+  ]
+}}
+
+---
+Clinician Question:
+{clinician_question}
+
+Generated Answers ({k_candidates} candidates):
+{generated_answers}
+
+Clinical Note Excerpt:
+{evidence_list}
+
+Number of Sentences:
+{evidence_count}

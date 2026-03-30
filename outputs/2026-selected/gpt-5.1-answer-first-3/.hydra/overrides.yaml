@@ -1,0 +1,4 @@
+- dataset=archehr-dev
+- method=answer_first
+- model=gpt-5.1
+- method.num_samples=3

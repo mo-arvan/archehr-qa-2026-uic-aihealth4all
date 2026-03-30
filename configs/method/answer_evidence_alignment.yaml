@@ -1,0 +1,9 @@
+# Subtask 4: Answer-Evidence Alignment
+# Aligns each pre-written reference answer sentence to supporting note sentences.
+# Model settings come from configs/model/*.yaml
+
+method: "answer_evidence_alignment"
+
+alignment_prompt_file_path: "prompts/answer-evidence-alignment.txt"
+max_retries: 10
+num_samples: 1

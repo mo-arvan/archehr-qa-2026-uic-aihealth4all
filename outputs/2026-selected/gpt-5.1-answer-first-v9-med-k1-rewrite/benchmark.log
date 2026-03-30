@@ -1,0 +1,340 @@
+[2026-03-02 03:05:26,719][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}, 'method': {'method': 'answer_first', 'evidence_prompt_file_path': 'prompts/evidence-classification-answer-first-v4.txt', 'qa_prompt_file_path': 'prompts/answer-generation-answer-first-v9.txt', 'num_samples': 1, 'k_candidates': 1, 'include_supplementary': True, 'max_retries': 10, 'max_answer_words': 75, 'evidence_batch_size': 'use_all', 'evidence_batch_overlap': 0, 'rewrite_prompt_file_path': 'prompts/answer-rewrite.txt'}, 'model': {'model_name': 'gpt-5.1', 'reasoning_effort': 'medium'}}
+[2026-03-02 03:05:26,737][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}
+[2026-03-02 03:05:26,743][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-03-02 03:05:26,782][ehr-qa][INFO] - [case 1] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:05:26,782][ehr-qa][INFO] - [case 1] Step 1: Generating 1 answer candidates
+[2026-03-02 03:05:26,782][ehr-qa][INFO] - [case 1] Generating answer from all evidence
+[2026-03-02 03:06:12,390][ehr-qa][INFO] - [case 1] Successfully generated answer
+[2026-03-02 03:06:12,390][ehr-qa][INFO] - [case 1] Successfully generated 1/1 answer candidates
+[2026-03-02 03:06:12,390][ehr-qa][INFO] - [case 1] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:06:12,390][ehr-qa][INFO] - [case 1] Classifying evidence using 1 generated answers
+[2026-03-02 03:06:16,523][ehr-qa][INFO] - [case 1] Evidence classification completed: 6 Essential, 1 Supplementary, 2 Not Relevant
+[2026-03-02 03:06:16,523][ehr-qa][INFO] - [case 1] Rewriting answer for stylistic alignment
+[2026-03-02 03:07:01,076][ehr-qa][INFO] - [case 1] Answer rewrite successful
+[2026-03-02 03:07:01,076][ehr-qa][INFO] - [case 1] Answer-first pipeline completed successfully
+[2026-03-02 03:07:01,077][ehr-qa][INFO] - [case 2] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:07:01,078][ehr-qa][INFO] - [case 2] Step 1: Generating 1 answer candidates
+[2026-03-02 03:07:01,078][ehr-qa][INFO] - [case 2] Generating answer from all evidence
+[2026-03-02 03:07:18,670][ehr-qa][INFO] - [case 2] Successfully generated answer
+[2026-03-02 03:07:18,670][ehr-qa][INFO] - [case 2] Successfully generated 1/1 answer candidates
+[2026-03-02 03:07:18,670][ehr-qa][INFO] - [case 2] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:07:18,670][ehr-qa][INFO] - [case 2] Classifying evidence using 1 generated answers
+[2026-03-02 03:07:27,606][ehr-qa][INFO] - [case 2] Evidence classification completed: 3 Essential, 1 Supplementary, 7 Not Relevant
+[2026-03-02 03:07:27,606][ehr-qa][INFO] - [case 2] Rewriting answer for stylistic alignment
+[2026-03-02 03:07:56,021][ehr-qa][INFO] - [case 2] Answer rewrite successful
+[2026-03-02 03:07:56,021][ehr-qa][INFO] - [case 2] Answer-first pipeline completed successfully
+[2026-03-02 03:07:56,022][ehr-qa][INFO] - [case 3] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:07:56,022][ehr-qa][INFO] - [case 3] Step 1: Generating 1 answer candidates
+[2026-03-02 03:07:56,022][ehr-qa][INFO] - [case 3] Generating answer from all evidence
+[2026-03-02 03:08:19,791][ehr-qa][INFO] - [case 3] Successfully generated answer
+[2026-03-02 03:08:19,792][ehr-qa][INFO] - [case 3] Successfully generated 1/1 answer candidates
+[2026-03-02 03:08:19,792][ehr-qa][INFO] - [case 3] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:08:19,792][ehr-qa][INFO] - [case 3] Classifying evidence using 1 generated answers
+[2026-03-02 03:08:23,247][ehr-qa][INFO] - [case 3] Evidence classification completed: 4 Essential, 1 Supplementary, 5 Not Relevant
+[2026-03-02 03:08:23,247][ehr-qa][INFO] - [case 3] Rewriting answer for stylistic alignment
+[2026-03-02 03:08:57,117][ehr-qa][INFO] - [case 3] Answer rewrite successful
+[2026-03-02 03:08:57,117][ehr-qa][INFO] - [case 3] Answer-first pipeline completed successfully
+[2026-03-02 03:08:57,118][ehr-qa][INFO] - [case 4] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:08:57,118][ehr-qa][INFO] - [case 4] Step 1: Generating 1 answer candidates
+[2026-03-02 03:08:57,118][ehr-qa][INFO] - [case 4] Generating answer from all evidence
+[2026-03-02 03:09:11,700][ehr-qa][INFO] - [case 4] Successfully generated answer
+[2026-03-02 03:09:11,700][ehr-qa][INFO] - [case 4] Successfully generated 1/1 answer candidates
+[2026-03-02 03:09:11,700][ehr-qa][INFO] - [case 4] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:09:11,700][ehr-qa][INFO] - [case 4] Classifying evidence using 1 generated answers
+[2026-03-02 03:09:27,194][ehr-qa][INFO] - [case 4] Evidence classification completed: 13 Essential, 2 Supplementary, 6 Not Relevant
+[2026-03-02 03:09:27,194][ehr-qa][INFO] - [case 4] Rewriting answer for stylistic alignment
+[2026-03-02 03:10:56,009][ehr-qa][INFO] - [case 4] Answer rewrite successful
+[2026-03-02 03:10:56,009][ehr-qa][INFO] - [case 4] Answer-first pipeline completed successfully
+[2026-03-02 03:10:56,010][ehr-qa][INFO] - [case 5] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:10:56,010][ehr-qa][INFO] - [case 5] Step 1: Generating 1 answer candidates
+[2026-03-02 03:10:56,010][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-03-02 03:11:20,959][ehr-qa][ERROR] - [case 5] Non-retryable error (ValidationError): 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+Traceback (most recent call last):
+  File "/app/src/retry.py", line 85, in call_with_retry
+    response = api_call()
+               ^^^^^^^^^^
+  File "/app/src/qa_model.py", line 1068, in make_api_call
+    return self.client.responses.parse(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1190, in parse
+    return self._post(
+           ^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1075, in request
+    return self._process_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1164, in _process_response
+    return api_response.parse()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_response.py", line 325, in parse
+    parsed = self._options.post_parser(parsed)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1184, in parser
+    return parse_response(
+           ^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/lib/_parsing/_responses.py", line 75, in parse_response
+    "parsed": parse_text(item.text, text_format=text_format),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/lib/_parsing/_responses.py", line 143, in parse_text
+    return cast(TextFormatT, model_parse_json(text_format, text))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/openai/_compat.py", line 171, in model_parse_json
+    return model.model_validate_json(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.12/site-packages/pydantic/main.py", line 766, in model_validate_json
+    return cls.__pydantic_validator__.validate_json(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-02 03:11:20,962][ehr-qa][WARNING] - [case 5] Error generating answer candidate 1: 1 validation error for QAResponse
+  Invalid JSON: expected ident at line 1 column 2 [type=json_invalid, input_value="I'm sorry, but I cannot ...sist with that request.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[2026-03-02 03:11:20,962][ehr-qa][ERROR] - [case 5] Failed to generate any answer candidates
+[2026-03-02 03:11:20,962][ehr-qa][ERROR] - Error processing case 5: Failed to generate any answer candidates
+[2026-03-02 03:11:20,963][ehr-qa][INFO] - [case 6] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:11:20,963][ehr-qa][INFO] - [case 6] Step 1: Generating 1 answer candidates
+[2026-03-02 03:11:20,963][ehr-qa][INFO] - [case 6] Generating answer from all evidence
+[2026-03-02 03:11:59,714][ehr-qa][INFO] - [case 6] Successfully generated answer
+[2026-03-02 03:11:59,714][ehr-qa][INFO] - [case 6] Successfully generated 1/1 answer candidates
+[2026-03-02 03:11:59,714][ehr-qa][INFO] - [case 6] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:11:59,714][ehr-qa][INFO] - [case 6] Classifying evidence using 1 generated answers
+[2026-03-02 03:12:10,348][ehr-qa][INFO] - [case 6] Evidence classification completed: 8 Essential, 2 Supplementary, 15 Not Relevant
+[2026-03-02 03:12:10,348][ehr-qa][INFO] - [case 6] Rewriting answer for stylistic alignment
+[2026-03-02 03:12:39,756][ehr-qa][INFO] - [case 6] Answer rewrite successful
+[2026-03-02 03:12:39,756][ehr-qa][INFO] - [case 6] Answer-first pipeline completed successfully
+[2026-03-02 03:12:39,757][ehr-qa][INFO] - [case 7] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:12:39,758][ehr-qa][INFO] - [case 7] Step 1: Generating 1 answer candidates
+[2026-03-02 03:12:39,758][ehr-qa][INFO] - [case 7] Generating answer from all evidence
+[2026-03-02 03:13:02,743][ehr-qa][INFO] - [case 7] Successfully generated answer
+[2026-03-02 03:13:02,744][ehr-qa][INFO] - [case 7] Successfully generated 1/1 answer candidates
+[2026-03-02 03:13:02,744][ehr-qa][INFO] - [case 7] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:13:02,744][ehr-qa][INFO] - [case 7] Classifying evidence using 1 generated answers
+[2026-03-02 03:13:19,538][ehr-qa][INFO] - [case 7] Evidence classification completed: 8 Essential, 1 Supplementary, 21 Not Relevant
+[2026-03-02 03:13:19,539][ehr-qa][INFO] - [case 7] Rewriting answer for stylistic alignment
+[2026-03-02 03:14:00,343][ehr-qa][INFO] - [case 7] Answer rewrite successful
+[2026-03-02 03:14:00,343][ehr-qa][INFO] - [case 7] Answer-first pipeline completed successfully
+[2026-03-02 03:14:00,345][ehr-qa][INFO] - [case 8] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:14:00,345][ehr-qa][INFO] - [case 8] Step 1: Generating 1 answer candidates
+[2026-03-02 03:14:00,345][ehr-qa][INFO] - [case 8] Generating answer from all evidence
+[2026-03-02 03:14:59,670][ehr-qa][INFO] - [case 8] Successfully generated answer
+[2026-03-02 03:14:59,670][ehr-qa][INFO] - [case 8] Successfully generated 1/1 answer candidates
+[2026-03-02 03:14:59,671][ehr-qa][INFO] - [case 8] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:14:59,671][ehr-qa][INFO] - [case 8] Classifying evidence using 1 generated answers
+[2026-03-02 03:15:17,250][ehr-qa][INFO] - [case 8] Evidence classification completed: 21 Essential, 0 Supplementary, 33 Not Relevant
+[2026-03-02 03:15:17,250][ehr-qa][INFO] - [case 8] Rewriting answer for stylistic alignment
+[2026-03-02 03:16:14,052][ehr-qa][INFO] - [case 8] Answer rewrite successful
+[2026-03-02 03:16:14,052][ehr-qa][INFO] - [case 8] Answer-first pipeline completed successfully
+[2026-03-02 03:16:14,054][ehr-qa][INFO] - [case 9] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:16:14,054][ehr-qa][INFO] - [case 9] Step 1: Generating 1 answer candidates
+[2026-03-02 03:16:14,054][ehr-qa][INFO] - [case 9] Generating answer from all evidence
+[2026-03-02 03:17:21,198][ehr-qa][INFO] - [case 9] Successfully generated answer
+[2026-03-02 03:17:21,198][ehr-qa][INFO] - [case 9] Successfully generated 1/1 answer candidates
+[2026-03-02 03:17:21,198][ehr-qa][INFO] - [case 9] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:17:21,198][ehr-qa][INFO] - [case 9] Classifying evidence using 1 generated answers
+[2026-03-02 03:17:31,910][ehr-qa][INFO] - [case 9] Evidence classification completed: 11 Essential, 3 Supplementary, 7 Not Relevant
+[2026-03-02 03:17:31,910][ehr-qa][INFO] - [case 9] Rewriting answer for stylistic alignment
+[2026-03-02 03:18:15,772][ehr-qa][INFO] - [case 9] Validation failed on attempt 1: Rewritten answer is too long: 79 words (limit: 75). Please shorten.
+[2026-03-02 03:18:29,967][ehr-qa][INFO] - [case 9] Answer rewrite successful
+[2026-03-02 03:18:29,967][ehr-qa][INFO] - [case 9] Answer-first pipeline completed successfully
+[2026-03-02 03:18:29,968][ehr-qa][INFO] - [case 10] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:18:29,968][ehr-qa][INFO] - [case 10] Step 1: Generating 1 answer candidates
+[2026-03-02 03:18:29,968][ehr-qa][INFO] - [case 10] Generating answer from all evidence
+[2026-03-02 03:18:45,693][ehr-qa][INFO] - [case 10] Successfully generated answer
+[2026-03-02 03:18:45,693][ehr-qa][INFO] - [case 10] Successfully generated 1/1 answer candidates
+[2026-03-02 03:18:45,693][ehr-qa][INFO] - [case 10] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:18:45,693][ehr-qa][INFO] - [case 10] Classifying evidence using 1 generated answers
+[2026-03-02 03:19:03,718][ehr-qa][INFO] - [case 10] Evidence classification completed: 12 Essential, 11 Supplementary, 9 Not Relevant
+[2026-03-02 03:19:03,718][ehr-qa][INFO] - [case 10] Rewriting answer for stylistic alignment
+[2026-03-02 03:19:31,189][ehr-qa][INFO] - [case 10] Validation failed on attempt 1: Rewritten answer is too long: 79 words (limit: 75). Please shorten.
+[2026-03-02 03:19:45,505][ehr-qa][INFO] - [case 10] Answer rewrite successful
+[2026-03-02 03:19:45,505][ehr-qa][INFO] - [case 10] Answer-first pipeline completed successfully
+[2026-03-02 03:19:45,507][ehr-qa][INFO] - [case 11] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:19:45,507][ehr-qa][INFO] - [case 11] Step 1: Generating 1 answer candidates
+[2026-03-02 03:19:45,507][ehr-qa][INFO] - [case 11] Generating answer from all evidence
+[2026-03-02 03:20:21,337][ehr-qa][INFO] - [case 11] Successfully generated answer
+[2026-03-02 03:20:21,337][ehr-qa][INFO] - [case 11] Successfully generated 1/1 answer candidates
+[2026-03-02 03:20:21,337][ehr-qa][INFO] - [case 11] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:20:21,337][ehr-qa][INFO] - [case 11] Classifying evidence using 1 generated answers
+[2026-03-02 03:20:36,140][ehr-qa][INFO] - [case 11] Evidence classification completed: 18 Essential, 2 Supplementary, 7 Not Relevant
+[2026-03-02 03:20:36,140][ehr-qa][INFO] - [case 11] Rewriting answer for stylistic alignment
+[2026-03-02 03:21:12,568][ehr-qa][INFO] - [case 11] Answer rewrite successful
+[2026-03-02 03:21:12,569][ehr-qa][INFO] - [case 11] Answer-first pipeline completed successfully
+[2026-03-02 03:21:12,570][ehr-qa][INFO] - [case 12] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:21:12,570][ehr-qa][INFO] - [case 12] Step 1: Generating 1 answer candidates
+[2026-03-02 03:21:12,570][ehr-qa][INFO] - [case 12] Generating answer from all evidence
+[2026-03-02 03:21:39,366][ehr-qa][INFO] - [case 12] Successfully generated answer
+[2026-03-02 03:21:39,366][ehr-qa][INFO] - [case 12] Successfully generated 1/1 answer candidates
+[2026-03-02 03:21:39,366][ehr-qa][INFO] - [case 12] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:21:39,366][ehr-qa][INFO] - [case 12] Classifying evidence using 1 generated answers
+[2026-03-02 03:21:44,654][ehr-qa][INFO] - [case 12] Evidence classification completed: 5 Essential, 0 Supplementary, 9 Not Relevant
+[2026-03-02 03:21:44,655][ehr-qa][INFO] - [case 12] Rewriting answer for stylistic alignment
+[2026-03-02 03:21:57,731][ehr-qa][INFO] - [case 12] Answer rewrite successful
+[2026-03-02 03:21:57,731][ehr-qa][INFO] - [case 12] Answer-first pipeline completed successfully
+[2026-03-02 03:21:57,732][ehr-qa][INFO] - [case 13] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:21:57,732][ehr-qa][INFO] - [case 13] Step 1: Generating 1 answer candidates
+[2026-03-02 03:21:57,732][ehr-qa][INFO] - [case 13] Generating answer from all evidence
+[2026-03-02 03:22:26,037][ehr-qa][INFO] - [case 13] Successfully generated answer
+[2026-03-02 03:22:26,038][ehr-qa][INFO] - [case 13] Successfully generated 1/1 answer candidates
+[2026-03-02 03:22:26,038][ehr-qa][INFO] - [case 13] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:22:26,038][ehr-qa][INFO] - [case 13] Classifying evidence using 1 generated answers
+[2026-03-02 03:22:30,575][ehr-qa][INFO] - [case 13] Evidence classification completed: 9 Essential, 0 Supplementary, 3 Not Relevant
+[2026-03-02 03:22:30,575][ehr-qa][INFO] - [case 13] Rewriting answer for stylistic alignment
+[2026-03-02 03:22:48,658][ehr-qa][INFO] - [case 13] Answer rewrite successful
+[2026-03-02 03:22:48,658][ehr-qa][INFO] - [case 13] Answer-first pipeline completed successfully
+[2026-03-02 03:22:48,659][ehr-qa][INFO] - [case 14] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:22:48,660][ehr-qa][INFO] - [case 14] Step 1: Generating 1 answer candidates
+[2026-03-02 03:22:48,660][ehr-qa][INFO] - [case 14] Generating answer from all evidence
+[2026-03-02 03:23:05,909][ehr-qa][INFO] - [case 14] Successfully generated answer
+[2026-03-02 03:23:05,909][ehr-qa][INFO] - [case 14] Successfully generated 1/1 answer candidates
+[2026-03-02 03:23:05,909][ehr-qa][INFO] - [case 14] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:23:05,909][ehr-qa][INFO] - [case 14] Classifying evidence using 1 generated answers
+[2026-03-02 03:23:08,277][ehr-qa][INFO] - [case 14] Evidence classification completed: 9 Essential, 0 Supplementary, 0 Not Relevant
+[2026-03-02 03:23:08,277][ehr-qa][INFO] - [case 14] Rewriting answer for stylistic alignment
+[2026-03-02 03:23:53,778][ehr-qa][INFO] - [case 14] Answer rewrite successful
+[2026-03-02 03:23:53,778][ehr-qa][INFO] - [case 14] Answer-first pipeline completed successfully
+[2026-03-02 03:23:53,779][ehr-qa][INFO] - [case 15] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:23:53,779][ehr-qa][INFO] - [case 15] Step 1: Generating 1 answer candidates
+[2026-03-02 03:23:53,779][ehr-qa][INFO] - [case 15] Generating answer from all evidence
+[2026-03-02 03:24:15,248][ehr-qa][INFO] - [case 15] Successfully generated answer
+[2026-03-02 03:24:15,248][ehr-qa][INFO] - [case 15] Successfully generated 1/1 answer candidates
+[2026-03-02 03:24:15,248][ehr-qa][INFO] - [case 15] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:24:15,248][ehr-qa][INFO] - [case 15] Classifying evidence using 1 generated answers
+[2026-03-02 03:24:18,856][ehr-qa][INFO] - [case 15] Evidence classification completed: 5 Essential, 0 Supplementary, 7 Not Relevant
+[2026-03-02 03:24:18,856][ehr-qa][INFO] - [case 15] Rewriting answer for stylistic alignment
+[2026-03-02 03:24:43,215][ehr-qa][INFO] - [case 15] Answer rewrite successful
+[2026-03-02 03:24:43,215][ehr-qa][INFO] - [case 15] Answer-first pipeline completed successfully
+[2026-03-02 03:24:43,216][ehr-qa][INFO] - [case 16] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:24:43,216][ehr-qa][INFO] - [case 16] Step 1: Generating 1 answer candidates
+[2026-03-02 03:24:43,216][ehr-qa][INFO] - [case 16] Generating answer from all evidence
+[2026-03-02 03:25:26,568][ehr-qa][INFO] - [case 16] Successfully generated answer
+[2026-03-02 03:25:26,568][ehr-qa][INFO] - [case 16] Successfully generated 1/1 answer candidates
+[2026-03-02 03:25:26,568][ehr-qa][INFO] - [case 16] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:25:26,568][ehr-qa][INFO] - [case 16] Classifying evidence using 1 generated answers
+[2026-03-02 03:25:38,989][ehr-qa][INFO] - [case 16] Evidence classification completed: 12 Essential, 0 Supplementary, 18 Not Relevant
+[2026-03-02 03:25:38,989][ehr-qa][INFO] - [case 16] Rewriting answer for stylistic alignment
+[2026-03-02 03:26:06,083][ehr-qa][INFO] - [case 16] Answer rewrite successful
+[2026-03-02 03:26:06,083][ehr-qa][INFO] - [case 16] Answer-first pipeline completed successfully
+[2026-03-02 03:26:06,085][ehr-qa][INFO] - [case 17] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:26:06,085][ehr-qa][INFO] - [case 17] Step 1: Generating 1 answer candidates
+[2026-03-02 03:26:06,085][ehr-qa][INFO] - [case 17] Generating answer from all evidence
+[2026-03-02 03:26:49,592][ehr-qa][INFO] - [case 17] Successfully generated answer
+[2026-03-02 03:26:49,592][ehr-qa][INFO] - [case 17] Successfully generated 1/1 answer candidates
+[2026-03-02 03:26:49,592][ehr-qa][INFO] - [case 17] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:26:49,592][ehr-qa][INFO] - [case 17] Classifying evidence using 1 generated answers
+[2026-03-02 03:27:09,212][ehr-qa][INFO] - [case 17] Evidence classification completed: 13 Essential, 0 Supplementary, 25 Not Relevant
+[2026-03-02 03:27:09,212][ehr-qa][INFO] - [case 17] Rewriting answer for stylistic alignment
+[2026-03-02 03:27:25,740][ehr-qa][INFO] - [case 17] Answer rewrite successful
+[2026-03-02 03:27:25,740][ehr-qa][INFO] - [case 17] Answer-first pipeline completed successfully
+[2026-03-02 03:27:25,741][ehr-qa][INFO] - [case 18] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:27:25,742][ehr-qa][INFO] - [case 18] Step 1: Generating 1 answer candidates
+[2026-03-02 03:27:25,742][ehr-qa][INFO] - [case 18] Generating answer from all evidence
+[2026-03-02 03:28:15,783][ehr-qa][INFO] - [case 18] Successfully generated answer
+[2026-03-02 03:28:15,783][ehr-qa][INFO] - [case 18] Successfully generated 1/1 answer candidates
+[2026-03-02 03:28:15,783][ehr-qa][INFO] - [case 18] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:28:15,783][ehr-qa][INFO] - [case 18] Classifying evidence using 1 generated answers
+[2026-03-02 03:28:30,443][ehr-qa][INFO] - [case 18] Evidence classification completed: 14 Essential, 0 Supplementary, 9 Not Relevant
+[2026-03-02 03:28:30,443][ehr-qa][INFO] - [case 18] Rewriting answer for stylistic alignment
+[2026-03-02 03:29:08,557][ehr-qa][INFO] - [case 18] Answer rewrite successful
+[2026-03-02 03:29:08,558][ehr-qa][INFO] - [case 18] Answer-first pipeline completed successfully
+[2026-03-02 03:29:08,559][ehr-qa][INFO] - [case 19] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:29:08,559][ehr-qa][INFO] - [case 19] Step 1: Generating 1 answer candidates
+[2026-03-02 03:29:08,559][ehr-qa][INFO] - [case 19] Generating answer from all evidence
+[2026-03-02 03:29:29,250][ehr-qa][INFO] - [case 19] Successfully generated answer
+[2026-03-02 03:29:29,250][ehr-qa][INFO] - [case 19] Successfully generated 1/1 answer candidates
+[2026-03-02 03:29:29,250][ehr-qa][INFO] - [case 19] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:29:29,250][ehr-qa][INFO] - [case 19] Classifying evidence using 1 generated answers
+[2026-03-02 03:29:36,799][ehr-qa][INFO] - [case 19] Evidence classification completed: 7 Essential, 0 Supplementary, 11 Not Relevant
+[2026-03-02 03:29:36,800][ehr-qa][INFO] - [case 19] Rewriting answer for stylistic alignment
+[2026-03-02 03:29:51,244][ehr-qa][INFO] - [case 19] Answer rewrite successful
+[2026-03-02 03:29:51,244][ehr-qa][INFO] - [case 19] Answer-first pipeline completed successfully
+[2026-03-02 03:29:51,245][ehr-qa][INFO] - [case 20] Starting answer-first pipeline with 1 candidates
+[2026-03-02 03:29:51,246][ehr-qa][INFO] - [case 20] Step 1: Generating 1 answer candidates
+[2026-03-02 03:29:51,246][ehr-qa][INFO] - [case 20] Generating answer from all evidence
+[2026-03-02 03:29:58,653][ehr-qa][INFO] - [case 20] Successfully generated answer
+[2026-03-02 03:29:58,653][ehr-qa][INFO] - [case 20] Successfully generated 1/1 answer candidates
+[2026-03-02 03:29:58,653][ehr-qa][INFO] - [case 20] Step 2: Classifying evidence based on generated answers
+[2026-03-02 03:29:58,653][ehr-qa][INFO] - [case 20] Classifying evidence using 1 generated answers
+[2026-03-02 03:30:03,245][ehr-qa][INFO] - [case 20] Evidence classification completed: 7 Essential, 0 Supplementary, 2 Not Relevant
+[2026-03-02 03:30:03,245][ehr-qa][INFO] - [case 20] Rewriting answer for stylistic alignment
+[2026-03-02 03:30:39,443][ehr-qa][INFO] - [case 20] Answer rewrite successful
+[2026-03-02 03:30:39,443][ehr-qa][INFO] - [case 20] Answer-first pipeline completed successfully
+[2026-03-02 03:30:39,444][ehr-qa][WARNING] - Mismatch in number of submission entries and task entries. Submission: 19, Task: 20
+[2026-03-02 03:30:39,444][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission.json
+[2026-03-02 03:30:39,444][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission_subtask2.json
+[2026-03-02 03:30:39,444][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission_subtask3.json
+[2026-03-02 03:30:39,444][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-03-02 03:30:39,454][ehr-qa][INFO] - Metrics:
+[2026-03-02 03:30:39,457][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.4757  0.7719    0.5886 114.0000
+supplementary     0.1250  0.1200    0.1224  25.0000
+not-relevant      0.8418  0.6203    0.7143 266.0000
+accuracy          0.6321  0.6321    0.6321   0.6321
+macro avg         0.4808  0.5041    0.4751 405.0000
+weighted avg      0.6945  0.6321    0.6424 405.0000
+
+[2026-03-02 03:30:39,457][ehr-qa][INFO] - Confusion Matrix:
+[2026-03-02 03:30:39,458][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.7719                    0.0439                   0.1842
+Actual: supplementary                0.4800                    0.1200                   0.4000
+Actual: not-relevant                 0.3195                    0.0602                   0.6203
+
+[2026-03-02 03:30:39,469][ehr-qa][INFO] - Binary Metrics:
+[2026-03-02 03:30:39,471][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.5167  0.7770    0.6207 139.0000
+not-relevant     0.8418  0.6203    0.7143 266.0000
+accuracy         0.6741  0.6741    0.6741   0.6741
+macro avg        0.6793  0.6986    0.6675 405.0000
+weighted avg     0.7303  0.6741    0.6822 405.0000
+
+[2026-03-02 04:22:03,326][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}, 'method': {'method': 'answer_first', 'evidence_prompt_file_path': 'prompts/evidence-classification-answer-first-v4.txt', 'qa_prompt_file_path': 'prompts/answer-generation-answer-first-v9.txt', 'num_samples': 1, 'k_candidates': 1, 'include_supplementary': True, 'max_retries': 10, 'max_answer_words': 75, 'evidence_batch_size': 'use_all', 'evidence_batch_overlap': 0, 'rewrite_prompt_file_path': 'prompts/answer-rewrite.txt'}, 'model': {'model_name': 'gpt-5.1', 'reasoning_effort': 'medium'}}
+[2026-03-02 04:22:03,342][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}
+[2026-03-02 04:22:03,347][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-03-02 04:22:03,384][ehr-qa][INFO] - [case 5] Starting answer-first pipeline with 1 candidates
+[2026-03-02 04:22:03,384][ehr-qa][INFO] - [case 5] Step 1: Generating 1 answer candidates
+[2026-03-02 04:22:03,384][ehr-qa][INFO] - [case 5] Generating answer from all evidence
+[2026-03-02 04:22:33,579][ehr-qa][INFO] - [case 5] Successfully generated answer
+[2026-03-02 04:22:33,580][ehr-qa][INFO] - [case 5] Successfully generated 1/1 answer candidates
+[2026-03-02 04:22:33,580][ehr-qa][INFO] - [case 5] Step 2: Classifying evidence based on generated answers
+[2026-03-02 04:22:33,580][ehr-qa][INFO] - [case 5] Classifying evidence using 1 generated answers
+[2026-03-02 04:22:44,058][ehr-qa][INFO] - [case 5] Evidence classification completed: 8 Essential, 0 Supplementary, 15 Not Relevant
+[2026-03-02 04:22:44,058][ehr-qa][INFO] - [case 5] Rewriting answer for stylistic alignment
+[2026-03-02 04:24:07,038][ehr-qa][INFO] - [case 5] Answer rewrite successful
+[2026-03-02 04:24:07,038][ehr-qa][INFO] - [case 5] Answer-first pipeline completed successfully
+[2026-03-02 04:24:07,047][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission.json
+[2026-03-02 04:24:07,047][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission_subtask2.json
+[2026-03-02 04:24:07,047][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission_subtask3.json
+[2026-03-02 04:24:07,047][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-03-02 04:24:07,056][ehr-qa][INFO] - Metrics:
+[2026-03-02 04:24:07,058][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.4870  0.7769    0.5987 121.0000
+supplementary     0.1250  0.1154    0.1200  26.0000
+not-relevant      0.8483  0.6370    0.7276 281.0000
+accuracy          0.6449  0.6449    0.6449   0.6449
+macro avg         0.4868  0.5098    0.4821 428.0000
+weighted avg      0.7023  0.6449    0.6543 428.0000
+
+[2026-03-02 04:24:07,058][ehr-qa][INFO] - Confusion Matrix:
+[2026-03-02 04:24:07,059][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.7769                    0.0413                   0.1818
+Actual: supplementary                0.5000                    0.1154                   0.3846
+Actual: not-relevant                 0.3060                    0.0569                   0.6370
+
+[2026-03-02 04:24:07,068][ehr-qa][INFO] - Binary Metrics:
+[2026-03-02 04:24:07,069][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.5300  0.7823    0.6319 147.0000
+not-relevant     0.8483  0.6370    0.7276 281.0000
+accuracy         0.6869  0.6869    0.6869   0.6869
+macro avg        0.6891  0.7097    0.6798 428.0000
+weighted avg     0.7390  0.6869    0.6947 428.0000
+

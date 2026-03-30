@@ -1,0 +1,100 @@
+# Grounded Question Answering Task
+
+
+**Instructions:**
+
+1. **Reason about the Question:**  
+   - Analyze both patient and clinician questions  
+   - Identify the core medical issue(s) and specific information being sought  
+   - Summarize the key points to address  
+
+3. **Answer Composition Rules:**  
+   - Write a clear, professional answer that directly addresses the clinician's question  
+   - Use ALL information from "Essential" sentences in your answer  
+   - You MAY include relevant "Supplementary" evidence sentences to enhance or clarify your response.
+   - Keep your answer within 75 words (maximum 5 sentences)  
+   - Format your answer following these strict citation rules:  
+     * Write each claim as a separate line  
+     * End each line with evidence citations between pipe symbols: |number|  
+     * For multiple evidence, separate with commas: |1,2,3|  
+     * Start a new line after each citation.  
+     * Example:  
+       The patient presented with severe chest pain. |1|  
+       Initial ECG showed ST elevation in leads V1-V4. |2,3|  
+       Troponin levels were significantly elevated. |4|  
+   - Use only provided information - no external knowledge  
+
+**Required Output Format:**
+```json
+{{
+  "reasoning": "Brief analysis of patient/clinician questions and key medical issues. ",
+  "final_answer": "Clear, professional response using all essential evidence and optional supplementary evidence (max 75 words)"
+}}
+```
+
+## Example 1
+
+**Patient Question:**  
+Took my 59 yo father to ER ultrasound discovered he had an aortic aneurysm. He had a salvage repair (tube graft). Long surgery/recovery for couple hours then removed packs. why did they do this surgery????? After this time he spent 1 month in hospital now sent home.
+
+**Clinician Question:**  
+Why did they perform the emergency salvage repair on him?
+
+**Essential Evidence:**  
+1: He was transferred to the hospital on 2025-1-20 for emergent repair of his ruptured thoracoabdominal aortic aneurysm.  
+2: He was immediately taken to the operating room where he underwent an emergent salvage repair of ruptured thoracoabdominal aortic aneurysm with a 34-mm Dacron tube graft using deep hypothermic circulatory arrest.  
+8: Thoracoabdominal wound healing well with exception of very small open area mid wound that is @1cm around and 1/2cm deep, no surrounding erythema.  
+
+**Supplementary Evidence:**  
+3: Please see operative note for details which included cardiac arrest x2.  
+4: Postoperatively he was taken to the intensive care unit for monitoring with an open chest.  
+
+**Model Output:**
+```json
+{{
+  "reasoning": "The patient asks why the emergency surgical repair was performed after discovering an aortic aneurysm, and the clinician specifically asks for the reason behind the salvage repair. The core issue is the rupture of a thoracoabdominal aortic aneurysm requiring urgent repair. Essential evidence highlights the aneurysm rupture and the emergent salvage repair performed with a Dacron tube graft, along with post-op wound healing status.",
+  "final_answer": "The emergency salvage repair was performed due to rupture of the thoracoabdominal aortic aneurysm, which is a life-threatening condition requiring urgent surgery |1|.
+  The procedure involved repair using a 34-mm Dacron tube graft under deep hypothermic circulatory arrest |2|.
+  Postoperative recovery was prolonged due to the complexity of the surgery and critical condition. The thoracoabdominal wound is healing well with only a small residual open area |8|."
+}}
+```
+
+## Example 2
+
+**Patient Question:**  
+I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnosed with CBD sludge. Doctor advised for ERCP. My question is if the sludge was there does not any medication help in flushing it out? Whether ERCP was the only cure?
+
+**Clinician Question:**  
+Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+**Essential Evidence:**  
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.  
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.  
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.  
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.  
+
+**Supplementary Evidence:**  
+2: However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.  
+3: Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.  
+8: At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
+
+**Model Output:**
+```json
+{{
+  "reasoning": "The patient questions if medication could clear the CBD sludge and why ERCP was needed, while the clinician asks why ERCP was indicated over medical treatment. The essential information reflects failure of medical management, obstruction due to sludge and stones, and the need for endoscopic intervention with stents and sphincterotomy.",
+  "final_answer": "ERCP was recommended because CBD sludge and stones caused biliary obstruction unrelieved by medication |1|. Liver function tests and bilirubin worsened despite initial biliary stenting |5|. The biliary stent became acutely obstructed by sludge and stones |6|. Sphincterotomy and stone removal via ERCP were necessary, treatments medications alone cannot provide |7|."
+}}
+```
+
+**Patient Question:**  
+{patient_narrative}
+
+Clinician Question:  
+{clinician_question}
+
+Essential Evidence:  
+{essential_evidence}
+
+Supplementary Evidence:  
+{supplementary_evidence}
+

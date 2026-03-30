@@ -1,0 +1,44 @@
+{
+    "case_id": "63",
+    "alignments": [
+        {
+            "answer_id": "1",
+            "evidence_id": [
+                "1"
+            ]
+        },
+        {
+            "answer_id": "2",
+            "evidence_id": [
+                "6"
+            ]
+        },
+        {
+            "answer_id": "3",
+            "evidence_id": [
+                "7"
+            ]
+        },
+        {
+            "answer_id": "4",
+            "evidence_id": [
+                "4",
+                "14"
+            ]
+        },
+        {
+            "answer_id": "5",
+            "evidence_id": [
+                "7",
+                "9"
+            ]
+        },
+        {
+            "answer_id": "6",
+            "evidence_id": [
+                "9",
+                "13"
+            ]
+        }
+    ]
+}

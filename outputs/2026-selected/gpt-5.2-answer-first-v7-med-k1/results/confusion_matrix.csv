@@ -1,0 +1,4 @@
+,Predicted: essential,Predicted: supplementary,Predicted: not-relevant
+Actual: essential,0.595,0.091,0.314
+Actual: supplementary,0.423,0.038,0.538
+Actual: not-relevant,0.160,0.085,0.754

@@ -1,0 +1,43 @@
+{
+    "case_id": "8",
+    "alignments": [
+        {
+            "answer_id": "1",
+            "evidence_id": [
+                "45"
+            ]
+        },
+        {
+            "answer_id": "2",
+            "evidence_id": [
+                "41",
+                "42",
+                "43",
+                "45"
+            ]
+        },
+        {
+            "answer_id": "3",
+            "evidence_id": [
+                "9",
+                "14",
+                "19",
+                "43"
+            ]
+        },
+        {
+            "answer_id": "4",
+            "evidence_id": [
+                "39"
+            ]
+        },
+        {
+            "answer_id": "5",
+            "evidence_id": [
+                "31",
+                "53",
+                "54"
+            ]
+        }
+    ]
+}

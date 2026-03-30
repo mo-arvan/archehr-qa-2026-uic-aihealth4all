@@ -1,0 +1,4 @@
+- dataset=archehr-dev
+- method=tight-supplementary
+- method.evidence_prompt_file_path=prompts/evidence-classification-tight-supplementary_v1.txt
+- model=gpt-5.1

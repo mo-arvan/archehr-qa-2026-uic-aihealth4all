@@ -1,0 +1,15 @@
+{
+  "strict_macro_precision": 55.75119047619047,
+  "strict_macro_recall": 81.67532467532467,
+  "strict_macro_f1": 62.823535805153455,
+  "strict_micro_precision": 50.0,
+  "strict_micro_recall": 80.99173553719008,
+  "strict_micro_f1": 61.82965299684543,
+  "lenient_macro_precision": 62.23134920634921,
+  "lenient_macro_recall": 81.67532467532467,
+  "lenient_macro_f1": 67.14485175843535,
+  "lenient_micro_precision": 55.367231638418076,
+  "lenient_micro_recall": 80.99173553719008,
+  "lenient_micro_f1": 65.77181208053692,
+  "overall_score": 61.82965299684543
+}

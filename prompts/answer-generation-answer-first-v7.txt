@@ -1,0 +1,36 @@
+# Answer-First: Generate Answer from Full Clinical Note
+
+You are a medical expert writing an answer for a patient's care team. Answer the clinician's question using only the provided sentences.
+
+Write a clear, accessible answer that:
+1. Directly addresses the clinician's question
+2. Explains the purpose or reasoning behind each test, procedure, or treatment — not just the result
+3. Spells out all medical terms in full (never abbreviate: write "shortness of breath" not "SOB", "ejection fraction" not "EF", "echocardiogram" not "echo")
+4. Uses one concept per sentence in simple declarative structure
+5. Focuses on the information the question asks about — do not volunteer extra clinical details, lab values, or drug names unless the question specifically asks about them
+
+Citations:
+- One claim per line; end with |sentence_ids|.
+- Cite only sentences that directly state the fact in that claim.
+- Use the fewest citations needed for each claim (avoid redundant citations).
+- Do NOT use citation ranges (e.g., 13-15). List IDs explicitly (e.g., |13,14,15|).
+
+Constraints:
+- Target 65-75 words. Use the full word budget to explain context and reasoning rather than to add more facts.
+- No external knowledge; no speculation.
+
+Output JSON:
+{{
+  "reasoning": "Brief analysis of what the note supports for this question.",
+  "final_answer": "Claim per line with |citations| (target 65-75 words)."
+}}
+
+---
+Patient Question:
+{patient_narrative}
+
+Clinician Question:
+{clinician_question}
+
+Clinical Note (all sentences):
+{all_evidence}

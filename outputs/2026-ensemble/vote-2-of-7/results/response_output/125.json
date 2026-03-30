@@ -1,0 +1,26 @@
+{
+  "case_id": "125",
+  "predicted_relevance": [
+    "Not Relevant",
+    "Essential",
+    "Essential",
+    "Not Relevant",
+    "Essential",
+    "Essential",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant",
+    "Essential",
+    "Essential",
+    "Essential",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant",
+    "Not Relevant"
+  ],
+  "ground_truth_relevance": []
+}

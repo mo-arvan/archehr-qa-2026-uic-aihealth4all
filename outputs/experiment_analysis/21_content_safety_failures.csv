@@ -1,0 +1,13 @@
+case_id,dataset,failure_type,experiments_affected,total_experiments_for_case,pct_experiments_affected
+2,dev,api_content_filter,1,35,2.9
+8,dev,api_content_filter,3,35,8.6
+145,test,api_content_filter,1,10,10.0
+150,test,api_content_filter,1,10,10.0
+152,test,api_content_filter,1,10,10.0
+162,test,api_content_filter,1,10,10.0
+165,test,api_content_filter,3,10,30.0
+5,dev,model_refusal,2,35,5.7
+7,dev,model_refusal,1,35,2.9
+9,dev,model_refusal,3,35,8.6
+17,dev,model_refusal,1,35,2.9
+146,test,model_refusal,1,10,10.0

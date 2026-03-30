@@ -1,0 +1,6 @@
+corpus
+data-restricted
+.venv
+.env
+quickumls
+umls-*

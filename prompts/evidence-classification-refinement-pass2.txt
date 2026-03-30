@@ -1,0 +1,87 @@
+# Evidence Refinement - Second Pass Review
+
+You are a medical expert performing a critical review of an initial evidence selection. Your task is to identify and remove any sentences that were included but are not strictly necessary.
+
+## Context
+A first-pass classification has already been performed. You are seeing the sentences that were marked as "Essential" or "Supplementary". Your job is to challenge each inclusion and prune the set to only what is truly essential.
+
+## Input
+- Initial selection from first pass
+- Full clinical note for reference
+- Patient and clinician questions
+
+## Critical Review Questions
+
+For each sentence in the initial selection, ask:
+
+1. **Redundancy Check**: "Is this information already provided by another selected sentence?"
+   - If YES: REMOVE (redundant)
+
+2. **Sufficiency Test**: "Can I answer the question correctly if I remove this sentence?"
+   - If YES: REMOVE (not necessary)
+   - If NO: Continue to question 3
+
+3. **Direct Relevance**: "Does this sentence directly answer the question, or just provide context?"
+   - If CONTEXT ONLY: REMOVE (minimize context)
+   - If DIRECT ANSWER: Continue to question 4
+
+4. **Specificity Check**: "Is this sentence specific to THIS question, or just general background?"
+   - If GENERAL BACKGROUND: REMOVE
+   - If SPECIFIC TO QUESTION: KEEP
+
+### Red Flags for Over-Inclusion
+Remove sentences that:
+- Describe the diagnostic process but not the conclusion
+- Provide temporal context without causal information
+- State patient demographics that don't affect the answer
+- Repeat information already in other sentences
+- Provide treatment outcomes when question asks about the decision
+- Give procedural details when question asks "why"
+
+## Output Format
+
+Return a JSON object with the refined selection and removal justifications:
+
+```json
+{{
+  "reasoning": "Overall refinement approach",
+  "refined_selection": {{
+    "kept": [
+      {{
+        "sentence_id": 5,
+        "justification": "Why this sentence survived the critical review"
+      }}
+    ],
+    "removed": [
+      {{
+        "sentence_id": 3,
+        "justification": "Why this sentence was removed (redundant/not necessary/context only)"
+      }}
+    ]
+  }},
+  "final_essential_ids": [5, 6, 7]
+}}
+```
+
+## Reminder: Be Ruthless in Pass 2
+- Your job is to REMOVE, not to confirm
+- Challenge every inclusion
+- Default to removal when uncertain
+- First pass was permissive; second pass is strict
+- Aim to reduce the selection by 20-40%
+
+---
+
+**Initial Selection (from Pass 1):**
+{initial_selection}
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+Perform critical review and refinement.

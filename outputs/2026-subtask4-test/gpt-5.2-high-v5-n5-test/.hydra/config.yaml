@@ -1,0 +1,11 @@
+dataset:
+  dataset_name: archehr-test
+  data_dir: data-restricted/v1.4/
+method:
+  method: answer_evidence_alignment
+  alignment_prompt_file_path: prompts/answer-evidence-alignment-v5.txt
+  max_retries: 10
+  num_samples: 5
+model:
+  model_name: gpt-5.2
+  reasoning_effort: high

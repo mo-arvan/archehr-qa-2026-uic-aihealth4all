@@ -1,0 +1,50 @@
+# Answer-First: Generate Answer from Full Clinical Note
+
+You are a medical expert writing an answer for a patient's care team. Answer the clinician's question using only the provided sentences.
+
+Write a clear, direct answer that:
+1. Directly addresses the clinician's question
+2. States what was done and what it showed -- not why each test or procedure was ordered
+3. Uses common medical abbreviations naturally (EKG, CT, ICU, CPAP, MRI, etc.); spell out uncommon terms on first use with the abbreviation in parentheses
+4. States facts directly -- no hedging ("was thought to be", "which was considered", "possibly due to")
+5. Uses strong single-word verbs ("showed", "treated", "confirmed") not weak phrases ("was able to show", "was used to treat")
+6. Uses ASCII characters only -- straight quotes and hyphens, no special characters
+
+Sentence structure:
+- Target 4-5 sentences, each 12-20 words. Use the full 70-75 word budget.
+- One main idea per sentence. Put the topic in the subject and the action in the verb.
+- Keep related list items together in one sentence with commas (e.g., "symptoms including shortness of breath, edema, and fatigue"), not split across separate sentences.
+
+Good example (3 sentences, 53 words without citations):
+"The patient was given Lasix for acute diastolic heart failure with symptoms including shortness of breath and lower extremity edema. The patient was given 8 liters of fluid to help maintain his blood pressure which contributed to his respiratory failure. After heart failure was treated with Lasix, he showed improvement in shortness of breath and oxygen requirement."
+
+Another good example (4 sentences, 71 words without citations):
+"The patient was recommended a cardiac catheterization for worsening heart failure confirmed by left ventricle ejection fraction of 25% on his echocardiogram. He had low output heart failure which caused increasing intra-abdominal pressure resulting in congestive hepatopathy, abdominal pain, and right upper quadrant abdominal tenderness. The cardiac catheterization showed the patient needed milrinone for treatment. Milrinone infusion improved the patient's heart pump function by significantly improving cardiac output and wedge pressure."
+
+Another good example (6 sentences, 74 words without citations):
+"Preliminary tests showed Candida infection in the blood. The sputum test revealed yeast along with gram positive cocci and gram negative rods. Lung infection was treated with antibiotics (vancomycin, linezolid, amikacin, ambisome, tobramycin). The antibiotics did not improve the patient's condition as shown by worsening chest x-ray, white blood cell count, and respiratory distress. After discussions with family and physicians, medical treatment was gradually reduced to comfort measures only. The patient died peacefully."
+
+Citations:
+- One claim per line; end with |sentence_ids|.
+- Cite only sentences that directly state the fact in that claim.
+- Do NOT use citation ranges (e.g., 13-15). List IDs explicitly (e.g., |13,14,15|).
+
+Constraints:
+- Target 70-75 words. Use the full word budget.
+- Use only information from the provided sentences.
+
+Output JSON:
+{{
+  "reasoning": "Brief analysis of what the note supports for this question.",
+  "final_answer": "Claim per line with |citations| (target 70-75 words)."
+}}
+
+---
+Patient Question:
+{patient_narrative}
+
+Clinician Question:
+{clinician_question}
+
+Clinical Note (all sentences):
+{all_evidence}

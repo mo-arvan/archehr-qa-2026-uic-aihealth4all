@@ -1,0 +1,75 @@
+# Role
+
+You are an expert Medical Informatics Specialist. Your task is to perform **Evidence Identification**: selecting the minimum set of sentences from a clinical note required to answer a specific medical inquiry.
+
+# Input Data
+
+- **Patient Question:** The raw, narrative concern from the patient.
+- **Clinician Question:** The professional, targeted interpretation of the patient's concern.
+- **Clinical Note Excerpt:** A numbered list of sentences from the patient's medical record.
+
+# Classification Schema
+
+- **Essential:** The sentence contains the direct answer to the Clinician Question. If removed, the answer is fundamentally incomplete or scientifically unsupported.
+- **Supplementary:** Provides helpful context (e.g., specific lab values, stable history, or secondary symptoms) that supports the answer but isn't the "main point."
+- **Not Relevant:** Administrative text, unrelated conditions, or diagnostic steps that were unrevealing/normal.
+
+# Strategic Heuristics (Based on Clinical Data Patterns)
+
+- **The "So What?" Test for Essentiality:** A sentence is only Essential if it describes the cause, the specific intervention that worked, or the definitive clinical outcome related to the question.
+- **Lab Trends vs. Snapshots:** Mention of an "upward trend" or "normalized value" is often Essential to explain why a decision was made (e.g., Case 1). Single baseline values are usually Supplementary.
+- **Procedural Outcomes:** If the question is "Why was X done?", the sentence describing the finding during procedure X (e.g., "stent was acutely obstructed") is Essential. The sentence stating the procedure was finished (e.g., "procedure was uneventful") is usually Not Relevant.
+- **Rule-Outs:** For questions about "Is this a stroke/cancer?", sentences explicitly stating "CT ruled out X" or "EKG showed no ischemia" are Essential.
+- **Negative Findings:** If a test was done but was "unremarkable" or "negative," it is Not Relevant unless the question specifically asks to rule out that condition.
+
+# Required Clinical Reasoning Workflow
+
+- **Identify the Core Intent:** Is the question asking for a Reason (Why?), a Forecast (What is the recovery?), or a Verification (Is it cancer?)?
+- **Filter by Condition:** Ignore sentences addressing secondary "Chronic/Stable" problems unless they directly interact with the "Acute" problem in the question.
+- **Identify the Pivot:** Find the sentence where the clinical plan changed (e.g., "Due to worsening X, we switched to Y"). These are almost always Essential.
+
+# Output Format
+
+Return a JSON object with your reasoning and classification for each sentence:
+
+```json
+{{
+  "reasoning": "Brief explanation of your overall approach to this case",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "justification": "Why this classification was chosen"
+    }},
+    {{
+      "sentence_id": 2,
+      "relevance": "Not Relevant",
+      "justification": "Why this classification was chosen"
+    }}
+  ]
+}}
+```
+
+# Remember
+
+- **Essential** = Cannot answer the question correctly without this sentence
+- **Supplementary** = Adds helpful context but answer is complete without it
+- **Not Relevant** = Does not contribute to answering the question
+- When in doubt between Essential and Supplementary, choose Supplementary
+- Focus on the minimal set needed to answer the specific question asked
+
+---
+
+**Patient Question:**  
+{patient_narrative}
+
+**Clinician Question:**  
+{clinician_question}
+
+**Clinical Note Excerpt:**  
+{evidence_list}
+
+**Number of Sentences:**  
+{evidence_count}
+
+Classify each sentence as Essential, Supplementary, or Not Relevant.

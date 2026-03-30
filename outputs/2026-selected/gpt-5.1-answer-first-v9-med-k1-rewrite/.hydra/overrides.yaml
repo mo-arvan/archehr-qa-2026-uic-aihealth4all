@@ -1,0 +1,8 @@
+- dataset=archehr-dev
+- model=gpt-5.1
+- method=answer_first
+- method.qa_prompt_file_path=prompts/answer-generation-answer-first-v9.txt
+- method.evidence_prompt_file_path=prompts/evidence-classification-answer-first-v4.txt
+- method.k_candidates=1
+- method.num_samples=1
+- +method.rewrite_prompt_file_path=prompts/answer-rewrite.txt

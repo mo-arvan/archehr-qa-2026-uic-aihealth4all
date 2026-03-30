@@ -1,0 +1,13 @@
+{
+  "threshold": 1,
+  "total_runs": 7,
+  "runs": [
+    "gpt-5.1-answer-first-v4-med-k3",
+    "gpt-5.1-answer-first-v4-med-k5",
+    "gpt-5.1-answer-first-v6-med-k3",
+    "gpt-5.1-answer-first-v6-med-k5",
+    "gpt-5.2-answer-first-v4-med-k5",
+    "gpt-5.2-answer-first-v6-med-k3",
+    "gpt-5.2-answer-first-v6-med-k5"
+  ]
+}

@@ -1,0 +1,6 @@
+,precision,recall,f1-score,support
+relevant,0.575,0.864,0.690,147.000
+not-relevant,0.903,0.665,0.766,281.000
+accuracy,0.734,0.734,0.734,0.734
+macro avg,0.739,0.765,0.728,428.000
+weighted avg,0.790,0.734,0.740,428.000

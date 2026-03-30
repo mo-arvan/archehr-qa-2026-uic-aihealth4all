@@ -1,0 +1,46 @@
+[2026-02-14 03:08:53,710][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}, 'method': {'method': 'grounded', 'evidence_prompt_file_path': 'prompts/evidence-classification-tight-supplementary_v2.txt', 'qa_prompt_file_path': 'prompts/answer-generation.txt', 'num_samples': 1, 'include_supplementary': True, 'evidence_batch_size': 'use_all', 'max_retries': 10, 'max_answer_words': 75}, 'model': {'model_name': 'gpt-5.1', 'reasoning_effort': 'medium'}}
+[2026-02-14 03:08:53,725][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.4/'}
+[2026-02-14 03:08:53,730][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-02-14 03:09:08,567][ehr-qa][INFO] - [case 1] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 87 words (limit: 75). Please shorten.
+[2026-02-14 03:09:50,820][ehr-qa][INFO] - [case 3] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 76 words (limit: 75). Please shorten.
+[2026-02-14 03:11:46,467][ehr-qa][INFO] - [case 7] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 79 words (limit: 75). Please shorten.
+[2026-02-14 03:14:06,256][ehr-qa][INFO] - [case 9] Validation failed on attempt 1: Please fix the following issues:
+Answer is too long: 76 words (limit: 75). Please shorten.
+[2026-02-14 03:18:32,887][ehr-qa][INFO] - [case 17] Validation failed on attempt 1: Please fix the following issues:
+Citation issues: Answer citation 10 is not in the essential evidence list.
+Answer citation 11 is not in the essential evidence list.
+Answer citation 9 is not in the essential evidence list.
+Answer is too long: 76 words (limit: 75). Please shorten.
+[2026-02-14 03:19:53,502][ehr-qa][INFO] - Legacy submission file saved to /app/outputs/2026-selected/gpt-5.1-tight-v2-1-sample/results/submission.json
+[2026-02-14 03:19:53,502][ehr-qa][INFO] - Subtask 2 submission saved to /app/outputs/2026-selected/gpt-5.1-tight-v2-1-sample/results/submission_subtask2.json
+[2026-02-14 03:19:53,502][ehr-qa][INFO] - Subtask 3 submission saved to /app/outputs/2026-selected/gpt-5.1-tight-v2-1-sample/results/submission_subtask3.json
+[2026-02-14 03:19:53,502][ehr-qa][INFO] - Reporting evaluation metrics...
+[2026-02-14 03:19:53,511][ehr-qa][INFO] - Metrics:
+[2026-02-14 03:19:53,513][ehr-qa][INFO] - 
+               precision  recall  f1-score  support
+essential         0.5734  0.6777    0.6212 121.0000
+supplementary     0.0000  0.0000    0.0000  26.0000
+not-relevant      0.8179  0.8149    0.8164 281.0000
+accuracy          0.7266  0.7266    0.7266   0.7266
+macro avg         0.4638  0.4975    0.4792 428.0000
+weighted avg      0.6991  0.7266    0.7116 428.0000
+
+[2026-02-14 03:19:53,513][ehr-qa][INFO] - Confusion Matrix:
+[2026-02-14 03:19:53,514][ehr-qa][INFO] - 
+                       Predicted: essential  Predicted: supplementary  Predicted: not-relevant
+Actual: essential                    0.6777                    0.0083                   0.3140
+Actual: supplementary                0.5000                    0.0000                   0.5000
+Actual: not-relevant                 0.1708                    0.0142                   0.8149
+
+[2026-02-14 03:19:53,524][ehr-qa][INFO] - Binary Metrics:
+[2026-02-14 03:19:53,526][ehr-qa][INFO] - 
+              precision  recall  f1-score  support
+relevant         0.6486  0.6531    0.6508 147.0000
+not-relevant     0.8179  0.8149    0.8164 281.0000
+accuracy         0.7593  0.7593    0.7593   0.7593
+macro avg        0.7333  0.7340    0.7336 428.0000
+weighted avg     0.7597  0.7593    0.7595 428.0000
+

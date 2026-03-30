@@ -1,0 +1,26 @@
+# Credentials
+.env
+
+# Data (restricted access)
+data-restricted/
+
+# PHI / clinical content
+*with_phi*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# UMLS
+umls-*
+quickumls/

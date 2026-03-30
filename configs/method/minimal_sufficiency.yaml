@@ -1,0 +1,20 @@
+# Minimal Sufficiency 2026 method (Strategy 3)
+# Single-step evidence selection: model returns minimal sentence ID set.
+# Uses same answer generation and correction as baseline.
+# Model settings come from configs/model/*.yaml
+
+method: "minimal_sufficiency"
+
+# Prompt file paths (required for minimal_sufficiency method)
+# Using conservative variant as default (can override with variant config)
+evidence_prompt_file_path: "prompts/evidence-classification-minimal-sufficiency-conservative.txt"
+qa_prompt_file_path: "prompts/answer-generation.txt"
+
+# Self-Consistency configuration
+num_samples: 1  # k for Self-Consistency (1 = single sample)
+
+# No batching (single call per case); no supplementary
+include_supplementary: false
+evidence_batch_size: "use_all"
+max_retries: 10
+max_answer_words: 75

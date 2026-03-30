@@ -1,0 +1,5 @@
+dataset,model,cases,first_try_pass,first_try_pct,word_count_violations,wc_pct,citation_errors,mean_attempts,latency_mean_s,latency_median_s
+dev,gpt-5.1,400,339,84.8,60,15.0,7,1.27,16089.9,25.4
+dev,gpt-5.2,300,262,87.3,38,12.7,2,1.35,6933.0,30.8
+test,gpt-5.1,282,175,62.1,107,37.9,0,1.93,53.3,35.4
+test,gpt-5.2,188,127,67.6,61,32.4,0,1.84,49.4,47.3

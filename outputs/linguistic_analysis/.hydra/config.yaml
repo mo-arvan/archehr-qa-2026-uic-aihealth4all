@@ -1,0 +1,8 @@
+reference: data-restricted/v1.4/dev/archehr-qa_key.json
+submissions:
+- outputs/2026-selected/gpt-5.1-answer-first-v9-med-k1/results/submission_subtask3.json
+- outputs/2026-selected/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission_subtask3.json
+labels:
+- Two-Step
+- Three-Step
+all_configs: null

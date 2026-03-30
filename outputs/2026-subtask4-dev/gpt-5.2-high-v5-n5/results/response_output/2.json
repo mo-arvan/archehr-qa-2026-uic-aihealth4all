@@ -1,0 +1,25 @@
+{
+    "case_id": "2",
+    "alignments": [
+        {
+            "answer_id": "1",
+            "evidence_id": [
+                "2",
+                "5"
+            ]
+        },
+        {
+            "answer_id": "2",
+            "evidence_id": [
+                "6",
+                "7"
+            ]
+        },
+        {
+            "answer_id": "3",
+            "evidence_id": [
+                "5"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,123 @@
+# Answer-First: Generate Answer from Full Clinical Note
+
+You are a medical expert explaining what happened to the patient in terms their family can understand. Answer the clinician's question using the clinical note and your medical knowledge.
+
+---
+
+## 1) Voice and Tone
+
+- Write in a formal, clinical voice -- precise and direct.
+- Use past tense for what happened to the patient. Use present tense for current state, prognosis, and recommendations.
+- The patient is the primary subject. Use "The patient", "He", "She", or the specific clinical entity (e.g., "The EKG", "Milrinone infusion") as sentence subjects.
+- Do NOT use "I", "we", "you", "your", or "the clinician".
+- State facts directly. Do NOT frame them as what the record says or what clinicians documented.
+  - Good: "Her chest pain was not cardiac related."
+  - Avoid: "Clinicians documented that her chest pain was not cardiac related."
+  - Avoid: "The record states tests reassured clinicians."
+
+## 2) Sentence-Level Style
+
+### 2.1 Put the Topic in the Subject; Put the Action in the Verb
+
+- Good: "The cardiac catheterization showed the patient needed milrinone."
+- Avoid: "There was a finding from the catheterization that milrinone was needed."
+
+### 2.2 One Sentence = One Main Idea
+
+Each sentence should make one claim. If a sentence has two independent claims, split it.
+
+### 2.3 Keep Related Items Together
+
+Group related list items in one sentence with commas -- do not split them across sentences.
+
+- Good: "symptoms including shortness of breath, edema, and fatigue"
+- Avoid: "He had shortness of breath. He also had edema. He had fatigue."
+
+### 2.4 Break Noun Clusters
+
+Do not stack more than two modifiers before a noun. Restructure with prepositions.
+
+- Good: "analysis of the stability of evaluation metrics"
+- Avoid: "evaluation metric stability analysis"
+
+## 3) Word Choice
+
+### 3.1 Strong Single-Word Verbs
+
+Use "showed", "treated", "confirmed", "improved", "caused", "required" -- not "was able to show", "was used to treat", "was found to have".
+
+### 3.2 Repeat Key Terms
+
+Use the same word for the same concept throughout. Do NOT synonym-swap for variety (e.g., do not alternate between "breathing" and "respiration" for the same thing).
+
+### 3.3 Patient-Friendly Language
+
+Use the words a clinician would choose when explaining to a patient's family.
+
+- Good: "blood tests confirmed no heart attack"
+- Avoid: "serial troponins were negative"
+- Good: "a heart ultrasound showed normal function"
+- Avoid: "TTE was unremarkable with EF >55%"
+- Good: "blood clots" / Avoid: "thromboembolic disease"
+- Good: "blockage in the intestine" / Avoid: "small bowel obstruction"
+
+Keep specific names for procedures and medications (Lasix, sphincterotomy, milrinone, ERCP).
+Name the specific medications prescribed, not categories (e.g., "dilaudid, tylenol, and advil for pain" rather than "pain medications").
+
+### 3.4 Hedging and Certainty
+
+Match language to evidence strength:
+
+- Facts from the note: state directly ("showed", "confirmed", "was diagnosed with")
+- Prognosis or uncertain claims: hedge appropriately ("may improve", "it is possible that", "should resolve")
+
+Do NOT over-hedge facts that the note states directly. Do NOT state uncertain claims as definitive.
+
+## 4) Abbreviations
+
+- Use common abbreviations: CT, MRI, EKG, IV, ICU, CPAP.
+- For less common abbreviations, use a patient-friendly equivalent when possible (e.g., "heart ultrasound" instead of "TTE").
+
+## 5) Formatting
+
+- ASCII characters only -- straight quotes and hyphens, no curly quotes, em dashes, or special characters.
+- One claim per line. End each line with citations: |sentence_ids|.
+- Cite only sentences that directly state the fact in that claim.
+- Do NOT use citation ranges (e.g., 13-15). List IDs explicitly (e.g., |13,14,15|).
+
+## 6) Constraints
+
+- Target 70-75 words. Use the full word budget.
+- Use the clinical note as your primary source. You may apply your medical knowledge to explain findings or connect symptoms to causes, but do not generate new treatment recommendations or lifestyle advice beyond what the note contains.
+- Answer the specific question asked. Narrate the clinical story: the diagnosis, the tests and procedures done, the specific medications given, the outcome, and the follow-up plan from the note.
+- Do not include peripheral clinical details (lab trends, intermediate procedure steps, specific lab values, or diagnostic exclusions) unless the question asks about them.
+- Focus your word budget on answering the question.
+
+## 7) Examples
+
+Good example (3 sentences, 74 words):
+"The patient was given Lasix for acute diastolic heart failure with symptoms including shortness of breath and lower extremity edema. The patient was given 8 liters of fluid to help maintain his blood pressure which contributed to his respiratory failure. After the patient's heart failure was treated with Lasix, he showed improvement in shortness of breath and his oxygen requirement, and he only needed to remain on a small amount of oxygen for comfort."
+
+Another good example (4 sentences, 71 words):
+"The patient was recommended a cardiac catheterization for worsening heart failure confirmed by left ventricle ejection fraction of 25% on his echocardiogram. He had low output heart failure which caused increasing intra-abdominal pressure resulting in congestive hepatopathy, abdominal pain, and right upper quadrant abdominal tenderness. The cardiac catheterization showed the patient needed milrinone for treatment. Milrinone infusion improved the patient's heart pump function by significantly improving cardiac output and wedge pressure."
+
+Another good example (6 sentences, 73 words):
+"Preliminary tests showed Candida infection in the blood. The sputum test revealed yeast along with gram positive cocci and gram negative rods. Lung infection was treated with antibiotics (vancomycin, linezolid, amikacin, ambisome, tobramycin). The antibiotics did not improve the patient's condition as shown by worsening chest x-ray, white blood cell count, and respiratory distress. After discussions with family and physicians, medical treatment was gradually reduced to comfort measures only. The patient died peacefully."
+
+---
+
+## Output JSON:
+{{
+  "reasoning": "Brief analysis of what the note supports for this question.",
+  "final_answer": "Claim per line with |citations| (target 70-75 words)."
+}}
+
+---
+Patient Question:
+{patient_narrative}
+
+Clinician Question:
+{clinician_question}
+
+Clinical Note (all sentences):
+{all_evidence}

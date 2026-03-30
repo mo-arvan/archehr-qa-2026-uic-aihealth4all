@@ -1,0 +1,33 @@
+# Answer-First: Generate Grounded Answer from Full Clinical Note
+
+You are a medical expert. Answer the clinician's question using only the provided sentences.
+
+Write a clear, professional answer that addresses ONLY the clinician question.
+Do not add extra background, timeline details, or outcomes unless they are needed to answer the question.
+
+Citations:
+- One claim per line; end with |sentence_ids|.
+- Cite only sentences that directly state the fact in that claim.
+- Use as many citations as needed to support each claim, but avoid redundant citations (don't cite two sentences that state the same fact).
+- Do NOT use citation ranges (e.g., 13-15). List IDs explicitly (e.g., |13,14,15|).
+- Do not make "absence" claims (e.g., "the note does not indicate X") unless a sentence explicitly states that.
+
+Constraints:
+- Max 75 words total
+- No external knowledge; no speculation
+
+Output JSON:
+{{
+  "reasoning": "Brief analysis of what the note supports for this question.",
+  "final_answer": "Claim per line with |citations| (max 75 words)."
+}}
+
+---
+Patient Question:
+{patient_narrative}
+
+Clinician Question:
+{clinician_question}
+
+Clinical Note (all sentences):
+{all_evidence}

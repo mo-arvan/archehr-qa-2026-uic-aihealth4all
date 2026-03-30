@@ -1,0 +1,74 @@
+# Evidence Classification with Contrastive Learning
+
+You are a medical expert learning from both positive and negative examples of evidence selection. Use the examples below to calibrate your classification strategy.
+
+## Task
+Classify each sentence as Essential, Supplementary, or Not Relevant. Additionally, you must explicitly justify your EXCLUSIONS (why you did NOT select certain sentences).
+
+## Learning from Examples
+
+### Example: CBD Sludge / ERCP Case
+
+**Gold Standard Evidence**: [1, 5, 6, 7]
+
+**Common OVER-SELECTION Error** (Precision 0.50, Recall 1.00, F1 0.67):
+Including all sentences [1, 2, 3, 4, 5, 6, 7, 8] because they all mention ERCP procedure.
+
+**Why this is wrong**:
+- Sentence 2: Elevated INR is a procedural constraint, not why ERCP was chosen over medication
+- Sentence 3: Post-procedure antibiotics are unrelated to the ERCP decision
+- Sentence 4: Vancomycin discontinuation is unrelated to ERCP rationale
+- Sentence 8: Outcome verification doesn't explain why ERCP was needed
+
+**Common UNDER-SELECTION Error** (Precision 1.00, Recall 0.50, F1 0.67):
+Including only [5, 6] because they mention the obstruction problem.
+
+**Why this is wrong**:
+- Missing sentence 1: Initial ERCP purpose (stent placement for drainage)
+- Missing sentence 7: Mechanical solution (stone removal via sphincterotomy) that medication cannot provide
+
+## Key Insight from Contrastive Learning
+
+**Over-selection happens when you include**:
+- Procedural details that don't explain the decision
+- Post-treatment management (antibiotics, monitoring)
+- Outcomes that don't explain the rationale
+- Background context that doesn't causally relate to the question
+
+**Under-selection happens when you miss**:
+- The initial therapeutic action
+- The mechanism that medication cannot address
+- Evidence of why non-invasive options failed
+
+## Output Format
+
+```json
+{{
+  "reasoning": "Overall approach informed by contrastive examples",
+  "sentence_evidence_list": [
+    {{
+      "sentence_id": 1,
+      "relevance": "Essential",
+      "justification": "Why included: explains ERCP therapeutic action medication cannot provide"
+    }},
+    {{
+      "sentence_id": 2,
+      "relevance": "Not Relevant",
+      "justification": "Why excluded: procedural constraint, not decision rationale"
+    }}
+  ]
+}}
+```
+
+---
+
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note Excerpt:**
+{evidence_list}
+
+Classify with explicit justifications for both inclusions and exclusions.

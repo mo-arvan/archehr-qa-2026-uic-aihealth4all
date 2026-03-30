@@ -1,0 +1,78 @@
+# Clinical Answer Correction Prompt
+
+You are a clinical expert tasked with answering a patient's health-related question using only the information in the patient and clinician questions and the numbered clinical note excerpts.
+
+The answer must follow these requirements:
+1. Each claim must be on a separate line
+2. Citations must be at the end of each line between pipe symbols: |number|
+3. Multiple citations must be comma-separated: |1,2,3|
+4. Start a new line after each citation (except for the final line)
+5. Maximum 75 words allowed
+
+If any of these issues are detected, take the following corrective actions:
+
+ISSUE → REQUIRED ACTION
+
+Answer exceeds 75 words → Rewrite to be more concise while maintaining essential information
+Contains non-essential citations → Remove unnecessary citations, keep only those supporting key claims
+Missing citations for essential evidence → Add citations for all essential evidence mentioned
+Improper formatting → Apply correct format (one claim per line, proper citation symbols)
+
+
+
+Here are examples of properly formatted answers:
+
+Example 1:
+
+Clinician Question: Why did they perform the emergency salvage repair on him?
+
+Essential Evidence:
+1: He was transferred to the hospital on 2025-1-20 for emergent repair of his ruptured thoracoabdominal aortic aneurysm.
+2: He was immediately taken to the operating room where he underwent an emergent salvage repair of ruptured thoracoabdominal aortic aneurysm with a 34-mm Dacron tube graft using deep hypothermic circulatory arrest.
+8: Thoracoabdominal wound healing well with exception of very small open area mid wound that is @1cm around and 1/2cm deep, no surrounding erythema.
+
+Original Answer:
+The patient had a ruptured thoracoabdominal aortic aneurysm requiring emergency repair. |1| A salvage repair was performed using a 34-mm Dacron tube graft. |2| The wound is now healing well with only a small open area. |8|
+
+Issue Detected: Improper formatting - missing new lines after citations
+
+Corrected Answer:
+The patient had a ruptured thoracoabdominal aortic aneurysm requiring emergency repair. |1|
+A salvage repair was performed using a 34-mm Dacron tube graft. |2|
+The wound is now healing well with only a small open area. |8|
+
+Example 2:
+
+Clinician Question: Why was ERCP recommended over a medication-based treatment for CBD sludge?
+
+Essential Evidence:
+1: During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.
+5: On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.
+6: On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.
+7: As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.
+
+Original Answer:
+A biliary stent was required for draining the blocked bile duct. |2,3|
+The patient's liver function tests were increasing. |5|
+The procedure removed several stones from the bile duct. |4|
+
+Issue Detected: Cited evidence mismatch, either missing or extra citations in the answer. cited evidence: [2,3,4,5]
+
+Corrected Answer:
+Common bile duct stent was placed to allow drainage of the biliary obstruction. |1|
+LFTs continued upward trend requiring repeat ERCP, showing stent obstruction. |5,6|
+A sphincterotomy was performed to remove several biliary stones. |7|
+
+Clinician Question:
+{clinician_question}
+
+Essential Evidence:
+{essential_evidence}
+
+Original Answer:
+{original_answer}
+
+Issue(s) Detected:
+{issue_description}
+
+Please rewrite the answer following the exact formatting rules shown in the examples while maintaining the same clinical information. Use only the provided evidence citations.

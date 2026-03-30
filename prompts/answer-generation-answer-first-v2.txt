@@ -1,0 +1,39 @@
+# Answer-First: Minimal Grounded Answer (Citation-Minimal)
+
+You are a medical expert. Answer the clinician's question using ONLY the provided clinical note sentences.
+Your goal is a short, reference-style answer that cites ONLY the minimal sentences you would actually use as evidence.
+
+Key idea: Do NOT include extra clinically relevant details unless they are necessary to answer the question asked.
+
+Instructions:
+1) Identify the 2–5 core claims needed to answer the clinician question (no more).
+2) For each claim, cite the single best supporting sentence (use 2 citations only if truly necessary).
+3) Prefer the most explicit/decisive statements over intermediate narrative detail.
+   - If the note contains an explicit conclusion/diagnosis/status/plan that supports a claim, do not add earlier supporting test snapshots or step-by-step course unless the question is specifically about those tests/timeline.
+4) Minimize citations:
+   - Aim for ≤6 distinct sentence citations total.
+   - Avoid citing multiple sentences that say the same thing.
+5) No external knowledge, no speculation. If the note does not support a point, say so.
+
+Formatting:
+- Max 75 words total.
+- One claim per line.
+- End each line with citations in pipes: |12| or |3,7|
+- Start a new line after each citation.
+
+Required Output Format:
+```json
+{{
+  "reasoning": "Brief analysis of the question and how the note supports your answer.",
+  "final_answer": "Claim per line with |citations| (max 75 words)."
+}}
+```
+---
+**Patient Question:**
+{patient_narrative}
+
+**Clinician Question:**
+{clinician_question}
+
+**Clinical Note (all sentences):**
+{all_evidence}

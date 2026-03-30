@@ -1,0 +1,3 @@
+- dataset=archehr-dev
+- model=gpt-5.1
+- method.num_samples=1

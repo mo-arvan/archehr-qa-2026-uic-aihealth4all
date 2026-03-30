@@ -1,0 +1,19 @@
+# Baseline 2026 method
+# Uses grounded QA with baseline prompts
+# Model settings come from configs/model/*.yaml
+
+method: "grounded"
+
+# Prompt file paths (required for grounded method)
+evidence_prompt_file_path: "prompts/evidence-classification-baseline.txt"
+qa_prompt_file_path: "prompts/answer-generation.txt"
+
+# Self-Consistency configuration
+num_samples: 1  # k for Self-Consistency (1 = single sample, >1 = voting)
+
+# Evidence classification and answer settings
+include_supplementary: true
+# evidence_batch_size: int = batch size; "use_all" = one call (no batching)
+evidence_batch_size: "use_all"
+max_retries: 10
+max_answer_words: 75

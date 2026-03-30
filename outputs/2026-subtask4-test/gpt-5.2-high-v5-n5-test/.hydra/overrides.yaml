@@ -1,0 +1,6 @@
+- method=answer_evidence_alignment
+- model=gpt-5.2
+- dataset=archehr-test
+- method.alignment_prompt_file_path=prompts/answer-evidence-alignment-v5.txt
+- method.num_samples=5
+- model.reasoning_effort=high

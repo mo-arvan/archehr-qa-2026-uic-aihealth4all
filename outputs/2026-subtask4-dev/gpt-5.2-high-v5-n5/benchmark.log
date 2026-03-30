@@ -1,0 +1,4 @@
+[2026-03-02 17:27:07,864][ehr-qa][INFO] - Experiment Config: {'dataset': {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}, 'method': {'method': 'answer_evidence_alignment', 'alignment_prompt_file_path': 'prompts/answer-evidence-alignment-v5.txt', 'max_retries': 10, 'num_samples': 5}, 'model': {'model_name': 'gpt-5.2', 'reasoning_effort': 'high'}}
+[2026-03-02 17:27:07,879][ehr-qa][INFO] - Loaded dataset: {'dataset_name': 'archehr-dev', 'data_dir': 'data-restricted/v1.5/'}
+[2026-03-02 17:27:07,884][ehr-qa][INFO] - Task has 20 cases; 20 have ground-truth sentence relevance (from archehr-qa_key.json 'answers'). Evaluation runs only when this count > 0.
+[2026-03-02 17:44:58,819][ehr-qa][INFO] - Subtask 4 submission saved to /app/outputs/2026-subtask4-dev/gpt-5.2-high-v5-n5/results/submission_subtask4.json

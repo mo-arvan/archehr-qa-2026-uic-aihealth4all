@@ -1,0 +1,32 @@
+Rewrite your answer above with the following structural changes only. Do NOT add or remove any clinical facts. Do NOT change medical terms -- clinicians use terms like "congestive hepatopathy", "sphincterotomy", "ERCP", "milrinone" freely.
+
+## Sentence Structure
+
+1. **Unpack compressed constructions.** Replace participial phrases and gerund chains with full subject-verb-object clauses.
+   - Before: "prompting outpatient referrals for further evaluation"
+   - After: "so the doctors referred her for further evaluation"
+   - Before: "completing antibiotics, obtaining cultures, and confirming clearance"
+   - After: "She completed antibiotics, cultures were obtained, and clearance was confirmed"
+
+2. **Break noun modifier stacks.** Do not stack more than two modifiers before a noun. Use prepositions to restructure.
+   - Before: "infection-related infertility"
+   - After: "infertility from the infection"
+
+3. **Use pronouns.** After the first mention of "the patient", use "he", "she", or "they" for subsequent references in the same answer. Do not repeat "the patient" in every sentence.
+
+4. **Add causal connectives.** When one event leads to another, make the relationship explicit with "because", "due to", "which caused", "so", or "as a result".
+   - Before: "Blood pressure dropped. Fluids were administered."
+   - After: "Her blood pressure dropped, so fluids were administered."
+
+5. **Use simple verbs.** Prefer "showed", "found", "treated", "caused" over nominalizations like "evaluation identified", "assessment revealed", "management involved".
+
+## Preserve Exactly
+
+- All citation markers in |id,id| format -- copy them exactly as they appear
+- All clinical facts, medications, test results, and diagnoses
+- Medical terminology and abbreviations (EKG, CT, ICU, ERCP, TTE, MELD, etc.)
+- The same level of hedging (do not add or remove uncertainty)
+
+## Length
+
+Target 70-75 words. Use the full word budget.
