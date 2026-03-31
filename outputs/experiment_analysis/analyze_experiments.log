@@ -1,0 +1,280 @@
+[2026-03-30 13:42:08,944][__main__][INFO] - Config:
+csv: outputs/log_analysis/log_analysis.csv
+scores: outputs/dev_official_scores.csv
+
+[2026-03-30 13:42:08,957][__main__][INFO] - Loaded 1171 cases from outputs/log_analysis/log_analysis.csv
+[2026-03-30 13:42:08,959][__main__][INFO] - Datasets: ['archehr-dev', 'archehr-test-2026']
+[2026-03-30 13:42:08,959][__main__][INFO] - Experiments: 40
+[2026-03-30 13:42:08,961][__main__][INFO] - Loaded 35 scored configs from outputs/dev_official_scores.csv
+[2026-03-30 13:42:08,973][__main__][INFO] - LaTeX table saved to: /app/outputs/experiment_analysis/15_error_analysis_latex_table.tex
+[2026-03-30 13:42:08,973][__main__][INFO] - \begin{table}[t]
+\centering
+\caption{Error analysis and correction effectiveness across development and test sets.}
+\label{tab:error-analysis}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Dev (35 exp) & Test (10 exp) \\
+\midrule
+Cases analyzed & 701 & 470 \\
+\midrule
+\multicolumn{3}{l}{\textit{Cumulative compliance}} \\
+\quad After attempt 1 & 85.9\% & 64.3\% \\
+\quad After attempt 2 & 90.9\% & 72.8\% \\
+\quad After attempt 3 & 96.1\% & 86.2\% \\
+\quad Final & 100.0\% & 100.0\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Error breakdown}} \\
+\quad Word count violation & 98 (77.8\%) & 168 (94.9\%) \\
+\quad API content filter & 4 (3.2\%) & 7 (4.0\%) \\
+\quad Pipeline failure & 1 (0.8\%) & 0 \\
+\quad Model refusal & 7 (5.6\%) & 1 (0.6\%) \\
+\quad Citation error & 9 (7.1\%) & 0 \\
+\quad Schema error & 7 (5.6\%) & 1 (0.6\%) \\
+\midrule
+\multicolumn{3}{l}{\textit{Word count detail}} \\
+\quad Median overshoot & 6 words & 9 words \\
+\quad Mean overshoot & 10.8 words & 13.7 words \\
+\bottomrule
+\end{tabular}
+\end{table}
+[2026-03-30 13:42:09,164][__main__][INFO] - Figure saved to: /app/outputs/experiment_analysis/01_iterative_correction_effectiveness.{pdf,png}
+[2026-03-30 13:42:09,246][__main__][INFO] - Figure saved to: /app/outputs/experiment_analysis/02_error_type_breakdown.{pdf,png}
+[2026-03-30 13:42:09,480][__main__][INFO] - Figure saved to: /app/outputs/experiment_analysis/03_case_difficulty_dev_set.{pdf,png}
+[2026-03-30 13:42:09,657][__main__][INFO] - Figure saved to: /app/outputs/experiment_analysis/04_safety_refusal_top10.{pdf,png}
+[2026-03-30 13:42:09,679][__main__][INFO] - Key numbers saved to: /app/outputs/experiment_analysis/16_key_statistics.json
+[2026-03-30 13:42:09,722][__main__][INFO] - Config ranking saved to: /app/outputs/experiment_analysis/17_configuration_ranking_by_pass_rate.csv (40 configs)
+[2026-03-30 13:42:09,728][__main__][INFO] - Model comparison saved to: /app/outputs/experiment_analysis/18_model_comparison_metrics.csv
+[2026-03-30 13:42:09,729][__main__][INFO] - Cumulative compliance saved to: /app/outputs/experiment_analysis/19_cumulative_compliance_by_attempt.csv
+[2026-03-30 13:42:09,746][__main__][INFO] - Pipeline factors saved to: /app/outputs/experiment_analysis/20_pipeline_factors_aggregated_stats.csv
+[2026-03-30 13:42:09,763][__main__][INFO] - Content safety CSV saved to: /app/outputs/experiment_analysis/21_content_safety_failures.csv
+[2026-03-30 13:42:09,764][__main__][INFO] - README saved to: /app/outputs/experiment_analysis/README.md
+[2026-03-30 13:42:09,764][__main__][INFO] - ============================================================
+[2026-03-30 13:42:09,764][__main__][INFO] - KEY NUMBERS FOR PAPER TEXT
+[2026-03-30 13:42:09,764][__main__][INFO] - ============================================================
+[2026-03-30 13:42:09,765][__main__][INFO] - archehr-dev (35 experiments, 701 cases):
+[2026-03-30 13:42:09,765][__main__][INFO] -   First-try pass: 601/700 (85.9%)
+[2026-03-30 13:42:09,766][__main__][INFO] -   gpt-5.1: first-try 339/400 (84.8%), wc violations 60/400 (15.0%)
+[2026-03-30 13:42:09,766][__main__][INFO] -   gpt-5.2: first-try 262/300 (87.3%), wc violations 38/300 (12.7%)
+[2026-03-30 13:42:09,768][__main__][INFO] -   answer_first: first-try 455/520 (87.5%)
+[2026-03-30 13:42:09,768][__main__][INFO] -   grounded: first-try 146/180 (81.1%)
+[2026-03-30 13:42:09,768][__main__][INFO] -   Mean attempts: 1.30
+[2026-03-30 13:42:09,768][__main__][INFO] -   Latency: mean=12079.6s, median=27.6s
+[2026-03-30 13:42:09,769][__main__][INFO] - archehr-test-2026 (10 experiments, 470 cases):
+[2026-03-30 13:42:09,769][__main__][INFO] -   First-try pass: 302/470 (64.3%)
+[2026-03-30 13:42:09,770][__main__][INFO] -   gpt-5.1: first-try 175/282 (62.1%), wc violations 107/282 (37.9%)
+[2026-03-30 13:42:09,770][__main__][INFO] -   gpt-5.2: first-try 127/188 (67.6%), wc violations 61/188 (32.4%)
+[2026-03-30 13:42:09,771][__main__][INFO] -   answer_first: first-try 302/470 (64.3%)
+[2026-03-30 13:42:09,771][__main__][INFO] -   Mean attempts: 1.89
+[2026-03-30 13:42:09,771][__main__][INFO] -   Latency: mean=51.8s, median=39.8s
+[2026-03-30 13:42:09,771][__main__][INFO] - All outputs saved to: /app/outputs/experiment_analysis
+[2026-03-31 15:41:59,722][__main__][INFO] - Config:
+csv: outputs/log_analysis/log_analysis.csv
+scores: outputs/dev_official_scores.csv
+
+[2026-03-31 15:41:59,735][__main__][INFO] - Loaded 1171 cases from outputs/log_analysis/log_analysis.csv
+[2026-03-31 15:41:59,735][__main__][INFO] - Datasets: ['archehr-dev', 'archehr-test-2026']
+[2026-03-31 15:41:59,735][__main__][INFO] - Experiments: 40
+[2026-03-31 15:41:59,736][__main__][INFO] - Loaded 35 scored configs from outputs/dev_official_scores.csv
+[2026-03-31 15:41:59,744][__main__][INFO] - LaTeX table saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/15_error_analysis_latex_table.tex
+[2026-03-31 15:41:59,744][__main__][INFO] - \begin{table}[t]
+\centering
+\caption{Error analysis and correction effectiveness across development and test sets.}
+\label{tab:error-analysis}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Dev (35 exp) & Test (10 exp) \\
+\midrule
+Cases analyzed & 701 & 470 \\
+\midrule
+\multicolumn{3}{l}{\textit{Cumulative compliance}} \\
+\quad After attempt 1 & 85.9\% & 64.3\% \\
+\quad After attempt 2 & 90.9\% & 72.8\% \\
+\quad After attempt 3 & 96.1\% & 86.2\% \\
+\quad Final & 100.0\% & 100.0\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Error breakdown}} \\
+\quad Word count violation & 98 (77.8\%) & 168 (94.9\%) \\
+\quad API content filter & 4 (3.2\%) & 7 (4.0\%) \\
+\quad Pipeline failure & 1 (0.8\%) & 0 \\
+\quad Model refusal & 7 (5.6\%) & 1 (0.6\%) \\
+\quad Citation error & 9 (7.1\%) & 0 \\
+\quad Schema error & 7 (5.6\%) & 1 (0.6\%) \\
+\midrule
+\multicolumn{3}{l}{\textit{Word count detail}} \\
+\quad Median overshoot & 6 words & 9 words \\
+\quad Mean overshoot & 10.8 words & 13.7 words \\
+\bottomrule
+\end{tabular}
+\end{table}
+[2026-03-31 15:42:00,118][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/01_iterative_correction_effectiveness.{pdf,png}
+[2026-03-31 15:42:00,213][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/02_error_type_breakdown.{pdf,png}
+[2026-03-31 15:42:00,352][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/03_case_difficulty_dev_set.{pdf,png}
+[2026-03-31 15:42:00,468][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/04_safety_refusal_top10.{pdf,png}
+[2026-03-31 15:42:00,479][__main__][INFO] - Key numbers saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/16_key_statistics.json
+[2026-03-31 15:42:00,499][__main__][INFO] - Config ranking saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/17_configuration_ranking_by_pass_rate.csv (40 configs)
+[2026-03-31 15:42:00,502][__main__][INFO] - Model comparison saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/18_model_comparison_metrics.csv
+[2026-03-31 15:42:00,503][__main__][INFO] - Cumulative compliance saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/19_cumulative_compliance_by_attempt.csv
+[2026-03-31 15:42:00,511][__main__][INFO] - Pipeline factors saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/20_pipeline_factors_aggregated_stats.csv
+[2026-03-31 15:42:00,519][__main__][INFO] - Content safety CSV saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/21_content_safety_failures.csv
+[2026-03-31 15:42:00,519][__main__][INFO] - README saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/README.md
+[2026-03-31 15:42:00,519][__main__][INFO] - ============================================================
+[2026-03-31 15:42:00,519][__main__][INFO] - KEY NUMBERS FOR PAPER TEXT
+[2026-03-31 15:42:00,519][__main__][INFO] - ============================================================
+[2026-03-31 15:42:00,520][__main__][INFO] - archehr-dev (35 experiments, 701 cases):
+[2026-03-31 15:42:00,520][__main__][INFO] -   First-try pass: 601/700 (85.9%)
+[2026-03-31 15:42:00,520][__main__][INFO] -   gpt-5.1: first-try 339/400 (84.8%), wc violations 60/400 (15.0%)
+[2026-03-31 15:42:00,520][__main__][INFO] -   gpt-5.2: first-try 262/300 (87.3%), wc violations 38/300 (12.7%)
+[2026-03-31 15:42:00,521][__main__][INFO] -   answer_first: first-try 455/520 (87.5%)
+[2026-03-31 15:42:00,521][__main__][INFO] -   grounded: first-try 146/180 (81.1%)
+[2026-03-31 15:42:00,521][__main__][INFO] -   Mean attempts: 1.30
+[2026-03-31 15:42:00,521][__main__][INFO] -   Latency: mean=12079.6s, median=27.6s
+[2026-03-31 15:42:00,521][__main__][INFO] - archehr-test-2026 (10 experiments, 470 cases):
+[2026-03-31 15:42:00,521][__main__][INFO] -   First-try pass: 302/470 (64.3%)
+[2026-03-31 15:42:00,522][__main__][INFO] -   gpt-5.1: first-try 175/282 (62.1%), wc violations 107/282 (37.9%)
+[2026-03-31 15:42:00,522][__main__][INFO] -   gpt-5.2: first-try 127/188 (67.6%), wc violations 61/188 (32.4%)
+[2026-03-31 15:42:00,522][__main__][INFO] -   answer_first: first-try 302/470 (64.3%)
+[2026-03-31 15:42:00,522][__main__][INFO] -   Mean attempts: 1.89
+[2026-03-31 15:42:00,522][__main__][INFO] -   Latency: mean=51.8s, median=39.8s
+[2026-03-31 15:42:00,522][__main__][INFO] - All outputs saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis
+[2026-03-31 15:49:10,613][__main__][INFO] - Config:
+csv: outputs/log_analysis/log_analysis.csv
+scores: outputs/dev_official_scores.csv
+
+[2026-03-31 15:49:10,618][__main__][INFO] - Loaded 1171 cases from outputs/log_analysis/log_analysis.csv
+[2026-03-31 15:49:10,618][__main__][INFO] - Datasets: ['archehr-dev', 'archehr-test-2026']
+[2026-03-31 15:49:10,618][__main__][INFO] - Experiments: 40
+[2026-03-31 15:49:10,619][__main__][INFO] - Loaded 35 scored configs from outputs/dev_official_scores.csv
+[2026-03-31 15:49:10,627][__main__][INFO] - LaTeX table saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/15_error_analysis_latex_table.tex
+[2026-03-31 15:49:10,627][__main__][INFO] - \begin{table}[t]
+\centering
+\caption{Error analysis and correction effectiveness across development and test sets.}
+\label{tab:error-analysis}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Dev (35 exp) & Test (10 exp) \\
+\midrule
+Cases analyzed & 701 & 470 \\
+\midrule
+\multicolumn{3}{l}{\textit{Cumulative compliance}} \\
+\quad After attempt 1 & 85.9\% & 64.3\% \\
+\quad After attempt 2 & 90.9\% & 72.8\% \\
+\quad After attempt 3 & 96.1\% & 86.2\% \\
+\quad Final & 100.0\% & 100.0\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Error breakdown}} \\
+\quad Word count violation & 98 (77.8\%) & 168 (94.9\%) \\
+\quad API content filter & 4 (3.2\%) & 7 (4.0\%) \\
+\quad Pipeline failure & 1 (0.8\%) & 0 \\
+\quad Model refusal & 7 (5.6\%) & 1 (0.6\%) \\
+\quad Citation error & 9 (7.1\%) & 0 \\
+\quad Schema error & 7 (5.6\%) & 1 (0.6\%) \\
+\midrule
+\multicolumn{3}{l}{\textit{Word count detail}} \\
+\quad Median overshoot & 6 words & 9 words \\
+\quad Mean overshoot & 10.8 words & 13.7 words \\
+\bottomrule
+\end{tabular}
+\end{table}
+[2026-03-31 15:49:10,775][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/01_iterative_correction_effectiveness.{pdf,png}
+[2026-03-31 15:49:10,867][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/02_error_type_breakdown.{pdf,png}
+[2026-03-31 15:49:11,006][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/03_case_difficulty_dev_set.{pdf,png}
+[2026-03-31 15:49:11,124][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/04_safety_refusal_top10.{pdf,png}
+[2026-03-31 15:49:11,134][__main__][INFO] - Key numbers saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/16_key_statistics.json
+[2026-03-31 15:49:11,174][__main__][INFO] - Config ranking saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/17_configuration_ranking_by_pass_rate.csv (40 configs)
+[2026-03-31 15:49:11,177][__main__][INFO] - Model comparison saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/18_model_comparison_metrics.csv
+[2026-03-31 15:49:11,178][__main__][INFO] - Cumulative compliance saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/19_cumulative_compliance_by_attempt.csv
+[2026-03-31 15:49:11,186][__main__][INFO] - Pipeline factors saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/20_pipeline_factors_aggregated_stats.csv
+[2026-03-31 15:49:11,193][__main__][INFO] - Content safety CSV saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/21_content_safety_failures.csv
+[2026-03-31 15:49:11,194][__main__][INFO] - README saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/README.md
+[2026-03-31 15:49:11,194][__main__][INFO] - ============================================================
+[2026-03-31 15:49:11,194][__main__][INFO] - KEY NUMBERS FOR PAPER TEXT
+[2026-03-31 15:49:11,194][__main__][INFO] - ============================================================
+[2026-03-31 15:49:11,194][__main__][INFO] - archehr-dev (35 experiments, 701 cases):
+[2026-03-31 15:49:11,194][__main__][INFO] -   First-try pass: 601/700 (85.9%)
+[2026-03-31 15:49:11,195][__main__][INFO] -   gpt-5.1: first-try 339/400 (84.8%), wc violations 60/400 (15.0%)
+[2026-03-31 15:49:11,195][__main__][INFO] -   gpt-5.2: first-try 262/300 (87.3%), wc violations 38/300 (12.7%)
+[2026-03-31 15:49:11,195][__main__][INFO] -   answer_first: first-try 455/520 (87.5%)
+[2026-03-31 15:49:11,195][__main__][INFO] -   grounded: first-try 146/180 (81.1%)
+[2026-03-31 15:49:11,196][__main__][INFO] -   Mean attempts: 1.30
+[2026-03-31 15:49:11,196][__main__][INFO] -   Latency: mean=12079.6s, median=27.6s
+[2026-03-31 15:49:11,196][__main__][INFO] - archehr-test-2026 (10 experiments, 470 cases):
+[2026-03-31 15:49:11,196][__main__][INFO] -   First-try pass: 302/470 (64.3%)
+[2026-03-31 15:49:11,196][__main__][INFO] -   gpt-5.1: first-try 175/282 (62.1%), wc violations 107/282 (37.9%)
+[2026-03-31 15:49:11,196][__main__][INFO] -   gpt-5.2: first-try 127/188 (67.6%), wc violations 61/188 (32.4%)
+[2026-03-31 15:49:11,197][__main__][INFO] -   answer_first: first-try 302/470 (64.3%)
+[2026-03-31 15:49:11,197][__main__][INFO] -   Mean attempts: 1.89
+[2026-03-31 15:49:11,197][__main__][INFO] -   Latency: mean=51.8s, median=39.8s
+[2026-03-31 15:49:11,197][__main__][INFO] - All outputs saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis
+[2026-03-31 15:54:08,639][__main__][INFO] - Config:
+csv: outputs/log_analysis/log_analysis.csv
+scores: outputs/dev_official_scores.csv
+
+[2026-03-31 15:54:08,644][__main__][INFO] - Loaded 1171 cases from outputs/log_analysis/log_analysis.csv
+[2026-03-31 15:54:08,645][__main__][INFO] - Datasets: ['archehr-dev', 'archehr-test-2026']
+[2026-03-31 15:54:08,645][__main__][INFO] - Experiments: 40
+[2026-03-31 15:54:08,646][__main__][INFO] - Loaded 35 scored configs from outputs/dev_official_scores.csv
+[2026-03-31 15:54:08,652][__main__][INFO] - LaTeX table saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/15_error_analysis_latex_table.tex
+[2026-03-31 15:54:08,652][__main__][INFO] - \begin{table}[t]
+\centering
+\caption{Error analysis and correction effectiveness across development and test sets.}
+\label{tab:error-analysis}
+\small
+\begin{tabular}{lrr}
+\toprule
+ & Dev (35 exp) & Test (10 exp) \\
+\midrule
+Cases analyzed & 701 & 470 \\
+\midrule
+\multicolumn{3}{l}{\textit{Cumulative compliance}} \\
+\quad After attempt 1 & 85.9\% & 64.3\% \\
+\quad After attempt 2 & 90.9\% & 72.8\% \\
+\quad After attempt 3 & 96.1\% & 86.2\% \\
+\quad Final & 100.0\% & 100.0\% \\
+\midrule
+\multicolumn{3}{l}{\textit{Error breakdown}} \\
+\quad Word count violation & 98 (77.8\%) & 168 (94.9\%) \\
+\quad API content filter & 4 (3.2\%) & 7 (4.0\%) \\
+\quad Pipeline failure & 1 (0.8\%) & 0 \\
+\quad Model refusal & 7 (5.6\%) & 1 (0.6\%) \\
+\quad Citation error & 9 (7.1\%) & 0 \\
+\quad Schema error & 7 (5.6\%) & 1 (0.6\%) \\
+\midrule
+\multicolumn{3}{l}{\textit{Word count detail}} \\
+\quad Median overshoot & 6 words & 9 words \\
+\quad Mean overshoot & 10.8 words & 13.7 words \\
+\bottomrule
+\end{tabular}
+\end{table}
+[2026-03-31 15:54:08,804][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/01_iterative_correction_effectiveness.{pdf,png}
+[2026-03-31 15:54:08,898][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/02_error_type_breakdown.{pdf,png}
+[2026-03-31 15:54:09,037][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/03_case_difficulty_dev_set.{pdf,png}
+[2026-03-31 15:54:09,153][__main__][INFO] - Figure saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/04_safety_refusal_top10.{pdf,png}
+[2026-03-31 15:54:09,163][__main__][INFO] - Key numbers saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/16_key_statistics.json
+[2026-03-31 15:54:09,181][__main__][INFO] - Config ranking saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/17_configuration_ranking_by_pass_rate.csv (40 configs)
+[2026-03-31 15:54:09,184][__main__][INFO] - Model comparison saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/18_model_comparison_metrics.csv
+[2026-03-31 15:54:09,184][__main__][INFO] - Cumulative compliance saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/19_cumulative_compliance_by_attempt.csv
+[2026-03-31 15:54:09,192][__main__][INFO] - Pipeline factors saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/20_pipeline_factors_aggregated_stats.csv
+[2026-03-31 15:54:09,200][__main__][INFO] - Content safety CSV saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/21_content_safety_failures.csv
+[2026-03-31 15:54:09,201][__main__][INFO] - README saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis/README.md
+[2026-03-31 15:54:09,201][__main__][INFO] - ============================================================
+[2026-03-31 15:54:09,201][__main__][INFO] - KEY NUMBERS FOR PAPER TEXT
+[2026-03-31 15:54:09,201][__main__][INFO] - ============================================================
+[2026-03-31 15:54:09,201][__main__][INFO] - archehr-dev (35 experiments, 701 cases):
+[2026-03-31 15:54:09,201][__main__][INFO] -   First-try pass: 601/700 (85.9%)
+[2026-03-31 15:54:09,202][__main__][INFO] -   gpt-5.1: first-try 339/400 (84.8%), wc violations 60/400 (15.0%)
+[2026-03-31 15:54:09,202][__main__][INFO] -   gpt-5.2: first-try 262/300 (87.3%), wc violations 38/300 (12.7%)
+[2026-03-31 15:54:09,202][__main__][INFO] -   answer_first: first-try 455/520 (87.5%)
+[2026-03-31 15:54:09,202][__main__][INFO] -   grounded: first-try 146/180 (81.1%)
+[2026-03-31 15:54:09,203][__main__][INFO] -   Mean attempts: 1.30
+[2026-03-31 15:54:09,203][__main__][INFO] -   Latency: mean=12079.6s, median=27.6s
+[2026-03-31 15:54:09,203][__main__][INFO] - archehr-test-2026 (10 experiments, 470 cases):
+[2026-03-31 15:54:09,203][__main__][INFO] -   First-try pass: 302/470 (64.3%)
+[2026-03-31 15:54:09,203][__main__][INFO] -   gpt-5.1: first-try 175/282 (62.1%), wc violations 107/282 (37.9%)
+[2026-03-31 15:54:09,203][__main__][INFO] -   gpt-5.2: first-try 127/188 (67.6%), wc violations 61/188 (32.4%)
+[2026-03-31 15:54:09,204][__main__][INFO] -   answer_first: first-try 302/470 (64.3%)
+[2026-03-31 15:54:09,204][__main__][INFO] -   Mean attempts: 1.89
+[2026-03-31 15:54:09,204][__main__][INFO] -   Latency: mean=51.8s, median=39.8s
+[2026-03-31 15:54:09,204][__main__][INFO] - All outputs saved to: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis

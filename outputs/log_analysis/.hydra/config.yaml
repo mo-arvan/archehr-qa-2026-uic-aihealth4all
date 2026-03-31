@@ -1,0 +1,5 @@
+experiment_dirs:
+- outputs/2026-selected
+- outputs/2026-test
+verbose: false
+top_n: 10

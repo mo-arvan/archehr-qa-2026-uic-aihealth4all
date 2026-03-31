@@ -1,0 +1,9 @@
+reference: "data-restricted/v1.4/dev/archehr-qa_key.json"
+
+# Provide either submissions+labels or all_configs
+submissions: null  # list of paths to submission_subtask3_with_phi.json
+labels: null       # list of display labels (same order as submissions)
+all_configs: null  # base directory to scan for all configs
+
+# Hydra auto-creates the output directory with timestamped subdirectories
+# Override on CLI: hydra.run.dir=outputs/linguistic_analysis/

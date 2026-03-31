@@ -1,6 +1,6 @@
 # ArchEHR-QA 2026 -- UIC-AIHealth4All System
 
-This repository contains the pipeline submitted by UIC-AIHealth4All to the ArchEHR-QA 2026 shared task (ClinicalNLP @ NAACL 2026). The system participates in Subtasks 2 (Evidence Identification), 3 (Answer Generation), and 4 (Answer-Evidence Alignment).
+This repository contains the pipeline submitted by UIC-AIHealth4All to the ArchEHR-QA 2026 shared task (CL4Health @ LREC 2026). The system participates in Subtasks 2 (Evidence Identification), 3 (Answer Generation), and 4 (Answer-Evidence Alignment).
 
 ## Private / Restricted Files
 
@@ -78,14 +78,16 @@ python src/benchmark.py \
 
 ### 3. Score configurations
 
+Requires the ground-truth key file from the dataset.
+
 ```bash
-# Subtask 2
+# Subtask 2 (dev experiments used v1.4)
 python src/scoring_subtask2.py \
   --submission_path outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/submission_subtask2.json \
   --key_path data-restricted/v1.4/dev/archehr-qa_key.json \
   --out_file_path outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/official_task2_scores.json
 
-# Subtask 4
+# Subtask 4 (dev experiments used v1.5)
 python src/scoring_subtask_4.py \
   --submission_path outputs/2026-subtask4-dev/gpt-5.2-xhigh-v5-n5/results/submission_subtask4.json \
   --key_path data-restricted/v1.5/dev/archehr-qa_key.json \
@@ -94,14 +96,19 @@ python src/scoring_subtask_4.py \
 
 ### 4. Analyze experiment logs
 
-Parses all experiment output directories and writes a consolidated CSV covering both
-dev and test runs.
+Parses all experiment output directories and writes a consolidated CSV.
+
+```bash
+python src/analyze_logs.py hydra.run.dir=outputs/log_analysis/
+```
+
+By default reads from `outputs/2026-selected` and `outputs/2026-test`
+(configured in `configs/log-analysis-config.yaml`). Override with:
 
 ```bash
 python src/analyze_logs.py \
-  outputs/2026-selected/* \
-  outputs/2026-test/* \
-  --output-csv outputs/log_analysis.csv
+  experiment_dirs='[outputs/2026-selected,outputs/2026-test]' \
+  hydra.run.dir=outputs/log_analysis/
 ```
 
 ### 5. Generate analysis artifacts
@@ -109,8 +116,11 @@ python src/analyze_logs.py \
 Produces all figures, tables, and narrative from the log CSV and dev F1 scores.
 
 ```bash
-python src/analyze_experiments.py
+python src/analyze_experiments.py hydra.run.dir=outputs/experiment_analysis/
 ```
+
+By default reads `outputs/log_analysis/log_analysis.csv` and `outputs/dev_official_scores.csv`
+(configured in `configs/experiment-analysis-config.yaml`).
 
 Outputs go to `outputs/experiment_analysis/`. See
 `outputs/experiment_analysis/README.md` for a full index of the generated files.
@@ -144,7 +154,7 @@ docker run --rm \
   -v "$PWD/quickumls:/app/evaluation/quickumls:rw" \
   archehr-qa-eval \
   python scoring_subtask_3.py \
-    --submission_path outputs/2026-selected/gpt-5.1-answer-first-v9-med-k1/results/submission_subtask3.json \
+    --submission_path outputs/2026-selected/gpt-5.1-answer-first-v9-med-k1/results/submission_subtask3_with_phi.json \
     --key_path data_dir/dev/archehr-qa_key.json \
     --data_path data_dir/dev/archehr-qa.xml \
     --quickumls_path quickumls/ \

@@ -1,0 +1,378 @@
+[2026-03-30 13:42:01,926][__main__][INFO] - Config:
+experiment_dirs:
+- outputs/2026-selected
+- outputs/2026-test
+verbose: false
+top_n: 10
+
+[2026-03-30 13:42:01,927][__main__][INFO] - Loading 48 experiment(s)...
+[2026-03-30 13:42:01,938][__main__][INFO] -   gpt-5.1-answer-first-3: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:01,947][__main__][INFO] -   gpt-5.1-answer-first-v10-med-k1: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:01,955][__main__][INFO] -   gpt-5.1-answer-first-v11-med-k1: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:01,966][__main__][INFO] -   gpt-5.1-answer-first-v2-med-k3: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:01,976][__main__][INFO] -   gpt-5.1-answer-first-v3-med-k3: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:01,986][__main__][INFO] -   gpt-5.1-answer-first-v4-high-k3: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:01,995][__main__][INFO] -   gpt-5.1-answer-first-v4-med-k3: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,004][__main__][INFO] -   gpt-5.1-answer-first-v5-med-k1: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,014][__main__][INFO] -   gpt-5.1-answer-first-v5-med-k3: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,023][__main__][INFO] -   gpt-5.1-answer-first-v8-med-k1: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,032][__main__][INFO] -   gpt-5.1-answer-first-v9-high-k1: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,040][__main__][INFO] -   gpt-5.1-answer-first-v9-med-k1: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,048][__main__][INFO] -   gpt-5.1-answer-first-v9-med-k1-no-rewrite: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,058][__main__][INFO] -   gpt-5.1-answer-first-v9-med-k1-rewrite: 20 cases (gpt-5.1, answer_first, archehr-dev)
+[2026-03-30 13:42:02,066][__main__][INFO] -   gpt-5.1-baseline-1-sample: 20 cases (gpt-5.1, grounded, archehr-dev)
+[2026-03-30 13:42:02,078][__main__][INFO] -   gpt-5.1-baseline-3-sample: 20 cases (gpt-5.1, grounded, archehr-dev)
+[2026-03-30 13:42:02,086][__main__][INFO] -   gpt-5.1-med-baseline-1-sample: 20 cases (gpt-5.1, grounded, archehr-dev)
+[2026-03-30 13:42:02,094][__main__][INFO] -   gpt-5.1-tight-1-sample: 20 cases (gpt-5.1, grounded, archehr-dev)
+[2026-03-30 13:42:02,103][__main__][INFO] -   gpt-5.1-tight-v1: 21 cases (gpt-5.1, grounded, archehr-dev)
+[2026-03-30 13:42:02,109][__main__][INFO] -   gpt-5.1-tight-v2-1-sample: 20 cases (gpt-5.1, grounded, archehr-dev)
+[2026-03-30 13:42:02,118][__main__][INFO] -   gpt-5.2-answer-first-v2-med-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,127][__main__][INFO] -   gpt-5.2-answer-first-v3-med-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,136][__main__][INFO] -   gpt-5.2-answer-first-v4-high-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,145][__main__][INFO] -   gpt-5.2-answer-first-v4-med-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,153][__main__][INFO] -   gpt-5.2-answer-first-v5-med-k1: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,162][__main__][INFO] -   gpt-5.2-answer-first-v5-med-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,173][__main__][INFO] -   gpt-5.2-answer-first-v6-med-k5: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,181][__main__][INFO] -   gpt-5.2-answer-first-v7-med-k1: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,190][__main__][INFO] -   gpt-5.2-answer-first-v9-med-k1: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,198][__main__][INFO] -   gpt-5.2-baseline-1-sample: 20 cases (gpt-5.2, grounded, archehr-dev)
+[2026-03-30 13:42:02,210][__main__][INFO] -   gpt-5.2-baseline-3-sample: 20 cases (gpt-5.2, grounded, archehr-dev)
+[2026-03-30 13:42:02,219][__main__][INFO] -   gpt-5.2-high-answer-first-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,230][__main__][INFO] -   gpt-5.2-high-answer-first-k5: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,240][__main__][INFO] -   gpt-5.2-med-answer-first-k3: 20 cases (gpt-5.2, answer_first, archehr-dev)
+[2026-03-30 13:42:02,248][__main__][INFO] -   gpt-5.2-med-baseline-1-sample: 20 cases (gpt-5.2, grounded, archehr-dev)
+[2026-03-30 13:42:02,268][__main__][INFO] -   2026-test/gpt-5.1-answer-first-v10-med-k1: 47 cases (gpt-5.1, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,289][__main__][INFO] -   2026-test/gpt-5.1-answer-first-v4-med-k3: 47 cases (gpt-5.1, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,313][__main__][INFO] -   gpt-5.1-answer-first-v4-med-k5: 47 cases (gpt-5.1, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,336][__main__][INFO] -   gpt-5.1-answer-first-v6-med-k3: 47 cases (gpt-5.1, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,362][__main__][INFO] -   gpt-5.1-answer-first-v6-med-k5: 47 cases (gpt-5.1, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,381][__main__][INFO] -   2026-test/gpt-5.1-answer-first-v9-med-k1: 47 cases (gpt-5.1, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,405][__main__][INFO] -   gpt-5.2-answer-first-v4-med-k5: 47 cases (gpt-5.2, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,427][__main__][INFO] -   gpt-5.2-answer-first-v6-med-k3: 47 cases (gpt-5.2, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,451][__main__][INFO] -   2026-test/gpt-5.2-answer-first-v6-med-k5: 47 cases (gpt-5.2, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,471][__main__][INFO] -   2026-test/gpt-5.2-answer-first-v7-med-k1: 47 cases (gpt-5.2, answer_first, archehr-test-2026)
+[2026-03-30 13:42:02,472][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,472][__main__][INFO] - LOG & RESULT ANALYSIS REPORT
+[2026-03-30 13:42:02,472][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,472][__main__][INFO] - Experiments analyzed: 45
+[2026-03-30 13:42:02,472][__main__][INFO] - Total cases: 1171
+[2026-03-30 13:42:02,472][__main__][INFO] - Models: gpt-5.1, gpt-5.2
+[2026-03-30 13:42:02,472][__main__][INFO] - Methods: answer_first, grounded
+[2026-03-30 13:42:02,472][__main__][INFO] - Datasets: archehr-dev, archehr-test-2026
+[2026-03-30 13:42:02,472][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,472][__main__][INFO] -   DEV SET (archehr-dev)
+[2026-03-30 13:42:02,472][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,472][__main__][INFO] -   Experiments: 35
+[2026-03-30 13:42:02,472][__main__][INFO] -   Total cases: 701
+[2026-03-30 13:42:02,473][__main__][INFO] -   Models: gpt-5.1, gpt-5.2
+[2026-03-30 13:42:02,473][__main__][INFO] -   Methods: answer_first, grounded
+[2026-03-30 13:42:02,473][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,473][__main__][INFO] - 1. OVERVIEW TABLE
+[2026-03-30 13:42:02,473][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,473][__main__][INFO] - Experiment                                    Cases Pass1 Retry Fail Crash
+[2026-03-30 13:42:02,473][__main__][INFO] - --------------------------------------------------------------------------
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-3                           20    15     5    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v10-med-k1                  20    17     3    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v11-med-k1                  20    19     1    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v2-med-k3                   20    15     5    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v3-med-k3                   20    10    10    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v4-high-k3                  20    20     0    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v4-med-k3                   20    20     0    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v5-med-k1                   20    17     3    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v5-med-k3                   20    16     4    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v8-med-k1                   20    20     0    0     0
+[2026-03-30 13:42:02,473][__main__][INFO] - gpt-5.1-answer-first-v9-high-k1                  20    20     0    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-answer-first-v9-med-k1                   20    17     3    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-answer-first-v9-med-k1-no-rewrite        20    19     1    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-answer-first-v9-med-k1-rewrite           20    20     0    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-baseline-1-sample                        20    12     8    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-baseline-3-sample                        20    17     3    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-med-baseline-1-sample                    20    17     3    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-tight-1-sample                           20    19     1    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-tight-v1                                 21    14     6    0     1
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.1-tight-v2-1-sample                        20    15     5    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v2-med-k3                   20    20     0    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v3-med-k3                   20    19     1    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v4-high-k3                  20    19     1    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v4-med-k3                   20    19     1    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v5-med-k1                   20    19     1    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v5-med-k3                   20    18     2    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v6-med-k5                   20    17     3    0     0
+[2026-03-30 13:42:02,474][__main__][INFO] - gpt-5.2-answer-first-v7-med-k1                   20    12     8    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-answer-first-v9-med-k1                   20    15     5    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-baseline-1-sample                        20    18     2    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-baseline-3-sample                        20    17     3    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-high-answer-first-k3                     20    19     1    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-high-answer-first-k5                     20    15     5    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-med-answer-first-k3                      20    18     2    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - gpt-5.2-med-baseline-1-sample                    20    17     3    0     0
+[2026-03-30 13:42:02,475][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,475][__main__][INFO] - 2. API ERRORS & MODEL REFUSALS (from benchmark.log)
+[2026-03-30 13:42:02,475][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,475][__main__][INFO] -   Cases with log-level errors: 12/701 (1.7%)
+[2026-03-30 13:42:02,475][__main__][INFO] -   Pipeline failures (no output): 1
+[2026-03-30 13:42:02,475][__main__][INFO] -   Model refusal (sorry, cannot assist): 7
+[2026-03-30 13:42:02,475][__main__][INFO] -   API returned None (content filter): 4
+[2026-03-30 13:42:02,475][__main__][INFO] -   Pydantic schema error: 7
+[2026-03-30 13:42:02,475][__main__][INFO] -   Pipeline failure (no candidates): 1
+[2026-03-30 13:42:02,475][__main__][INFO] -   Problematic cases (errors in 2+ experiments):
+[2026-03-30 13:42:02,475][__main__][INFO] -     case 8: fails in 3 experiments
+[2026-03-30 13:42:02,476][__main__][INFO] -     case 9: fails in 3 experiments
+[2026-03-30 13:42:02,476][__main__][INFO] -     case 5: fails in 2 experiments
+[2026-03-30 13:42:02,476][__main__][INFO] -   By model:
+[2026-03-30 13:42:02,476][__main__][INFO] -     gpt-5.1: 8/401 (2.0%)
+[2026-03-30 13:42:02,476][__main__][INFO] -     gpt-5.2: 4/300 (1.3%)
+[2026-03-30 13:42:02,476][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,476][__main__][INFO] - 3. WORD COUNT VIOLATION RATE
+[2026-03-30 13:42:02,476][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,476][__main__][INFO] -   Cases with word count violation: 98/700 (14.0%)
+[2026-03-30 13:42:02,476][__main__][INFO] -   By model:
+[2026-03-30 13:42:02,477][__main__][INFO] -     gpt-5.1: 60/400 (15.0%)
+[2026-03-30 13:42:02,477][__main__][INFO] -     gpt-5.2: 38/300 (12.7%)
+[2026-03-30 13:42:02,477][__main__][INFO] -   By method:
+[2026-03-30 13:42:02,477][__main__][INFO] -     answer_first: 65/520 (12.5%)
+[2026-03-30 13:42:02,477][__main__][INFO] -     grounded: 33/180 (18.3%)
+[2026-03-30 13:42:02,477][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,477][__main__][INFO] - 4. CORRECTION SUCCESS RATE
+[2026-03-30 13:42:02,477][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,477][__main__][INFO] -   Cases that failed first attempt: 99
+[2026-03-30 13:42:02,477][__main__][INFO] -   Corrected within retries:       99/99 (100.0%)
+[2026-03-30 13:42:02,477][__main__][INFO] -   Max retries exceeded:           0/99 (0.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] -   By model:
+[2026-03-30 13:42:02,478][__main__][INFO] -     gpt-5.1: 61/61 corrected (100.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] -     gpt-5.2: 38/38 corrected (100.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] -   By first failure type:
+[2026-03-30 13:42:02,478][__main__][INFO] -     citation_extra: 2/2 corrected (100.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] -     citation_missing: 2/2 corrected (100.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] -     combined: 5/5 corrected (100.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] -     word_count: 90/90 corrected (100.0%)
+[2026-03-30 13:42:02,478][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,478][__main__][INFO] - 5. CITATION ERROR RATE
+[2026-03-30 13:42:02,478][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,478][__main__][INFO] -   Cases with citation errors: 9/700 (1.3%)
+[2026-03-30 13:42:02,479][__main__][INFO] -   Essential not cited: 8
+[2026-03-30 13:42:02,479][__main__][INFO] -   Extra citations:     7
+[2026-03-30 13:42:02,479][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,479][__main__][INFO] - 6. ATTEMPTS DISTRIBUTION
+[2026-03-30 13:42:02,479][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,479][__main__][INFO] -   Attempt 1 (pass)   ##########################        601 (85.9%)
+[2026-03-30 13:42:02,480][__main__][INFO] -   Attempt 2          ##                                 35 ( 5.0%)
+[2026-03-30 13:42:02,480][__main__][INFO] -   Attempt 3          ##                                 37 ( 5.3%)
+[2026-03-30 13:42:02,480][__main__][INFO] -   Attempt 4          #                                  14 ( 2.0%)
+[2026-03-30 13:42:02,480][__main__][INFO] -   Attempt 5                                              9 ( 1.3%)
+[2026-03-30 13:42:02,480][__main__][INFO] -   Attempt 5+                                             4 ( 0.6%)
+[2026-03-30 13:42:02,480][__main__][INFO] -   Cumulative compliance:
+[2026-03-30 13:42:02,480][__main__][INFO] -     After attempt 1: 601/700 (85.9%)
+[2026-03-30 13:42:02,480][__main__][INFO] -     After attempt 2: 636/700 (90.9%)
+[2026-03-30 13:42:02,480][__main__][INFO] -     After attempt 3: 673/700 (96.1%)
+[2026-03-30 13:42:02,480][__main__][INFO] -     After attempt 4: 687/700 (98.1%)
+[2026-03-30 13:42:02,480][__main__][INFO] -     After attempt 5: 696/700 (99.4%)
+[2026-03-30 13:42:02,480][__main__][INFO] -     After attempt 5+: 700/700 (100.0%)
+[2026-03-30 13:42:02,480][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,480][__main__][INFO] - 7. ERROR TAXONOMY (all sources)
+[2026-03-30 13:42:02,480][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,480][__main__][INFO] -   Total errors (validation + API + pipeline): 237
+[2026-03-30 13:42:02,481][__main__][INFO] -   word_count                 201 (84.8%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   combined                     7 ( 3.0%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   schema_error                 7 ( 3.0%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   refusal                      7 ( 3.0%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   pipeline_failure             7 ( 3.0%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   api_none                     4 ( 1.7%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   citation_missing             2 ( 0.8%)
+[2026-03-30 13:42:02,481][__main__][INFO] -   citation_extra               2 ( 0.8%)
+[2026-03-30 13:42:02,481][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,481][__main__][INFO] - 8. MODEL COMPARISON
+[2026-03-30 13:42:02,481][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,481][__main__][INFO] -   Metric                               gpt-5.1       gpt-5.2
+[2026-03-30 13:42:02,481][__main__][INFO] -   ----------------------------------------------------------
+[2026-03-30 13:42:02,481][__main__][INFO] -   First-try pass rate                    84.8%         87.3%
+[2026-03-30 13:42:02,482][__main__][INFO] -   Word count violation                   15.0%         12.7%
+[2026-03-30 13:42:02,482][__main__][INFO] -   Citation error rate                     1.8%          0.7%
+[2026-03-30 13:42:02,482][__main__][INFO] -   Avg attempts needed                     1.27          1.35
+[2026-03-30 13:42:02,482][__main__][INFO] -   API/refusal error rate                  2.0%          1.3%
+[2026-03-30 13:42:02,482][__main__][INFO] -   Total cases                              401           300
+[2026-03-30 13:42:02,483][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,483][__main__][INFO] - 9. METHOD COMPARISON
+[2026-03-30 13:42:02,483][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,483][__main__][INFO] -   Metric                            answer_first        grounded
+[2026-03-30 13:42:02,483][__main__][INFO] -   --------------------------------------------------------------
+[2026-03-30 13:42:02,483][__main__][INFO] -   First-try pass rate                      87.5%           81.1%
+[2026-03-30 13:42:02,483][__main__][INFO] -   Word count violation                     12.5%           18.3%
+[2026-03-30 13:42:02,483][__main__][INFO] -   Citation error rate                       0.0%            5.0%
+[2026-03-30 13:42:02,484][__main__][INFO] -   Avg attempts needed                       1.32            1.26
+[2026-03-30 13:42:02,484][__main__][INFO] -   API/refusal error rate                    2.1%            0.6%
+[2026-03-30 13:42:02,484][__main__][INFO] -   Total cases                                520             181
+[2026-03-30 13:42:02,484][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,484][__main__][INFO] - 10. WORD COUNT DISTRIBUTION (failed attempts)
+[2026-03-30 13:42:02,484][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,484][__main__][INFO] -   Overshoot distribution (words over 75 limit):
+[2026-03-30 13:42:02,484][__main__][INFO] -     1-5 over        ############                 97 (46.6%)
+[2026-03-30 13:42:02,484][__main__][INFO] -     6-10 over       #####                        42 (20.2%)
+[2026-03-30 13:42:02,484][__main__][INFO] -     11-20 over      ####                         37 (17.8%)
+[2026-03-30 13:42:02,484][__main__][INFO] -     21-50 over      ###                          29 (13.9%)
+[2026-03-30 13:42:02,484][__main__][INFO] -     50+ over                                      3 ( 1.4%)
+[2026-03-30 13:42:02,484][__main__][INFO] -   Total violations: 208
+[2026-03-30 13:42:02,484][__main__][INFO] -   Median overshoot: 6 words
+[2026-03-30 13:42:02,484][__main__][INFO] -   Mean overshoot:   10.3 words
+[2026-03-30 13:42:02,484][__main__][INFO] -   Max overshoot:    57 words (132 words total)
+[2026-03-30 13:42:02,485][__main__][INFO] -   Final answers still over 75 words: 4/700 (0.6%)
+[2026-03-30 13:42:02,485][__main__][INFO] -   Final answer word count: mean=60.7, median=65, max=77
+[2026-03-30 13:42:02,485][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,485][__main__][INFO] - 11. LATENCY ANALYSIS (from benchmark.log)
+[2026-03-30 13:42:02,485][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,485][__main__][INFO] -   Cases with timing data: 680
+[2026-03-30 13:42:02,486][__main__][INFO] -   Mean:   12168.4s
+[2026-03-30 13:42:02,486][__main__][INFO] -   Median: 28.0s
+[2026-03-30 13:42:02,486][__main__][INFO] -   P95:    89.5s
+[2026-03-30 13:42:02,486][__main__][INFO] -   Max:    2068795.9s
+[2026-03-30 13:42:02,486][__main__][INFO] -   Per-case duration by method:
+[2026-03-30 13:42:02,486][__main__][INFO] -     answer_first         mean=15906.5s, median=32.0s, n=520
+[2026-03-30 13:42:02,486][__main__][INFO] -     grounded             mean=19.7s, median=16.2s, n=160
+[2026-03-30 13:42:02,486][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,486][__main__][INFO] - 12. CRASH / FAILURE SUMMARY
+[2026-03-30 13:42:02,486][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,487][__main__][INFO] -   Total experiments: 35
+[2026-03-30 13:42:02,487][__main__][INFO] -   Total cases (incl. failed): 701
+[2026-03-30 13:42:02,487][__main__][INFO] -   Pipeline failures: 1
+[2026-03-30 13:42:02,487][__main__][INFO] -   Max retries exceeded: 0
+[2026-03-30 13:42:02,487][__main__][INFO] -   Submission mismatch in gpt-5.1-answer-first-v10-med-k1: 19/20 cases submitted
+[2026-03-30 13:42:02,487][__main__][INFO] -   Submission mismatch in gpt-5.1-answer-first-v8-med-k1: 19/20 cases submitted
+[2026-03-30 13:42:02,487][__main__][INFO] -   Submission mismatch in gpt-5.1-answer-first-v9-high-k1: 18/20 cases submitted
+[2026-03-30 13:42:02,487][__main__][INFO] -   Submission mismatch in gpt-5.1-answer-first-v9-med-k1-rewrite: 19/20 cases submitted
+[2026-03-30 13:42:02,487][__main__][INFO] -   Submission mismatch in gpt-5.2-answer-first-v7-med-k1: 19/20 cases submitted
+[2026-03-30 13:42:02,487][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,487][__main__][INFO] -   TEST SET (archehr-test-2026)
+[2026-03-30 13:42:02,487][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,487][__main__][INFO] -   Experiments: 10
+[2026-03-30 13:42:02,487][__main__][INFO] -   Total cases: 470
+[2026-03-30 13:42:02,487][__main__][INFO] -   Models: gpt-5.1, gpt-5.2
+[2026-03-30 13:42:02,487][__main__][INFO] -   Methods: answer_first
+[2026-03-30 13:42:02,487][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,487][__main__][INFO] - 1. OVERVIEW TABLE
+[2026-03-30 13:42:02,487][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,487][__main__][INFO] - Experiment                                    Cases Pass1 Retry Fail Crash
+[2026-03-30 13:42:02,487][__main__][INFO] - --------------------------------------------------------------------------
+[2026-03-30 13:42:02,487][__main__][INFO] - 2026-test/gpt-5.1-answer-first-v10-med-k1        47    38     9    0     0
+[2026-03-30 13:42:02,487][__main__][INFO] - 2026-test/gpt-5.1-answer-first-v4-med-k3         47    31    16    0     0
+[2026-03-30 13:42:02,487][__main__][INFO] - 2026-test/gpt-5.1-answer-first-v9-med-k1         47    42     5    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - 2026-test/gpt-5.2-answer-first-v6-med-k5         47    28    19    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - 2026-test/gpt-5.2-answer-first-v7-med-k1         47    25    22    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - gpt-5.1-answer-first-v4-med-k5                   47    32    15    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - gpt-5.1-answer-first-v6-med-k3                   47    18    29    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - gpt-5.1-answer-first-v6-med-k5                   47    14    33    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - gpt-5.2-answer-first-v4-med-k5                   47    45     2    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - gpt-5.2-answer-first-v6-med-k3                   47    29    18    0     0
+[2026-03-30 13:42:02,488][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,488][__main__][INFO] - 2. API ERRORS & MODEL REFUSALS (from benchmark.log)
+[2026-03-30 13:42:02,488][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,488][__main__][INFO] -   Cases with log-level errors: 8/470 (1.7%)
+[2026-03-30 13:42:02,488][__main__][INFO] -   Pipeline failures (no output): 0
+[2026-03-30 13:42:02,488][__main__][INFO] -   Model refusal (sorry, cannot assist): 1
+[2026-03-30 13:42:02,488][__main__][INFO] -   API returned None (content filter): 9
+[2026-03-30 13:42:02,488][__main__][INFO] -   Pydantic schema error: 1
+[2026-03-30 13:42:02,488][__main__][INFO] -   Problematic cases (errors in 2+ experiments):
+[2026-03-30 13:42:02,488][__main__][INFO] -     case 165: fails in 3 experiments
+[2026-03-30 13:42:02,488][__main__][INFO] -   By model:
+[2026-03-30 13:42:02,488][__main__][INFO] -     gpt-5.1: 5/282 (1.8%)
+[2026-03-30 13:42:02,488][__main__][INFO] -     gpt-5.2: 3/188 (1.6%)
+[2026-03-30 13:42:02,488][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,488][__main__][INFO] - 3. WORD COUNT VIOLATION RATE
+[2026-03-30 13:42:02,488][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,489][__main__][INFO] -   Cases with word count violation: 168/470 (35.7%)
+[2026-03-30 13:42:02,489][__main__][INFO] -   By model:
+[2026-03-30 13:42:02,489][__main__][INFO] -     gpt-5.1: 107/282 (37.9%)
+[2026-03-30 13:42:02,489][__main__][INFO] -     gpt-5.2: 61/188 (32.4%)
+[2026-03-30 13:42:02,489][__main__][INFO] -   By method:
+[2026-03-30 13:42:02,489][__main__][INFO] -     answer_first: 168/470 (35.7%)
+[2026-03-30 13:42:02,489][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,489][__main__][INFO] - 4. CORRECTION SUCCESS RATE
+[2026-03-30 13:42:02,489][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,489][__main__][INFO] -   Cases that failed first attempt: 168
+[2026-03-30 13:42:02,490][__main__][INFO] -   Corrected within retries:       168/168 (100.0%)
+[2026-03-30 13:42:02,490][__main__][INFO] -   Max retries exceeded:           0/168 (0.0%)
+[2026-03-30 13:42:02,490][__main__][INFO] -   By model:
+[2026-03-30 13:42:02,490][__main__][INFO] -     gpt-5.1: 107/107 corrected (100.0%)
+[2026-03-30 13:42:02,490][__main__][INFO] -     gpt-5.2: 61/61 corrected (100.0%)
+[2026-03-30 13:42:02,490][__main__][INFO] -   By first failure type:
+[2026-03-30 13:42:02,490][__main__][INFO] -     word_count: 168/168 corrected (100.0%)
+[2026-03-30 13:42:02,490][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,490][__main__][INFO] - 5. CITATION ERROR RATE
+[2026-03-30 13:42:02,490][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,490][__main__][INFO] -   Cases with citation errors: 0/470 (0.0%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Essential not cited: 0
+[2026-03-30 13:42:02,491][__main__][INFO] -   Extra citations:     0
+[2026-03-30 13:42:02,491][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,491][__main__][INFO] - 6. ATTEMPTS DISTRIBUTION
+[2026-03-30 13:42:02,491][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,491][__main__][INFO] -   Attempt 1 (pass)   ###################               302 (64.3%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Attempt 2          ###                                40 ( 8.5%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Attempt 3          ####                               63 (13.4%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Attempt 4          #                                  23 ( 4.9%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Attempt 5          ##                                 33 ( 7.0%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Attempt 5+         #                                   9 ( 1.9%)
+[2026-03-30 13:42:02,491][__main__][INFO] -   Cumulative compliance:
+[2026-03-30 13:42:02,491][__main__][INFO] -     After attempt 1: 302/470 (64.3%)
+[2026-03-30 13:42:02,491][__main__][INFO] -     After attempt 2: 342/470 (72.8%)
+[2026-03-30 13:42:02,491][__main__][INFO] -     After attempt 3: 405/470 (86.2%)
+[2026-03-30 13:42:02,491][__main__][INFO] -     After attempt 4: 428/470 (91.1%)
+[2026-03-30 13:42:02,491][__main__][INFO] -     After attempt 5: 461/470 (98.1%)
+[2026-03-30 13:42:02,491][__main__][INFO] -     After attempt 5+: 470/470 (100.0%)
+[2026-03-30 13:42:02,491][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,491][__main__][INFO] - 7. ERROR TAXONOMY (all sources)
+[2026-03-30 13:42:02,491][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,492][__main__][INFO] -   Total errors (validation + API + pipeline): 430
+[2026-03-30 13:42:02,492][__main__][INFO] -   word_count                 418 (97.2%)
+[2026-03-30 13:42:02,492][__main__][INFO] -   api_none                     9 ( 2.1%)
+[2026-03-30 13:42:02,492][__main__][INFO] -   schema_error                 1 ( 0.2%)
+[2026-03-30 13:42:02,492][__main__][INFO] -   refusal                      1 ( 0.2%)
+[2026-03-30 13:42:02,492][__main__][INFO] -   pipeline_failure             1 ( 0.2%)
+[2026-03-30 13:42:02,492][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,492][__main__][INFO] - 8. MODEL COMPARISON
+[2026-03-30 13:42:02,492][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,492][__main__][INFO] -   Metric                               gpt-5.1       gpt-5.2
+[2026-03-30 13:42:02,492][__main__][INFO] -   ----------------------------------------------------------
+[2026-03-30 13:42:02,492][__main__][INFO] -   First-try pass rate                    62.1%         67.6%
+[2026-03-30 13:42:02,492][__main__][INFO] -   Word count violation                   37.9%         32.4%
+[2026-03-30 13:42:02,493][__main__][INFO] -   Citation error rate                     0.0%          0.0%
+[2026-03-30 13:42:02,493][__main__][INFO] -   Avg attempts needed                     1.93          1.84
+[2026-03-30 13:42:02,493][__main__][INFO] -   API/refusal error rate                  1.8%          1.6%
+[2026-03-30 13:42:02,493][__main__][INFO] -   Total cases                              282           188
+[2026-03-30 13:42:02,493][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,493][__main__][INFO] - 9. METHOD COMPARISON
+[2026-03-30 13:42:02,493][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,493][__main__][INFO] -   Only one method found, skipping comparison.
+[2026-03-30 13:42:02,493][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,493][__main__][INFO] - 10. WORD COUNT DISTRIBUTION (failed attempts)
+[2026-03-30 13:42:02,493][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,493][__main__][INFO] -   Overshoot distribution (words over 75 limit):
+[2026-03-30 13:42:02,493][__main__][INFO] -     1-5 over        ########                    140 (33.5%)
+[2026-03-30 13:42:02,493][__main__][INFO] -     6-10 over       #####                        84 (20.1%)
+[2026-03-30 13:42:02,493][__main__][INFO] -     11-20 over      ######                       96 (23.0%)
+[2026-03-30 13:42:02,494][__main__][INFO] -     21-50 over      #####                        84 (20.1%)
+[2026-03-30 13:42:02,494][__main__][INFO] -     50+ over        #                            14 ( 3.3%)
+[2026-03-30 13:42:02,494][__main__][INFO] -   Total violations: 418
+[2026-03-30 13:42:02,494][__main__][INFO] -   Median overshoot: 9 words
+[2026-03-30 13:42:02,494][__main__][INFO] -   Mean overshoot:   14.4 words
+[2026-03-30 13:42:02,494][__main__][INFO] -   Max overshoot:    109 words (184 words total)
+[2026-03-30 13:42:02,494][__main__][INFO] -   Final answers still over 75 words: 0/470 (0.0%)
+[2026-03-30 13:42:02,494][__main__][INFO] -   Final answer word count: mean=61.9, median=66, max=75
+[2026-03-30 13:42:02,494][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,494][__main__][INFO] - 11. LATENCY ANALYSIS (from benchmark.log)
+[2026-03-30 13:42:02,494][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,494][__main__][INFO] -   Cases with timing data: 470
+[2026-03-30 13:42:02,495][__main__][INFO] -   Mean:   51.8s
+[2026-03-30 13:42:02,495][__main__][INFO] -   Median: 39.8s
+[2026-03-30 13:42:02,495][__main__][INFO] -   P95:    84.4s
+[2026-03-30 13:42:02,495][__main__][INFO] -   Max:    2205.7s
+[2026-03-30 13:42:02,495][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,495][__main__][INFO] - 12. CRASH / FAILURE SUMMARY
+[2026-03-30 13:42:02,495][__main__][INFO] - ----------------------------------------------------------------------
+[2026-03-30 13:42:02,495][__main__][INFO] -   Total experiments: 10
+[2026-03-30 13:42:02,495][__main__][INFO] -   Total cases (incl. failed): 470
+[2026-03-30 13:42:02,495][__main__][INFO] -   Pipeline failures: 0
+[2026-03-30 13:42:02,495][__main__][INFO] -   Max retries exceeded: 0
+[2026-03-30 13:42:02,495][__main__][INFO] -   Submission mismatch in 2026-test/gpt-5.1-answer-first-v9-med-k1: 46/47 cases submitted
+[2026-03-30 13:42:02,495][__main__][INFO] - ======================================================================
+[2026-03-30 13:42:02,521][__main__][INFO] - Per-case analysis saved to: /app/outputs/log_analysis/log_analysis.csv
+[2026-03-30 13:42:02,521][__main__][INFO] - CSV saved to: /app/outputs/log_analysis/log_analysis.csv
+[2026-03-30 13:42:02,521][__main__][INFO] - All outputs saved to: /app/outputs/log_analysis

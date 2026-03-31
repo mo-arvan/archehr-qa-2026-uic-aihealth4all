@@ -322,8 +322,8 @@ def run_benchmark(experiment_config: dict, env_vars: dict) -> None:
             f"Submission: {num_completed}, Task: {len(task)}"
         )
 
-    # Legacy format
-    submission_file_name = f"{results_dir}/submission.json"
+    # Legacy format (contains generated answers — PHI)
+    submission_file_name = f"{results_dir}/submission_with_phi.json"
     with open(submission_file_name, "w") as f:
         json.dump(submission_list, f, indent=4)
     logger.info(f"Legacy submission file saved to {submission_file_name}")
@@ -334,8 +334,8 @@ def run_benchmark(experiment_config: dict, env_vars: dict) -> None:
         json.dump(subtask2_submission_list, f, indent=4)
     logger.info(f"Subtask 2 submission saved to {subtask2_file}")
 
-    # 2026 subtask 3 submission
-    subtask3_file = f"{results_dir}/submission_subtask3.json"
+    # 2026 subtask 3 submission (contains generated answers — PHI)
+    subtask3_file = f"{results_dir}/submission_subtask3_with_phi.json"
     with open(subtask3_file, "w") as f:
         json.dump(subtask3_submission_list, f, indent=4)
     logger.info(f"Subtask 3 submission saved to {subtask3_file}")

@@ -1,0 +1,26 @@
+[2026-03-30 13:42:16,357][__main__][INFO] - Config:
+reference: data-restricted/v1.4/dev/archehr-qa_key.json
+submissions:
+- outputs/2026-selected/gpt-5.1-answer-first-v9-med-k1-no-rewrite/results/submission_subtask3_with_phi.json
+- outputs/2026-selected/gpt-5.1-answer-first-v9-med-k1-rewrite/results/submission_subtask3_with_phi.json
+labels:
+- Two-Step
+- Three-Step
+all_configs: null
+
+[2026-03-30 13:42:16,358][__main__][INFO] - Loading spaCy model...
+[2026-03-30 13:42:16,855][__main__][INFO] - Loading reference answers...
+[2026-03-30 13:42:16,856][__main__][INFO] -   Loaded 20 clinician answers
+[2026-03-30 13:42:16,856][__main__][INFO] - Computing clinician features...
+[2026-03-30 13:42:18,011][__main__][INFO] - Processing: Two-Step...
+[2026-03-30 13:42:23,095][__main__][INFO] -   Two-Step: 9 sig features
+[2026-03-30 13:42:23,095][__main__][INFO] - Processing: Three-Step...
+[2026-03-30 13:42:27,874][__main__][INFO] -   Three-Step: 6 sig features
+[2026-03-30 13:42:27,875][__main__][INFO] - Cross-config comparison (2 configs)
+[2026-03-30 13:42:28,238][__main__][INFO] - Linguistic distance ranking (closest to clinician):
+[2026-03-30 13:42:28,239][__main__][INFO] -    1. Three-Step                                    dist=0.381
+[2026-03-30 13:42:28,239][__main__][INFO] -    2. Two-Step                                      dist=0.519
+[2026-03-30 13:42:28,239][__main__][INFO] - Furthest from clinician:
+[2026-03-30 13:42:28,239][__main__][INFO] -       Three-Step                                    dist=0.381
+[2026-03-30 13:42:28,239][__main__][INFO] -       Two-Step                                      dist=0.519
+[2026-03-30 13:42:28,239][__main__][INFO] - All outputs saved to: /app/outputs/linguistic_analysis

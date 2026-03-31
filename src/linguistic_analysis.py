@@ -22,7 +22,7 @@ References:
 Usage:
     # Single config:
     python src/linguistic_analysis.py \\
-      submissions='[outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/submission_subtask3.json]' \\
+      submissions='[outputs/2026-selected/gpt-5.1-answer-first-v4-med-k3/results/submission_subtask3_with_phi.json]' \\
       labels='[Two-Step]' \\
       hydra.run.dir=outputs/linguistic_analysis/
 
@@ -43,7 +43,9 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-plt.style.use(str(Path(__file__).parent / "research_vibrant.mplstyle"))
+_STYLE_PATH = Path(__file__).resolve().parent / "research_vibrant.mplstyle"
+if _STYLE_PATH.exists():
+    plt.style.use(str(_STYLE_PATH))
 import numpy as np
 import pandas as pd
 import hydra
@@ -139,9 +141,9 @@ def load_model_answers(path: str) -> dict[str, str]:
 
 
 def discover_all_configs(base_dir: str) -> list[Path]:
-    """Find all submission_subtask3.json files in config subdirectories."""
+    """Find all submission_subtask3_with_phi.json files in config subdirectories."""
     base = Path(base_dir)
-    paths = sorted(base.glob("*/results/submission_subtask3.json"))
+    paths = sorted(base.glob("*/results/submission_subtask3_with_phi.json"))
     return paths
 
 

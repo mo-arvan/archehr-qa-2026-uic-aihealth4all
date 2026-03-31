@@ -112,12 +112,11 @@ hydra:
     hydra:
     - hydra.run.dir=outputs/experiment_analysis/
     - hydra.mode=RUN
-    task:
-    - csv=outputs/log_analysis/log_analysis.csv
+    task: []
   job:
     name: analyze_experiments
     chdir: null
-    override_dirname: csv=outputs/log_analysis/log_analysis.csv
+    override_dirname: ''
     id: ???
     num: ???
     config_name: experiment-analysis-config
@@ -131,18 +130,18 @@ hydra:
   runtime:
     version: 1.3.2
     version_base: '1.3'
-    cwd: /app
+    cwd: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all
     config_sources:
     - path: hydra.conf
       schema: pkg
       provider: hydra
-    - path: /app/configs
+    - path: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/configs
       schema: file
       provider: main
     - path: ''
       schema: structured
       provider: schema
-    output_dir: /app/outputs/experiment_analysis
+    output_dir: /home/ar-ws/Workspace/archehr-qa-2026-uic-aihealth4all/outputs/experiment_analysis
     choices:
       hydra/env: default
       hydra/callbacks: null
